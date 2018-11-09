@@ -1,7 +1,15 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            <strong>Sukces! </strong>@ViewBag.Message
+        </div>
+    }
+}
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
@@ -28,4 +36,56 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
+</div>
+
+<div>
+    @model IEnumerable<SystemRezerwacjiKortow.Models.Customer>
+
+    @{
+        ViewBag.Title = "CustomerList";
+    }
+
+    <h2>CustomerList</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.City)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Street)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </th>
+        </tr>
+        }
+
+    </table>
 </div>
