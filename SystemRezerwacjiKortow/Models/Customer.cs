@@ -18,12 +18,12 @@ namespace SystemRezerwacjiKortow.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "Miasto jest wymagane")]
         public string City { get; set; }
 
-        [Display(Name = "Miasto")]
+        [Display(Name = "Ulica")]
         [StringLength(50)]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Ulica jest wymagana")]
         public string Street { get; set; }
 
-        [Display(Name = "Miasto")]
+        [Display(Name = "Kod pocztowy")]
         [StringLength(6)]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Kod pocztowy jest wymagany")]
         public string ZipCode { get; set; }

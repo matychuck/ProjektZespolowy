@@ -14,18 +14,18 @@ namespace SystemRezerwacjiKortow.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "Imię jest wymagane")]
         public string FirstName { get; set; }
 
-        [Display(Name = "Dzień miesiąca")]
+        [Display(Name = "Dzień tygodnia")]
         [Range(1, 7)]
         public int DayOfWeek { get; set; }
 
-        [Display(Name = "Czy zakończone")]
+        [Display(Name = "Dzień miesiąca")]
         [Range(1, 31)]
         public int DayOfMonth { get; set; }
 
-        [Display(Name = "Czy zakończone")]
+        [Display(Name = "Częstotliwość")]
         public int DayInterval { get; set; }
 
-        [Display(Name = "Data rozpoczecia")]
+        [Display(Name = "Godzina")]
         [DataType(DataType.Time)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Time { get; set; }

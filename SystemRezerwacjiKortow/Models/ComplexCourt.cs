@@ -8,7 +8,7 @@ namespace SystemRezerwacjiKortow.Models
 {
     public class ComplexCourt
     {
-        [Display(Name = "Nazwa kompleksu")]
+        [Display(Name = "Nazwa roli")]
         [StringLength(50)]
         public string RoleName { get; set; }
 
@@ -16,11 +16,11 @@ namespace SystemRezerwacjiKortow.Models
         [StringLength(50)]
         public string City { get; set; }
 
-        [Display(Name = "Miasto")]
+        [Display(Name = "Ulica")]
         [StringLength(50)]
         public string Street { get; set; }
 
-        [Display(Name = "Miasto")]
+        [Display(Name = "Kod pocztowy")]
         [StringLength(6)]
         public string ZipCode { get; set; }
     }
