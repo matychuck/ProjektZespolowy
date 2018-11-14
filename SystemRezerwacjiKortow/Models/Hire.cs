@@ -10,8 +10,6 @@ namespace SystemRezerwacjiKortow.Models
     {
         public int HireID { get; set; }
 
-        public int UserID { get; set; }
-
         [Display(Name = "Data rozpoczecia")]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
@@ -22,10 +20,6 @@ namespace SystemRezerwacjiKortow.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateTo { get; set; }
 
-        [Display(Name = "Należna płatność")]
-        [DataType(DataType.Currency)]
-        public decimal Payment { get; set; }
-
         [Display(Name = "Numer sprzętu")]
         public int GearID { get; set; }
 
@@ -35,6 +29,11 @@ namespace SystemRezerwacjiKortow.Models
         [Display(Name = "Numer kortu")]
         public int CourtID { get; set; }
 
+        [Display(Name = "Należna płatność")]
+        [DataType(DataType.Currency)]
+        public decimal Payment { get; set; }
+
+        public int UserID { get; set; }
 
         [Display(Name = "Data zapłaty")]
         [DataType(DataType.Date)]

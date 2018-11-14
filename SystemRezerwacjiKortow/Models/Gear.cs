@@ -15,8 +15,8 @@ namespace SystemRezerwacjiKortow.Models
         //[Required(ErrorMessage = "Cena jest wymagana")]
         public decimal PriceH { get; set; }
 
-        [Display(Name = "Imię")]
-        //[Required(AllowEmptyStrings = false, ErrorMessage = "Imię jest wymagane")]
+        [Display(Name = "Nazwa")]
+        //[Required(AllowEmptyStrings = false, ErrorMessage = "Nazwa jest wymagana")]
         public string Name { get; set; }
 
         [Display(Name = "Ilość")]

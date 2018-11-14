@@ -10,10 +10,10 @@ namespace SystemRezerwacjiKortow.Models
     {
         public int CourtID { get; set; }
 
-        [Display(Name = "Numer Kotu")]
+        [Display(Name = "Numer Kortu")]
         public int CourtNumber { get; set; }
 
-        [Display(Name = "Typ powirzchni")]
+        [Display(Name = "Typ powierzchni")]
         [StringLength(50)]
         public string SurfaceType { get; set; }
 

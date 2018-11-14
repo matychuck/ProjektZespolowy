@@ -17,7 +17,7 @@ namespace SystemRezerwacjiKortow.Models
 
         [Display(Name = "Nazwisko")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Nazwisko jest wymagane")]
-        public string LastName { get; set; }
+        public string Surname { get; set; }
 
         [Display(Name = "Email")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email jest wymagany")]
@@ -42,17 +42,16 @@ namespace SystemRezerwacjiKortow.Models
 
         public bool IsEmailVeryfied { get; set; }
 
-        public string ActivationCode { get; set; }
-
         [Display(Name = "Rola")]
-        [Range (0 , 5)]
+        [Range(0, 5)]
         public int RoleID { get; set; }
 
         public int CustomerID { get; set; }
 
+       // [Display(Name = "Adres")]
+       // [Required(AllowEmptyStrings = false, ErrorMessage = "Adres jest wymagany")]
+       // public string Address { get; set; }
 
-        [Display(Name = "Adres")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Adres jest wymagany")]
-        public string Address { get; set; }
+        public string ActivationCode { get; set; }
     }
 }

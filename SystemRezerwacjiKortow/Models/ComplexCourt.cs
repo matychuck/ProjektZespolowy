@@ -8,9 +8,9 @@ namespace SystemRezerwacjiKortow.Models
 {
     public class ComplexCourt
     {
-        [Display(Name = "Nazwa roli")]
+        [Display(Name = "Nazwa kompleksu")]
         [StringLength(50)]
-        public string RoleName { get; set; }
+        public string ComplexName { get; set; }
 
         [Display(Name = "Miasto")]
         [StringLength(50)]
