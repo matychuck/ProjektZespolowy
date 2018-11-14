@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -15,10 +16,10 @@ namespace SystemRezerwacjiKortow.Database
         {
             SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
             stringBuilder.Pooling = false;
-            stringBuilder.DataSource = "pocztabmg.pl";
-            stringBuilder.UserID = "01167725_0000001";
-            stringBuilder.InitialCatalog = "01167725_0000001";
-            stringBuilder.Password = "t59Go:SwHYyT";
+            stringBuilder.DataSource = ConfigurationManager.AppSettings["BazaDataSource"];
+            stringBuilder.UserID = ConfigurationManager.AppSettings["BazaUserID"];
+            stringBuilder.InitialCatalog = ConfigurationManager.AppSettings["BazaInitialCatalog"];
+            stringBuilder.Password = ConfigurationManager.AppSettings["BazaPassword"];
             Console.WriteLine(stringBuilder.ToString());
             return new SqlConnection(stringBuilder.ToString());
         }
