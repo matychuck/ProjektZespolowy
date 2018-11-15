@@ -8,10 +8,10 @@ using SystemRezerwacjiKortow.Models;
 
 namespace SystemRezerwacjiKortow.Database
 {
-    public class SqlDatabase
+    public static class SqlDatabase
     {
         static SqlConnection connection = Initialize();
-
+        
         public static SqlConnection Initialize()
         {
             SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
