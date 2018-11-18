@@ -149,6 +149,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Database\SqlDatabase.cs" />
+    <Compile Include="Database\SqlTesty.cs" />
+    <Compile Include="Database\SqlUser.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,6 +167,7 @@
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

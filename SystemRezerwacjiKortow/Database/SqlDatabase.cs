@@ -10,8 +10,12 @@ namespace SystemRezerwacjiKortow.Database
 {
     public static class SqlDatabase
     {
-        static SqlConnection connection = Initialize();
-        
+        public static int UserRoleId;   // numer roli użytkownik
+        public static int CustomerAtr;  // atrapa customera
+
+        public static SqlConnection connection = Initialize();
+
+        #region Konfiguracja bazy
         public static SqlConnection Initialize()
         {
             SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
@@ -65,25 +69,63 @@ namespace SystemRezerwacjiKortow.Database
                 Console.WriteLine(ex.Message);
                 return false;
             }
-        }
+        }       
+        #endregion
 
-        /*
-        public static void InsertTest()
+        #region Inicjalizacja zmiennych początkowych
+        public static void init()
         {
+            SqlDatabase.UserRoleId = SqlDatabase.GetUserRoleId();
+            SqlDatabase.CustomerAtr = SqlDatabase.GetCustomerAtr();
+        }
+        public static int GetUserRoleId()
+        {
+            int result = -1;
             if (OpenConnection())
             {
-                var command = new SqlCommand
-                    ("INSERT INTO Test (Nazwa) VALUES ('aga')", connection);
+                var command = new SqlCommand("select RoleID from dbo.Role where RoleName='user'", connection);
+                var reader = command.ExecuteReader();
 
-                command.ExecuteNonQuery();
+                if (reader.Read())
+                {
+                    result = (int)reader["RoleID"];
+                }
+                else
+                {
+                    throw new System.ArgumentException("W tabeli dbo.Role brakuje roli o nazwie user");
+                }
+
+                CloseConnection();                
+            }
+            return result;
+        }
+
+        public static int GetCustomerAtr()
+        {
+            int result = -1;
+            if (OpenConnection())
+            {
+                var command = new SqlCommand("select CustomerID from dbo.Customer where CompanyName='Atrapa' and City='Atrapa'", connection);
+                var reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    result = (int)reader["CustomerID"];
+                }
+                else
+                {
+                    throw new System.ArgumentException("W tabeli dbo.Customer brakuje klienta o nazwie firmy Atrapa i mieście Atrapa");
+                }
 
                 CloseConnection();
             }
-        }*/
+            return result;
+        }
+        #endregion
 
         // zwraca listę danych klientów
         public static List<Customer> GetCustomers()
-        {     
+        {
             var list = new List<Customer>();
             if (OpenConnection())
             {

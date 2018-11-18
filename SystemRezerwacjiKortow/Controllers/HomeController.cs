@@ -13,6 +13,9 @@ namespace SystemRezerwacjiKortow.Controllers
         public ActionResult Index()
         {
             ViewBag.Status = true;
+            SqlDatabase.init();  // ustawianie wartości początkowych zmiennych
+            //SqlTesty.Testy();   // do testowania bazy danych
+
             List<Customer> customers = SqlDatabase.GetCustomers();
             return View(customers);
         }
