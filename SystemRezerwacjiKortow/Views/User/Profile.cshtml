@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profil użytkownika</h2>
+
+<div>
+    @Html.ActionLink("Powrót do strony głównej", "Index", "Home")
+</div>
+<div>
+    @Html.ActionLink("Wyloguj", "Logout", "User")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

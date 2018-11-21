@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "VerifyAccount";
+}
+
+<h2>Weryfikacja użytkownika</h2>
+
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+    <div class="alert alert-success">
+        <strong>Sukces!</strong>Twoje konto zostało potwierdzone. Kliknij tutaj, żeby się zalogować @Html.ActionLink("Login", "Login", "User")
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <strong>Error!</strong> @ViewBag.Message
+    </div>
+}

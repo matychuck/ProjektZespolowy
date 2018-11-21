@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using SystemRezerwacjiKortow.Models;
 
@@ -19,7 +20,12 @@ namespace SystemRezerwacjiKortow.Database
         public static SqlConnection Initialize()
         {
             SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
+            //stringBuilder.ConnectRetryCount = 1;
+            //stringBuilder.ConnectTimeout = 15;
             stringBuilder.Pooling = false;
+            //stringBuilder.IntegratedSecurity = false;
+            //stringBuilder.MultipleActiveResultSets = true; 
+            
             stringBuilder.DataSource = ConfigurationManager.AppSettings["BazaDataSource"];
             stringBuilder.UserID = ConfigurationManager.AppSettings["BazaUserID"];
             stringBuilder.InitialCatalog = ConfigurationManager.AppSettings["BazaInitialCatalog"];
@@ -30,31 +36,53 @@ namespace SystemRezerwacjiKortow.Database
 
         public static bool OpenConnection()
         {
+            int counter = 3;
+            bool ret = false;
+
             if (connection == null)
                 Initialize();
-
-            try
+            while (counter > 0 && ret == false)
             {
-                if (connection.State != System.Data.ConnectionState.Open)
-                    connection.Open();
-                return true;
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Number);
-                Console.WriteLine(ex.Message);
-                switch (ex.Number)
+                try
                 {
-                    case 0:
-                        Console.WriteLine("Cannot connect to server. Contact administrator");
-                        break;
+                    if (connection.State != System.Data.ConnectionState.Open)
+                    {
+                        //Thread.Sleep(1000);
+                        //if (connection.State == System.Data.ConnectionState.Connecting)
+                        //{
+                       //connection.Close();
+                       // }
+                        connection.Open();
 
-                    case 1045:
-                        Console.WriteLine("Invalid username/password, please try again");
-                        break;
+                    }
+                    ret = true;
+                    break;
+                    //return true;
                 }
-                return false;
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Number);
+                    Console.WriteLine(ex.Message);
+                    switch (ex.Number)
+                    {
+                        case 0:
+                            Console.WriteLine("Cannot connect to server. Contact administrator");
+                            break;
+
+                        case 1045:
+                            Console.WriteLine("Invalid username/password, please try again");
+                            break;
+                        default:
+                            Console.WriteLine(ex.Message);
+                            break;
+                    }
+                    counter--;
+                    if(counter<=0) break;
+                    //Thread.Sleep(1000);
+                }
             }
+            if (!ret) throw new Exception("Problem z połączeniem się z serverem SQL");
+            return ret;
         }
         public static bool CloseConnection()
         {
