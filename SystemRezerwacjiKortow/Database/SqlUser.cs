@@ -17,7 +17,7 @@ namespace SystemRezerwacjiKortow.Database
         public static void InsertUser(User user)
         {
             if (SqlDatabase.OpenConnection())
-            {
+            {              
                 var command = new SqlCommand
                     ("INSERT INTO [User] (FirstName, Surname, Email, DateOfBirth, Password, IsEmailVeryfied, RoleID, CustomerID, ActivationCode) " +
                     "VALUES (@name, @surname, @email, @birth, @password, @veryfied, @role, @customer, @code) " +
@@ -33,6 +33,7 @@ namespace SystemRezerwacjiKortow.Database
                 command.Parameters.AddWithValue("@customer", user.CustomerID);
                 command.Parameters.AddWithValue("@code", user.ActivationCode);
 
+                command.CommandTimeout = SqlDatabase.Timeout;
                 var result = command.ExecuteReader();
                 if (result.Read())
                 {
@@ -55,6 +56,8 @@ namespace SystemRezerwacjiKortow.Database
                 var command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE Email = @email", SqlDatabase.connection);
                 command.Parameters.AddWithValue("@email", email);
 
+                command.CommandTimeout = SqlDatabase.Timeout;
+
                 var result = command.ExecuteReader();
                 while (result.Read())
                 {
@@ -74,6 +77,8 @@ namespace SystemRezerwacjiKortow.Database
             {
                 var command = new SqlCommand("SELECT COUNT(*) FROM [User] WHERE ActivationCode = @code", SqlDatabase.connection);
                 command.Parameters.AddWithValue("@code", code);
+
+                command.CommandTimeout = SqlDatabase.Timeout;
 
                 var result = command.ExecuteReader();
                 while (result.Read())
@@ -97,6 +102,8 @@ namespace SystemRezerwacjiKortow.Database
                 var command = new SqlCommand("SELECT * FROM [User] WHERE Email = @email and IsEmailVeryfied = 1", SqlDatabase.connection);
                 command.Parameters.AddWithValue("@email", login.Email);
 
+                command.CommandTimeout = SqlDatabase.Timeout;
+
                 var result = command.ExecuteReader();
                 while (result.Read())
                 {
@@ -115,6 +122,9 @@ namespace SystemRezerwacjiKortow.Database
             {
                 var command = new SqlCommand("UPDATE [User] SET IsEmailVeryfied = 1  WHERE ActivationCode = @code", SqlDatabase.connection);
                 command.Parameters.AddWithValue("@code", code);
+
+                command.CommandTimeout = SqlDatabase.Timeout;
+
                 command.ExecuteNonQuery();
                 SqlDatabase.CloseConnection();
             }
@@ -129,6 +139,8 @@ namespace SystemRezerwacjiKortow.Database
             {
                 var command = new SqlCommand("SELECT Password FROM [User] WHERE Email = @email", SqlDatabase.connection);
                 command.Parameters.AddWithValue("@email", login.Email);
+
+                command.CommandTimeout = SqlDatabase.Timeout;
 
                 var result = command.ExecuteReader();
                 while (result.Read())
@@ -155,6 +167,8 @@ namespace SystemRezerwacjiKortow.Database
                 command.Parameters.AddWithValue("@UserID", user.UserID);
                 command.Parameters.AddWithValue("@CustomerID", customer.CustomerID);
                 command.Parameters["@CustomerID"].Direction = ParameterDirection.Output;
+
+                command.CommandTimeout = SqlDatabase.Timeout;
 
                 // użyć jeżeli chcemy wykorzystać wartość return z procedury
                 //command.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;

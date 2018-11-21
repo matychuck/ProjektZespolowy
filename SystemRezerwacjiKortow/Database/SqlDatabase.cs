@@ -13,6 +13,7 @@ namespace SystemRezerwacjiKortow.Database
     {
         public static int UserRoleId;   // numer roli użytkownik
         public static int CustomerAtr;  // atrapa customera
+        public static int Timeout = 120;
 
         public static SqlConnection connection = Initialize();
 
@@ -21,7 +22,7 @@ namespace SystemRezerwacjiKortow.Database
         {
             SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
             //stringBuilder.ConnectRetryCount = 1;
-            //stringBuilder.ConnectTimeout = 15;
+            stringBuilder.ConnectTimeout = Timeout;
             stringBuilder.Pooling = false;
             //stringBuilder.IntegratedSecurity = false;
             //stringBuilder.MultipleActiveResultSets = true; 
@@ -45,16 +46,12 @@ namespace SystemRezerwacjiKortow.Database
             {
                 try
                 {
-                    if (connection.State != System.Data.ConnectionState.Open)
+                    if(connection.State == System.Data.ConnectionState.Open)
                     {
-                        //Thread.Sleep(1000);
-                        //if (connection.State == System.Data.ConnectionState.Connecting)
-                        //{
-                       //connection.Close();
-                       // }
-                        connection.Open();
-
+                        connection.Close();
                     }
+                    connection.Open();
+
                     ret = true;
                     break;
                     //return true;
@@ -112,6 +109,9 @@ namespace SystemRezerwacjiKortow.Database
             if (OpenConnection())
             {
                 var command = new SqlCommand("select RoleID from dbo.Role where RoleName='user'", connection);
+
+                command.CommandTimeout = Timeout;
+
                 var reader = command.ExecuteReader();
 
                 if (reader.Read())
@@ -134,6 +134,9 @@ namespace SystemRezerwacjiKortow.Database
             if (OpenConnection())
             {
                 var command = new SqlCommand("select CustomerID from dbo.Customer where CompanyName='Atrapa' and City='Atrapa'", connection);
+
+                command.CommandTimeout = Timeout;
+
                 var reader = command.ExecuteReader();
 
                 if (reader.Read())
@@ -159,6 +162,9 @@ namespace SystemRezerwacjiKortow.Database
             {
                 var command = new SqlCommand("select * from dbo.Customer", connection);
                 //command.Parameters.AddWithValue("@number", number);
+
+                command.CommandTimeout = Timeout;
+
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
