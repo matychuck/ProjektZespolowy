@@ -15,10 +15,11 @@ namespace SystemRezerwacjiKortow.Database
         public static int CustomerAtr;  // atrapa customera
         public static int Timeout = 120;
 
-        public static SqlConnection connection = Initialize();
+        public static string connectionString;
 
         #region Konfiguracja bazy
-        public static SqlConnection Initialize()
+        
+        public static void BuildConnectionString()
         {
             SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
             //stringBuilder.ConnectRetryCount = 1;
@@ -26,62 +27,46 @@ namespace SystemRezerwacjiKortow.Database
             stringBuilder.Pooling = false;
             //stringBuilder.IntegratedSecurity = false;
             //stringBuilder.MultipleActiveResultSets = true; 
-            
+
             stringBuilder.DataSource = ConfigurationManager.AppSettings["BazaDataSource"];
             stringBuilder.UserID = ConfigurationManager.AppSettings["BazaUserID"];
             stringBuilder.InitialCatalog = ConfigurationManager.AppSettings["BazaInitialCatalog"];
             stringBuilder.Password = ConfigurationManager.AppSettings["BazaPassword"];
-            Console.WriteLine(stringBuilder.ToString());
-            return new SqlConnection(stringBuilder.ToString());
+            connectionString = stringBuilder.ToString();
         }
 
-        public static bool OpenConnection()
+        public static bool OpenConnection(SqlConnection connection)
         {
-            int counter = 3;
             bool ret = false;
 
-            if (connection == null)
-                Initialize();
-            while (counter > 0 && ret == false)
+            try
             {
-                try
+                connection.Open();
+                ret = true;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Number);
+                Console.WriteLine(ex.Message);
+                switch (ex.Number)
                 {
-                    if(connection.State == System.Data.ConnectionState.Open)
-                    {
-                        connection.Close();
-                    }
-                    connection.Open();
+                    case 0:
+                        Console.WriteLine("Cannot connect to server. Contact administrator");
+                        break;
 
-                    ret = true;
-                    break;
-                    //return true;
-                }
-                catch (SqlException ex)
-                {
-                    Console.WriteLine(ex.Number);
-                    Console.WriteLine(ex.Message);
-                    switch (ex.Number)
-                    {
-                        case 0:
-                            Console.WriteLine("Cannot connect to server. Contact administrator");
-                            break;
-
-                        case 1045:
-                            Console.WriteLine("Invalid username/password, please try again");
-                            break;
-                        default:
-                            Console.WriteLine(ex.Message);
-                            break;
-                    }
-                    counter--;
-                    if(counter<=0) break;
-                    //Thread.Sleep(1000);
+                    case 1045:
+                        Console.WriteLine("Invalid username/password, please try again");
+                        break;
+                    default:
+                        Console.WriteLine(ex.Message);
+                        break;
                 }
             }
             if (!ret) throw new Exception("Problem z połączeniem się z serverem SQL");
             return ret;
         }
-        public static bool CloseConnection()
+
+        public static bool CloseConnection(SqlConnection connection)
         {
             try
             {
@@ -94,19 +79,26 @@ namespace SystemRezerwacjiKortow.Database
                 Console.WriteLine(ex.Message);
                 return false;
             }
-        }       
+        }
+
+        public static SqlConnection NewConnection()
+        {
+            return new SqlConnection(connectionString);
+        } 
         #endregion
 
         #region Inicjalizacja zmiennych początkowych
         public static void init()
         {
+            BuildConnectionString();
             SqlDatabase.UserRoleId = SqlDatabase.GetUserRoleId();
             SqlDatabase.CustomerAtr = SqlDatabase.GetCustomerAtr();
         }
         public static int GetUserRoleId()
         {
+            SqlConnection connection = NewConnection();
             int result = -1;
-            if (OpenConnection())
+            if (OpenConnection(connection))
             {
                 var command = new SqlCommand("select RoleID from dbo.Role where RoleName='user'", connection);
 
@@ -123,15 +115,16 @@ namespace SystemRezerwacjiKortow.Database
                     throw new System.ArgumentException("W tabeli dbo.Role brakuje roli o nazwie user");
                 }
 
-                CloseConnection();                
+                CloseConnection(connection);                
             }
             return result;
         }
 
         public static int GetCustomerAtr()
         {
+            SqlConnection connection = NewConnection();
             int result = -1;
-            if (OpenConnection())
+            if (OpenConnection(connection))
             {
                 var command = new SqlCommand("select CustomerID from dbo.Customer where CompanyName='Atrapa' and City='Atrapa'", connection);
 
@@ -148,7 +141,7 @@ namespace SystemRezerwacjiKortow.Database
                     throw new System.ArgumentException("W tabeli dbo.Customer brakuje klienta o nazwie firmy Atrapa i mieście Atrapa");
                 }
 
-                CloseConnection();
+                CloseConnection(connection);
             }
             return result;
         }
@@ -157,12 +150,11 @@ namespace SystemRezerwacjiKortow.Database
         // zwraca listę danych klientów
         public static List<Customer> GetCustomers()
         {
+            SqlConnection connection = NewConnection();
             var list = new List<Customer>();
-            if (OpenConnection())
+            if (OpenConnection(connection))
             {
                 var command = new SqlCommand("select * from dbo.Customer", connection);
-                //command.Parameters.AddWithValue("@number", number);
-
                 command.CommandTimeout = Timeout;
 
                 var reader = command.ExecuteReader();
@@ -178,7 +170,7 @@ namespace SystemRezerwacjiKortow.Database
                         DiscountValue = (decimal)reader["DiscountValue"],
                     });
                 }
-                CloseConnection();
+                CloseConnection(connection);
             }
             return list;
         }
