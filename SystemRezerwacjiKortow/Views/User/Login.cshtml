@@ -7,6 +7,14 @@
 }
 
 <h2>Login</h2>
+
+@if ((string)TempData["Logout"] == "Udało sie wylogować")
+{
+    <div class="alert alert-success">
+        <strong>Sukces!</strong> @TempData["Logout"]
+    </div>
+}
+
 @if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
 {
     if (ViewBag.Message != null)
