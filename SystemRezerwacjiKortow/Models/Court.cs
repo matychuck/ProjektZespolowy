@@ -19,11 +19,11 @@ namespace SystemRezerwacjiKortow.Models
 
         [Display(Name = "Czy jest dla debli")]
         [Range(0, 1)]
-        public int IsForDoubles { get; set; }
+        public bool IsForDoubles { get; set; }
 
         [Display(Name = "Czy kort jest zakryty")]
         [Range(0, 1)]
-        public int IsCovered { get; set; }
+        public bool IsCovered { get; set; }
 
         [Display(Name = "Cena za godzine")]
         [DataType(DataType.Currency)]

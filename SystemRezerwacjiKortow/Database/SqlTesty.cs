@@ -16,6 +16,9 @@ namespace SystemRezerwacjiKortow.Database
             //SqlUser.CheckUserExists("alamakota@onet.pl");
             //SqlUser.CheckUserExists("admin@wp.pl");
             //testCheckEmailVeryfied();
+
+            // testy kortu
+            //testAddModyfyCourt();
         }
         #region User
         private static void testInsertUser()
@@ -45,7 +48,7 @@ namespace SystemRezerwacjiKortow.Database
             customer.ZipCode = "00-000";
             customer.DiscountValue = 0;
 
-            SqlUser.AddAddress(customer, user);
+            SqlUser.AddModyfyAddress(customer, user);
         }
 
         private static void testCheckEmailVeryfied()
@@ -54,6 +57,24 @@ namespace SystemRezerwacjiKortow.Database
             userLogin.Email = "admin@wp.pl";
 
             SqlUser.CheckEmailVeryfied(userLogin);
+        }
+        #endregion
+
+        #region Court
+        private static void testAddModyfyCourt()
+        {
+            Court court = new Court();
+            court.CourtID = 0;
+
+            court.CourtNumber = 2;
+            court.SurfaceType = "ceglasty";
+            court.IsForDoubles = true;
+            court.IsCovered = false;
+            court.PriceH = 99;
+            court.Name = "kort 2";
+            
+
+            SqlCourt.AddModifyCourt(court);
         }
         #endregion
     }

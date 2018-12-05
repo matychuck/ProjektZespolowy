@@ -12,12 +12,15 @@ namespace SystemRezerwacjiKortow.Models
 
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime TimeFrom { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh\\:mm}")]
+        public TimeSpan TimeFrom { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime TimeTo { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh\\:mm}")]
+        public TimeSpan TimeTo { get; set; }
+
+
+        public string DayName { get; set; }
     }
 }

@@ -16,8 +16,12 @@ namespace SystemRezerwacjiKortow.Controllers
             SqlDatabase.init();  // ustawianie wartości początkowych zmiennych
             //SqlTesty.Testy();   // do testowania bazy danych
 
-            List<Customer> customers = SqlDatabase.GetCustomers();
-            return View(customers);
+            // List<Customer> customers = SqlDatabase.GetCustomers();
+            //List<User> users = SqlUser.GetUsers();
+            // List<Court> courts = SqlCourt.GetCourts();
+            // List<Gear> gears = SqlGear.GetGears();
+            List<OpeningHours> openingHours = SqlCompany.GetOpeningHours();
+            return View(openingHours);
         }
 
         public ActionResult About()

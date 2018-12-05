@@ -42,7 +42,7 @@ namespace SystemRezerwacjiKortow.Models
 
         public bool IsEmailVeryfied { get; set; }
 
-        [Display(Name = "Rola")]
+        [Display(Name = "Rola ID")]
         [Range(0, 5)]
         public int RoleID { get; set; }
 
@@ -53,5 +53,8 @@ namespace SystemRezerwacjiKortow.Models
        // public string Address { get; set; }
 
         public string ActivationCode { get; set; }
+
+        [Display(Name = "Rola")]
+        public string RoleName { get; set; }
     }
 }

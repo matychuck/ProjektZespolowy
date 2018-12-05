@@ -38,54 +38,152 @@
     </div>
 </div>
 
-<div>
-    @model IEnumerable<SystemRezerwacjiKortow.Models.Customer>
+@model IEnumerable<SystemRezerwacjiKortow.Models.OpeningHours>
 
-    @{
-        ViewBag.Title = "CustomerList";
+@{
+    ViewBag.Title = "OpeningHoursList";
+}
+
+<h2>Opening Hours</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeTo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.DayName)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.TimeFrom)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.TimeTo)
+            </th>
+        </tr>
     }
 
-    <h2>CustomerList</h2>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CustomerID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CompanyName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Street)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ZipCode)
-            </th>
-            <th></th>
-        </tr>
+</table>
 
-        @foreach (var item in Model)
-        {
-        <tr>
-            <th>
-                @Html.DisplayFor(modelItem => item.CustomerID)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.CompanyName)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.City)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Street)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.ZipCode)
-            </th>
-        </tr>
+
+@*<div>
+        @model IEnumerable<SystemRezerwacjiKortow.Models.User>
+
+        @{
+            ViewBag.Title = "UserList";
         }
 
-    </table>
-</div>
+        <h2>User List</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsEmailVeryfied)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoleName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.IsEmailVeryfied)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.RoleName)
+                </th>
+            </tr>
+            }
+
+        </table>
+    </div>*@
+
+
+@*<div>
+        @model IEnumerable<SystemRezerwacjiKortow.Models.Customer>
+
+        @{
+            ViewBag.Title = "CustomerList";
+        }
+
+        <h2>CustomerList</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Street)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ZipCode)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.CustomerID)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.City)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Street)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </th>
+            </tr>
+            }
+
+        </table>
+    </div>*@

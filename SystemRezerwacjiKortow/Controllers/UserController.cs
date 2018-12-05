@@ -76,7 +76,7 @@ namespace SystemRezerwacjiKortow.Controllers
             string subject = "Twoje konto zostało pomyślnie utworzone!";
 
             string body = "Twoje konto zostało pomyślnie utworzone.<br/>" +
-                "Aby aktywować konto kliknij w poniższym link aktywacyjny:" +
+                "Aby aktywować konto kliknij w poniższy link aktywacyjny:" +
                 " <br/><a href='" + link + "'>" + link + "</a> ";
 
             Email.SendEmail(subject, body, email, firstName);
