@@ -168,6 +168,8 @@ namespace SystemRezerwacjiKortow.Database
         }
 
         // dodanie danych użytkownika lub ich modyfikacja
+        // CustomerID = SqlDatabase.CustomerAtr dodanie nowych danych
+        // CustomerID > 0 modyfikacja istniejących
         public static bool AddModyfyAddress(Customer customer, User user)
         {
             bool result = false;
