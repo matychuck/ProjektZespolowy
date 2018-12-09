@@ -280,5 +280,26 @@ namespace SystemRezerwacjiKortow.Database
             return list;
         }
 
+        public static string GetUserRole(string email)
+        {
+            string RoleName = "";
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("SELECT RoleName FROM VUser WHERE Email = @email", connection);
+                    command.Parameters.AddWithValue("@email", email);
+
+                    var result = command.ExecuteReader();
+                    while (result.Read())
+                    {
+                        RoleName = result.GetString(0);
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return RoleName;
+        }
+
     }
 }

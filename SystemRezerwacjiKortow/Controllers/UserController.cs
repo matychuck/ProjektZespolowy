@@ -106,6 +106,9 @@ namespace SystemRezerwacjiKortow.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Profile", "User");
+            else
             return View();
         }
 
@@ -141,7 +144,15 @@ namespace SystemRezerwacjiKortow.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Profile", "User");
+                        switch (SqlUser.GetUserRole(login.Email))
+                        {
+                            case "administrator":
+                            //return RedirectToAction("AdminPanel", "Admin");
+                            //case "worker":
+                            //return RedirectToAction("Profile", "User");
+                            case "user":
+                                return RedirectToAction("Profile", "User");
+                        }
                     }
                 }
                 else
@@ -160,7 +171,7 @@ namespace SystemRezerwacjiKortow.Controllers
         }
 
         // do wylogowania 
-        //[Authorize]
+        [Authorize]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
@@ -168,11 +179,13 @@ namespace SystemRezerwacjiKortow.Controllers
             return RedirectToAction("Login", "User");
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public ActionResult Profile()
         {
             return View();
         }
+
+        
     }
 }
