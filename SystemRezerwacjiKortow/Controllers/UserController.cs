@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using SystemRezerwacjiKortow.Database;
 using SystemRezerwacjiKortow.Models;
+using Microsoft.AspNet;
 
 namespace SystemRezerwacjiKortow.Controllers
 {
@@ -183,9 +184,38 @@ namespace SystemRezerwacjiKortow.Controllers
         [HttpGet]
         public ActionResult Profile()
         {
-            return View();
+            Customer customer = SqlUser.GetCustomer(SqlUser.GetUser(User.Identity.Name));
+            //Console.WriteLine(customer.CompanyName);
+
+            return View(customer);
+        }
+       
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult EditProfile()
+        {
+            Customer customer = SqlUser.GetCustomer(SqlUser.GetUser(User.Identity.Name));
+            return View(customer);
         }
 
-        
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditProfile(Customer customer)
+        {
+            
+            if (ModelState.IsValid)
+            {
+                SqlUser.AddModyfyAddress(customer, User.Identity.Name);
+            }
+            else
+            {
+                return RedirectToAction("EditProfile", "User");
+                
+            }
+            return RedirectToAction("Profile", "User");
+        }
+
     }
 }

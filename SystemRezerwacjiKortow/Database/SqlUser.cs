@@ -170,7 +170,7 @@ namespace SystemRezerwacjiKortow.Database
         // dodanie danych użytkownika lub ich modyfikacja
         // CustomerID = SqlDatabase.CustomerAtr dodanie nowych danych
         // CustomerID > 0 modyfikacja istniejących
-        public static bool AddModyfyAddress(Customer customer, User user)
+        public static bool AddModyfyAddress(Customer customer, String email)
         {
             bool result = false;
             using (SqlConnection connection = SqlDatabase.NewConnection())
@@ -184,7 +184,7 @@ namespace SystemRezerwacjiKortow.Database
                     command.Parameters.AddWithValue("@Street", customer.Street);
                     command.Parameters.AddWithValue("@ZipCode", customer.ZipCode);
                     command.Parameters.AddWithValue("@DiscountValue", customer.DiscountValue);
-                    command.Parameters.AddWithValue("@UserID", user.UserID);
+                    command.Parameters.AddWithValue("@UserID", GetUser(email).UserID);
                     command.Parameters.AddWithValue("@CustomerID", customer.CustomerID);
                     command.Parameters["@CustomerID"].Direction = ParameterDirection.Output;
 
@@ -300,6 +300,69 @@ namespace SystemRezerwacjiKortow.Database
             }
             return RoleName;
         }
+
+        public static User GetUser(string email)
+        {
+            User user=null;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("SELECT * FROM VUser WHERE Email = @email", connection);
+                    command.Parameters.AddWithValue("@email", email);
+
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        user = new User() {
+                            UserID = (int)reader["UserID"],
+                            FirstName = (string)reader["FirstName"],
+                            Surname = (string)reader["Surname"],
+                            Email = (string)reader["Email"],
+                            DateOfBirth = (DateTime)reader["DateOfBirth"],
+                            IsEmailVeryfied = (bool)reader["IsEmailVeryfied"],
+                            RoleID = (int)reader["RoleID"],
+                            CustomerID = (int)reader["CustomerID"],
+                            RoleName = (string)reader["RoleName"]
+                        };
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return user;
+        }
+
+        public static Customer GetCustomer(User user)
+        {
+            Customer customer=null;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("select * from Customer WHERE CustomerID = @customerID", connection);
+                    command.Parameters.AddWithValue("@customerID", GetUser(user.Email).CustomerID);
+
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        customer=new Customer()
+                        {
+                            CustomerID = (int)reader["CustomerID"],
+                            CompanyName = (string)reader["CompanyName"],
+                            Street = (string)reader["Street"],
+                            ZipCode = (string)reader["ZipCode"],
+                            DiscountValue = (decimal)reader["DiscountValue"]
+                        };
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return customer;
+        }
+
+
+
+
 
     }
 }

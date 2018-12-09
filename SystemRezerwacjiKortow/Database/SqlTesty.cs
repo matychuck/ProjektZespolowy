@@ -40,7 +40,7 @@ namespace SystemRezerwacjiKortow.Database
         {
             User user = new User();
             user.UserID = 8;
-
+            user.Email = "";
             Customer customer = new Customer();
             customer.CompanyName = "Test";
             customer.City = "Test";
@@ -48,7 +48,7 @@ namespace SystemRezerwacjiKortow.Database
             customer.ZipCode = "00-000";
             customer.DiscountValue = 0;
 
-            SqlUser.AddModyfyAddress(customer, user);
+            SqlUser.AddModyfyAddress(customer, user.Email);
         }
 
         private static void testCheckEmailVeryfied()
