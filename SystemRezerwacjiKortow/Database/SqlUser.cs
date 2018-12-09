@@ -349,6 +349,7 @@ namespace SystemRezerwacjiKortow.Database
                         {
                             CustomerID = (int)reader["CustomerID"],
                             CompanyName = (string)reader["CompanyName"],
+                            City = (string)reader["City"],
                             Street = (string)reader["Street"],
                             ZipCode = (string)reader["ZipCode"],
                             DiscountValue = (decimal)reader["DiscountValue"]
