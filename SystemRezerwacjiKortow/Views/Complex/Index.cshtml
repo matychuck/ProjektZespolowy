@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SystemRezerwacjiKortow.Models.ComplexCourt>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kompleksy</h2>
+
+<div class="form-horizontal">
+
+    <div class="form-group">
+        @Html.Label("Pokaz:")
+        <input type="button" value="Powrot" onclick="location.href='@Url.Action("Index", "Admin")'" />
+        <input type="button" value="Korty" onclick="location.href='@Url.Action("Index", "Court")'" />
+        <input type="button" value="Sprzet" onclick="location.href='@Url.Action("Index", "Gear")'" />
+        <input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Index", "Users")'" />
+    </div>
+
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZipCode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

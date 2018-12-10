@@ -79,7 +79,7 @@ namespace SystemRezerwacjiKortow.Database
                 CloseConnection();
             }
         }*/
-
+        #region Lists
         // zwraca listę danych klientów
         public static List<Customer> GetCustomers()
         {     
@@ -105,5 +105,129 @@ namespace SystemRezerwacjiKortow.Database
             }
             return list;
         }
+
+        // zwraca listę danych kortów
+        public static List<Court> GetCourtsList()
+        {
+            var list = new List<Court>();
+            //if (OpenConnection())
+            //{
+            //    var command = new SqlCommand("select * from dbo.Court", connection);
+            //    //command.Parameters.AddWithValue("@number", number);
+            //    var reader = command.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        list.Add(new Court()
+            //        {
+            //            CourtID = (int)reader["CourtID"],
+            //            CourtNumber = (int)reader["CourtNumber"],
+            //            SurfaceType = (string)reader["SurfaceType"],
+            //            IsForDoubles = (byte)reader["IsForDoubles"],
+            //            IsCovered = (byte)reader["IsCovered"],
+            //            PriceH = (decimal)reader["PriceH"],
+            //            Name = (string)reader["Name"],
+            //        });
+            //    }
+            //    CloseConnection();
+            //}
+            return list;
+        }
+
+        public static List<ComplexCourt> GetComplexes()
+        {
+            var list = new List<ComplexCourt>();
+            //if (OpenConnection())
+            //{
+            //    var command = new SqlCommand("select * from dbo.Gear", connection);
+            //    //command.Parameters.AddWithValue("@number", number);
+            //    var reader = command.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        list.Add(new Gear()
+            //        {
+            //            GearID = (int)reader["GearID"],
+            //            PriceH = (decimal)reader["PriceH"],
+            //            Name = (string)reader["Name"],
+            //            Amount = (int)reader["Amount"],
+            //        });
+            //    }
+            //    CloseConnection();
+            //}
+            return list;
+        }
+
+        //Get gear list
+        public static List<Gear> GetGears()
+        {
+            var list = new List<Gear>();
+            if (OpenConnection())
+            {
+                var command = new SqlCommand("select * from dbo.Gear", connection);
+                //command.Parameters.AddWithValue("@number", number);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(new Gear()
+                    {
+                        GearID = (int)reader["GearID"],
+                        PriceH = (decimal)reader["PriceH"],
+                        Name = (string)reader["Name"],
+                        Amount = (int)reader["Amount"],
+                    });
+                }
+                CloseConnection();
+            }
+            return list;
+        }
+
+        // zwraca listę użytkowników
+        public static List<User> GetUsers()
+        {
+            var list = new List<User>();
+            if (OpenConnection())
+            {
+                var command = new SqlCommand("select * from dbo.User", connection);
+                //command.Parameters.AddWithValue("@number", number);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(new User()
+                    {
+                        UserID = (int)reader["userID"],
+                        FirstName = (string)reader["FirstName"],
+                        LastName = (string)reader["Surname"],
+                        Email = (string)reader["Email"],
+                        DateOfBirth = (DateTime)reader["DateOfBirth"],
+                        //IsEmailVeryfied = (bool)reader["IsEmailVerified"],
+                        RoleID = (int)reader["RoleID"],
+                        CustomerID = (int)reader["CustomerID"],
+                    });
+                }
+                CloseConnection();
+            }
+            return list;
+        }
+        #endregion
+
+        #region Insert
+        public static void InsertCourt(Court court)
+        {
+            if (OpenConnection())
+            {
+                //var command = new SqlCommand
+                //    ("INSERT INTO Book (Author, Title, ISBN, Category) " +
+                //    "VALUES (@author,@title,@isbn,@category)", connection);
+                //command.Parameters.AddWithValue("@author", court.Author);
+                //command.Parameters.AddWithValue("@title", court.Title);
+                //command.Parameters.AddWithValue("@isbn", court.ISBN);
+                //command.Parameters.AddWithValue("@category", cour.Category);
+
+                //command.ExecuteNonQuery();
+
+                CloseConnection();
+            }
+        }
+        #endregion
+
     }
 }

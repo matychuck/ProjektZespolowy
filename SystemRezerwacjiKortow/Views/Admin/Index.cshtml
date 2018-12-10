@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Panel Admninistacyjny</h2>
+
+<div class="form-horizontal">
+
+    <div class="form-group">
+        @Html.Label("Pokaz:")
+        <input type="button" value="Korty" onclick="location.href='@Url.Action("Index", "Court")'" />
+        <input type="button" value="Sprzet" onclick="location.href='@Url.Action("Index", "Gear")'" />
+        <input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Index", "User")'" />
+        <input type="button" value="Kompleksy" onclick="location.href='@Url.Action("Index", "Complex")'" />
+    </div>
+
+</div>

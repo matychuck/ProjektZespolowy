@@ -147,7 +147,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ComplexController.cs" />
+    <Compile Include="Controllers\CourtController.cs" />
+    <Compile Include="Controllers\GearController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Database\SqlDatabase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -205,6 +210,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Courts.cshtml" />
+    <Content Include="Views\Court\Index.cshtml" />
+    <Content Include="Views\Court\Create.cshtml" />
+    <Content Include="Views\Court\Edit.cshtml" />
+    <Content Include="Views\Court\Delete.cshtml" />
+    <Content Include="Views\Gear\Index.cshtml" />
+    <Content Include="Views\Gear\Create.cshtml" />
+    <Content Include="Views\Gear\Delete.cshtml" />
+    <Content Include="Views\Gear\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Complex\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

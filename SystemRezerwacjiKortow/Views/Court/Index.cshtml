@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SystemRezerwacjiKortow.Models.Court>
+
+@{
+    ViewBag.Title = "Korty";
+}
+
+<h2>Korty</h2>
+
+<div class="form-horizontal">
+
+    <div class="form-group">
+        @Html.Label("Pokaz:")
+        <input type="button" value="Korty" onclick="location.href='@Url.Action("Index", "Court")'" />
+        <input type="button" value="Sprzet" onclick="location.href='@Url.Action("Index", "Gear")'" />
+        <input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Index", "Users")'" />
+        <input type="button" value="Kompleksy" onclick="location.href='@Url.Action("Index", "Complex")'" />
+    </div>
+
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurfaceType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsForDoubles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsCovered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SurfaceType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsForDoubles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsCovered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CourtID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CourtID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CourtID })
+        </td>
+    </tr>
+}
+
+</table>
