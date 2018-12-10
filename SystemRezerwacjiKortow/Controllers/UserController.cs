@@ -186,7 +186,7 @@ namespace SystemRezerwacjiKortow.Controllers
         {
             Customer customer = SqlUser.GetCustomer(SqlUser.GetUser(User.Identity.Name));
             //Console.WriteLine(customer.CompanyName);
-
+            ViewBag.user = SqlUser.GetUser(User.Identity.Name);
             return View(customer);
         }
        

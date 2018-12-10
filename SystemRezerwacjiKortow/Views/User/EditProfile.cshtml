@@ -27,9 +27,7 @@ else
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <div>
-                @Html.ActionLink("Wyloguj", "Logout", "User")
-            </div>
+           
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">

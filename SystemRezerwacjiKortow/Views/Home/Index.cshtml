@@ -1,305 +1,305 @@
 ﻿<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-
-@{
-    ViewBag.Title = "System rezerwacji kortów";
-}
-@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
-{
-    if (ViewBag.Message != null)
-    {
-        <div class="alert alert-success">
-            <strong>Sukces! </strong>@ViewBag.Message
-        </div>
+<body background="https://www.tennisforu.com/wp-content/uploads/2017/07/racquets-review.jpg">
+    @{
+        ViewBag.Title = "System rezerwacji kortów";
     }
-}
-
-
-<div class="row">
-    <div class="column">
-
-    </div>
-    <div class="column">
-        <div class="hex hex-2">
-
-            <br />
-            <img src="https://www.freeiconspng.com/minicovers/calendar-icon-png-14.png" />
-            <h4>KALENDARZ</h4>
-
-            <a href="#"></a>
-            <div class="corner-1"></div>
-            <div class="corner-2"></div>
-        </div>
-    </div>
-    <div class="column">
-
-    </div>
-</div>
-
-<div class="row">
-    <div class="column">
-        <div class="hex hex-5">
-
-            <br />
-            <img src=https://www.freeiconspng.com/minicovers/money-stack-icon-25.png />
-            <h4>CENNIK</h4>
-
-            <a href="#"></a>
-            <div class="corner-1"></div>
-            <div class="corner-2"></div>
-        </div>
-    </div>
-    <div class="column">
-    </div>
-
-    <div class="column">
-        <div class="hex hex-6">
-
-            <br />
-            <img src=https://img.icons8.com/ios/2x/tennis-2-filled.png />
-            <h4>KORTY</h4>
-
-            <a href="#"></a>
-            <div class="corner-1"></div>
-            <div class="corner-2"></div>
-        </div>
-    </div>
-    <div class="column">
-    </div>
-    <div class="column">
-        <hello>Witaj w świecie tenisa !</hello>
-    </div>
-
-</div>
-
-
-<div class="row">
-    <div class="column">
-
-    </div>
-    <div class="column">
-        <div class="hex hex-7">
-
-         
-            <br />
-            <img src=https://www.freeiconspng.com/minicovers/tennis-icon-6.png />
-            <h4>SPRZĘT</h4>
-
-            <a href="#"></a>
-            <div class="corner-1"></div>
-            <div class="corner-2"></div>
-        </div>
-    </div>
-    <div class="column">
-
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="column">
-        <div class="hex hex-8">
-
-            <br />
-            <img src="https://www.freeiconspng.com/minicovers/audio-megaphone-sound-speaker-voice-volume-icon--icon-search--8.png" />
-            <h4>OGŁOSZENIA</h4>
-
-            <a href="#"></a>
-            <div class="corner-1"></div>
-            <div class="corner-2"></div>
-        </div>
-    </div>
-    <div class="column">
-
-    </div>
-    <div class="column">
-        <div class="hex hex-9">
-            <br />
-            <img src=http://www.clker.com/cliparts/0/9/e/5/13683041681302339221medal-icon-th.png />
-
-            <h4>TURNIEJE</h4>
-
-
-            <a href="#"></a>
-            <div class="corner-1"></div>
-            <div class="corner-2"></div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="column">
-
-    </div>
-    <div class="column">
-        <div class="hex hex-10">
-
-            <br />
-            <img src=https://img.icons8.com/ios/2x/phone.png />
-            <h4>KONTAKT</h4>
-
-            <a href="#"></a>
-            <div class="corner-1"></div>
-            <div class="corner-2"></div>
-        </div>
-    </div>
-    <div class="column">
-
-    </div>
-</div>
-
-
-
-
-
-
-
-@model IEnumerable<SystemRezerwacjiKortow.Models.OpeningHours>
-
-@{
-    ViewBag.Title = "OpeningHoursList";
-}
-
-<h2>Opening Hours</h2>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.DayName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeFrom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeTo)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    @if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
     {
-        <tr>
-            <th>
-                @Html.DisplayFor(modelItem => item.DayName)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.TimeFrom)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.TimeTo)
-            </th>
-        </tr>
+        if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">
+                <strong>Sukces! </strong>@ViewBag.Message
+            </div>
+        }
     }
 
-</table>
+
+    <div class="row">
+        <div class="column">
+
+        </div>
+        <div class="column">
+            <div class="hex hex-2">
+
+                <br />
+                <img src="https://www.freeiconspng.com/minicovers/calendar-icon-png-14.png" />
+                <h4>KALENDARZ</h4>
+
+                <a href="#"></a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="hex hex-5">
+
+                <br />
+                <img src=https://www.freeiconspng.com/minicovers/money-stack-icon-25.png />
+                <h4>CENNIK</h4>
+
+                <a href="#"></a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+        </div>
+        <div class="column">
+        </div>
+
+        <div class="column">
+            <div class="hex hex-6">
+
+                <br />
+                <img src=https://img.icons8.com/ios/2x/tennis-2-filled.png />
+                <h4>KORTY</h4>
+
+                <a href="#"></a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+            <hello>Witaj w świecie tenisa !</hello>
+        </div>
+
+    </div>
 
 
-@*<div>
-        @model IEnumerable<SystemRezerwacjiKortow.Models.User>
+    <div class="row">
+        <div class="column">
 
-        @{
-            ViewBag.Title = "UserList";
-        }
+        </div>
+        <div class="column">
+            <div class="hex hex-7">
 
-        <h2>User List</h2>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.UserID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Surname)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DateOfBirth)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsEmailVeryfied)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RoleName)
-                </th>
-                <th></th>
-            </tr>
 
-            @foreach (var item in Model)
-            {
-            <tr>
-                <th>
-                    @Html.DisplayFor(modelItem => item.UserID)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.Surname)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.DateOfBirth)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.IsEmailVeryfied)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.RoleName)
-                </th>
-            </tr>
+                <br />
+                <img src=https://www.freeiconspng.com/minicovers/tennis-icon-6.png />
+                <h4>SPRZĘT</h4>
+
+                <a href="#"></a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="column">
+            <div class="hex hex-8">
+
+                <br />
+                <img src="https://www.freeiconspng.com/minicovers/audio-megaphone-sound-speaker-voice-volume-icon--icon-search--8.png" />
+                <h4>OGŁOSZENIA</h4>
+
+                <a href="#"></a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+        </div>
+        <div class="column">
+
+        </div>
+        <div class="column">
+            <div class="hex hex-9">
+                <br />
+                <img src=http://www.clker.com/cliparts/0/9/e/5/13683041681302339221medal-icon-th.png />
+
+                <h4>TURNIEJE</h4>
+
+
+                <a href="#"></a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+
+        </div>
+        <div class="column">
+            <div class="hex hex-10">
+
+                <br />
+                <img src=https://img.icons8.com/ios/2x/phone.png />
+                <h4>KONTAKT</h4>
+
+                <a href="#"></a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+
+
+
+
+
+    @*
+
+            @model IEnumerable<SystemRezerwacjiKortow.Models.OpeningHours>
+
+            @{
+                ViewBag.Title = "OpeningHoursList";
             }
 
-        </table>
-    </div>*@
+            <h2>Opening Hours</h2>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DayName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TimeFrom)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TimeTo)
+                    </th>
+                    <th></th>
+                </tr>
 
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.DayName)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.TimeFrom)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.TimeTo)
+                        </th>
+                    </tr>
+                }
 
-@*<div>
-        @model IEnumerable<SystemRezerwacjiKortow.Models.Customer>
+            </table>
+        </body>
+    *@
+    @*<div>
+            @model IEnumerable<SystemRezerwacjiKortow.Models.User>
 
-        @{
-            ViewBag.Title = "CustomerList";
-        }
-
-        <h2>CustomerList</h2>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.CustomerID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CompanyName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.City)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Street)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ZipCode)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-            <tr>
-                <th>
-                    @Html.DisplayFor(modelItem => item.CustomerID)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.CompanyName)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.City)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.Street)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.ZipCode)
-                </th>
-            </tr>
+            @{
+                ViewBag.Title = "UserList";
             }
 
-        </table>
-    </div>*@
+            <h2>User List</h2>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Surname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateOfBirth)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsEmailVeryfied)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RoleName)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.UserID)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.IsEmailVeryfied)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.RoleName)
+                    </th>
+                </tr>
+                }
+
+            </table>
+        </div>*@
+
+
+    @*<div>
+            @model IEnumerable<SystemRezerwacjiKortow.Models.Customer>
+
+            @{
+                ViewBag.Title = "CustomerList";
+            }
+
+            <h2>CustomerList</h2>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomerID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CompanyName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.City)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Street)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ZipCode)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.CustomerID)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.Street)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.ZipCode)
+                    </th>
+                </tr>
+                }
+
+            </table>
+        </div>*@
