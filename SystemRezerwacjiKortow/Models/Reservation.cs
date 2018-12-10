@@ -35,7 +35,7 @@ namespace SystemRezerwacjiKortow.Models
         [Display(Name = "Numer kortu")]
         public int CourtID { get; set; }
 
-        [Display(Name = "Data realizacji")]
+        [Display(Name = "Data wpłynięcia rezerwacji")]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateOfInsert { get; set; }

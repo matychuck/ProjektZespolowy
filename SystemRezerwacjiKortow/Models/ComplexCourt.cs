@@ -10,17 +10,17 @@ namespace SystemRezerwacjiKortow.Models
     {
         [Display(Name = "Nazwa kompleksu")]
         [StringLength(50)]
-        public string RoleName { get; set; }
+        public string ComplexName { get; set; }
 
         [Display(Name = "Miasto")]
         [StringLength(50)]
         public string City { get; set; }
 
-        [Display(Name = "Miasto")]
+        [Display(Name = "Ulica")]
         [StringLength(50)]
         public string Street { get; set; }
 
-        [Display(Name = "Miasto")]
+        [Display(Name = "Kod pocztowy")]
         [StringLength(6)]
         public string ZipCode { get; set; }
     }

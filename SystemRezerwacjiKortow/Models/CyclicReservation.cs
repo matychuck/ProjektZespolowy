@@ -11,21 +11,21 @@ namespace SystemRezerwacjiKortow.Models
         public int CyclicReservationID { get; set; }
 
         [Display(Name = "Opis")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Imię jest wymagane")]
-        public string FirstName { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Opis jest wymagany")]
+        public string Description { get; set; }
 
-        [Display(Name = "Dzień miesiąca")]
+        [Display(Name = "Dzień tygodnia")]
         [Range(1, 7)]
         public int DayOfWeek { get; set; }
 
-        [Display(Name = "Czy zakończone")]
+        [Display(Name = "Dzień miesiąca")]
         [Range(1, 31)]
         public int DayOfMonth { get; set; }
 
-        [Display(Name = "Czy zakończone")]
+        [Display(Name = "Częstotliwość")]
         public int DayInterval { get; set; }
 
-        [Display(Name = "Data rozpoczecia")]
+        [Display(Name = "Godzina")]
         [DataType(DataType.Time)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Time { get; set; }
@@ -40,9 +40,9 @@ namespace SystemRezerwacjiKortow.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateStop { get; set; }
 
-        [Display(Name = "Należna płatność")]
+        [Display(Name = "Użytkownik")]
         [DataType(DataType.Currency)]
-        public decimal Payment { get; set; }
+        public int UserID { get; set; }
 
         [Display(Name = "Numer sprzętu")]
         public int GearID { get; set; }
@@ -56,7 +56,7 @@ namespace SystemRezerwacjiKortow.Models
         [Display(Name = "Data anulowania rezerwacji")]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime DateOfCancel { get; set; }
+        public DateTime DateCancel { get; set; }
 
     }
 }
