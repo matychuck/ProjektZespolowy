@@ -75,7 +75,7 @@ namespace SystemRezerwacjiKortow.Database
                     SqlDatabase.CloseConnection(connection);
 
                 }
-            }  
+            }
             return result;
         }
 
@@ -103,8 +103,36 @@ namespace SystemRezerwacjiKortow.Database
                     }
                     SqlDatabase.CloseConnection(connection);
                 }
-            }    
+            }
             return list;
+        }
+
+        // zwraca konkretny sprzęt
+        public static Gear GetGear(int id)
+        {
+            Gear gear = null;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("SELECT * FROM VGear WHERE GearID = @id", connection);
+                    command.Parameters.AddWithValue("@id", id);
+
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        gear = new Gear()
+                        {
+                            GearID = (int)reader["GearID"],
+                            PriceH = (decimal)reader["PriceH"],
+                            Name = (string)reader["Name"],
+                            Amount = (int)reader["Amount"]
+                        };
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return gear;
         }
     }
 }

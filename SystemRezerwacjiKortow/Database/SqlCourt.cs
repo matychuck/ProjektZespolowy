@@ -116,5 +116,36 @@ namespace SystemRezerwacjiKortow.Database
             }       
             return list;
         }
+
+        // zwraca konkretny kort
+        public static Court GetCourt(int id)
+        {
+            Court court = null;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("SELECT * FROM VCourt WHERE CourtID = @id", connection);
+                    command.Parameters.AddWithValue("@id", id);
+
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        court = new Court()
+                        {
+                            CourtID = (int)reader["CourtID"],
+                            CourtNumber = (int)reader["CourtNumber"],
+                            SurfaceType = (string)reader["SurfaceType"],
+                            IsForDoubles = (bool)reader["IsForDoubles"],
+                            IsCovered = (bool)reader["IsCovered"],
+                            PriceH = (decimal)reader["PriceH"],
+                            Name = (string)reader["Name"],
+                        };
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return court;
+        }
     }
 }
