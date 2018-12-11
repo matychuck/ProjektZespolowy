@@ -1,0 +1,80 @@
+﻿@model IEnumerable<SystemRezerwacjiKortow.Models.User>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>Uzytkownicy</h2>
+
+<div class="form-horizontal">
+
+    <div class="form-group">
+        <input type="button" value="Powrot" onclick="location.href='@Url.Action("Index", "Admin")'" />
+        <input type="button" value="Korty" onclick="location.href='@Url.Action(" Index", "Court" )'" />
+        <input type="button" value="Sprzet" onclick="location.href='@Url.Action(" Index", "Gear" )'" />
+        <input type="button" value="Kompleks" onclick="location.href='@Url.Action(" Complex", "Admin" )'" />
+        <input type="button" value="Wydarzenia" onclick="location.href='@Url.Action(" Contest", "Admin" )'" />
+        <input type="button" value="Reklamy" onclick="location.href='@Url.Action(" Advertisements", "Admin" )'" />
+    </div>
+
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsEmailVeryfied)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsEmailVeryfied)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleName)
+        </td>
+    </tr>
+}
+
+</table>

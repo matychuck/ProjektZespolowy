@@ -9,11 +9,12 @@
 <div class="form-horizontal">
 
     <div class="form-group">
-        @Html.Label("Pokaz:")
-        <input type="button" value="Korty" onclick="location.href='@Url.Action("Index", "Court")'" />
+        <input type="button" value="Powrot" onclick="location.href='@Url.Action("Index", "Admin")'" />
         <input type="button" value="Sprzet" onclick="location.href='@Url.Action("Index", "Gear")'" />
-        <input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Index", "Users")'" />
-        <input type="button" value="Kompleksy" onclick="location.href='@Url.Action("Index", "Complex")'" />
+        <input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Users", "Admin")'" />
+        <input type="button" value="Kompleks" onclick="location.href='@Url.Action("Complex", "Admin")'" />
+        <input type="button" value="Wydarzenia" onclick="location.href='@Url.Action("Contest", "Admin")'" />
+        <input type="button" value="Reklamy" onclick="location.href='@Url.Action("Advertisements", "Admin")'" />
     </div>
 
 </div>
@@ -66,7 +67,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CourtID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CourtID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.CourtID })
         </td>
     </tr>

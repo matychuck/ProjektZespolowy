@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Linq.Expressions;
+using System.ComponentModel;
 using SystemRezerwacjiKortow.Database;
 using SystemRezerwacjiKortow.Models;
 
@@ -10,7 +13,7 @@ namespace SystemRezerwacjiKortow.Controllers
 {
     public class CourtController : Controller
     {
-        List<Court> list = SqlDatabase.GetCourtsList();
+        List<Court> list = SqlCourt.GetCourts();
         // GET: Court
         public ActionResult Index()
         {
@@ -32,46 +35,53 @@ namespace SystemRezerwacjiKortow.Controllers
 
         // POST: Court/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Include = "CourtNumber, SurfaceType, IsForDoubles, IsCovered, PriceH, Name")] Court court)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    SqlCourt.AddModifyCourt(court);
+                    return RedirectToAction("Index");
+                }
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(court);
             }
         }
 
         // GET: Court/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+           Court court = SqlCourt.GetCourt(id);
+            return View(court);
         }
 
         // POST: Court/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, [Bind(Include = "CourtNumber, SurfaceType, IsForDoubles, IsCovered, PriceH, Name")] Court court)
         {
             try
             {
+                SqlCourt.AddModifyCourt(court);
                 // TODO: Add update logic here
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(court);
             }
         }
 
         // GET: Court/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Court court = SqlCourt.GetCourt(id);
+            return View(court);
         }
 
         // POST: Court/Delete/5
@@ -80,8 +90,10 @@ namespace SystemRezerwacjiKortow.Controllers
         {
             try
             {
+                Court ToDelete = new Court();
+                ToDelete = SqlCourt.GetCourt(id);
+                SqlCourt.DeleteCourt(ToDelete);
                 // TODO: Add delete logic here
-
                 return RedirectToAction("Index");
             }
             catch

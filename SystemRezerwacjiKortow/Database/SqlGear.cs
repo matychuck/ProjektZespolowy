@@ -49,7 +49,7 @@ namespace SystemRezerwacjiKortow.Database
         // usuwanie sprzętu
         // sprawdzenie czy nie ma powiązań w innych tabelach jest po stronie bazy
         // przy wywołaniu dać w if'ie, żeby sprawdzić czy na pewno udało się usunąć
-        public static bool DeleteGear(Court court)
+        public static bool DeleteGear(Gear gear)
         {
             bool result = false;
             using (SqlConnection connection = SqlDatabase.NewConnection())
@@ -58,14 +58,14 @@ namespace SystemRezerwacjiKortow.Database
                 {
                     var command = new SqlCommand("dbo.DeleteGear", connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@GearID", court.CourtID);
+                    command.Parameters.AddWithValue("@GearID", gear.GearID);
 
                     command.CommandTimeout = SqlDatabase.Timeout;
 
                     try
                     {
                         command.ExecuteNonQuery();
-                        court.CourtID = 0;
+                        gear.GearID = 0;
                         result = true;
                     }
                     catch (Exception ex)

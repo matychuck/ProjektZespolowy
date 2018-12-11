@@ -10,7 +10,7 @@ namespace SystemRezerwacjiKortow.Controllers
 {
     public class GearController : Controller
     {
-        List<Gear> list = SqlDatabase.GetGears();
+        List<Gear> list = SqlGear.GetGears();
         // GET: Gear
         public ActionResult Index()
         {
@@ -31,24 +31,29 @@ namespace SystemRezerwacjiKortow.Controllers
 
         // POST: Gear/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Include = "PriceH, Name, Amount")] Gear gear)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    SqlGear.AddModifyGear(gear);
+                    return RedirectToAction("Index");
+                }
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(gear);
             }
         }
 
         // GET: Gear/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Gear gear = SqlGear.GetGear(id);
+            return View(gear);
         }
 
         // POST: Gear/Edit/5
@@ -57,6 +62,8 @@ namespace SystemRezerwacjiKortow.Controllers
         {
             try
             {
+                SqlGear.GetGear(id);
+
                 // TODO: Add update logic here
 
                 return RedirectToAction("Index");
@@ -70,7 +77,8 @@ namespace SystemRezerwacjiKortow.Controllers
         // GET: Gear/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Gear gear = SqlGear.GetGear(id);
+            return View(gear);
         }
 
         // POST: Gear/Delete/5
@@ -79,7 +87,9 @@ namespace SystemRezerwacjiKortow.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                Gear ToDelete = new Gear();
+                ToDelete = SqlGear.GetGear(id);
+                SqlGear.DeleteGear(ToDelete);
 
                 return RedirectToAction("Index");
             }

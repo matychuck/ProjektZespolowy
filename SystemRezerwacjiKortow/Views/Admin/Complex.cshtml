@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SystemRezerwacjiKortow.Models.OpeningHours>
+
+@{
+    ViewBag.Title = "Complex";
+}
+
+<h2>Komples</h2>
+
+<input type="button" value="Powrot" onclick="location.href='@Url.Action("Index", "Admin")'" />
+<input type="button" value="Korty" onclick="location.href='@Url.Action("Index", "Court")'" />
+<input type="button" value="Sprzet" onclick="location.href='@Url.Action("Index", "Gear")'" />
+<input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Users", "Admin")'" />
+<input type="button" value="Wydarzenia" onclick="location.href='@Url.Action("Contest", "Admin")'" />
+<input type="button" value="Reklamy" onclick="location.href='@Url.Action("Advertisements", "Admin")'" />
+
+<div class="form-horizontal">
+    <div>
+        <h2>Godziny Otwarcia</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DayOfWeek)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeFrom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeTo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DayName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DayOfWeek)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeFrom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeTo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DayName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.DayOfWeek }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div>
+        <h2>Dane Kompleksu</h2>
+
+    </div>
+</div>

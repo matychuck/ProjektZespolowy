@@ -148,7 +148,7 @@ namespace SystemRezerwacjiKortow.Controllers
                         switch (SqlUser.GetUserRole(login.Email))
                         {
                             case "administrator":
-                            //return RedirectToAction("AdminPanel", "Admin");
+                            return RedirectToAction("Index", "Admin");
                             //case "worker":
                             //return RedirectToAction("Profile", "User");
                             case "user":

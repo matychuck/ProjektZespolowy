@@ -17,7 +17,7 @@ namespace SystemRezerwacjiKortow.Models
         [StringLength(50)]
         public string SurfaceType { get; set; }
 
-        [Display(Name = "Czy jest dla debli")]
+        [Display(Name = "czy jest deblowy")]
         [Range(0, 1)]
         public bool IsForDoubles { get; set; }
 
