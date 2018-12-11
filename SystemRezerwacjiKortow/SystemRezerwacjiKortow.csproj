@@ -250,6 +250,7 @@
     <Content Include="Views\Gear\Delete.cshtml" />
     <Content Include="Views\Gear\Edit.cshtml" />
     <Content Include="Views\Gear\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

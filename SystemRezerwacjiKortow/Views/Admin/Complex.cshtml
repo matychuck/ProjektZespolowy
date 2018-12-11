@@ -6,12 +6,7 @@
 
 <h2>Komples</h2>
 
-<input type="button" value="Powrot" onclick="location.href='@Url.Action("Index", "Admin")'" />
-<input type="button" value="Korty" onclick="location.href='@Url.Action("Index", "Court")'" />
-<input type="button" value="Sprzet" onclick="location.href='@Url.Action("Index", "Gear")'" />
-<input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Users", "Admin")'" />
-<input type="button" value="Wydarzenia" onclick="location.href='@Url.Action("Contest", "Admin")'" />
-<input type="button" value="Reklamy" onclick="location.href='@Url.Action("Advertisements", "Admin")'" />
+@Html.Partial("_AdminPartial")
 
 <div class="form-horizontal">
     <div>

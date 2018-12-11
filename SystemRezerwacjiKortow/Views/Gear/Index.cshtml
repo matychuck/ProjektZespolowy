@@ -6,17 +6,7 @@
 
 <h2>Sprzęt</h2>
 
-<div class="form-horizontal">
-
-    <div class="form-group">
-        <input type="button" value="Powrót" onclick="location.href='@Url.Action("Index", "Admin")'" />
-        <input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Users", "Admin")'" />
-        <input type="button" value="Kompleks" onclick="location.href='@Url.Action("Complex", "Admin")'" />
-        <input type="button" value="Wydarzenia" onclick="location.href='@Url.Action("Contest", "Admin")'" />
-        <input type="button" value="Reklamy" onclick="location.href='@Url.Action("Advertisements", "Admin")'" />
-    </div>
-
-</div>
+@Html.Partial("_AdminPartial")
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -35,22 +25,23 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PriceH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amount)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GearID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GearID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.GearID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.GearID })
+            </td>
+        </tr>
+    }
 
 </table>
