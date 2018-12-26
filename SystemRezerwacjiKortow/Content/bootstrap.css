@@ -26,6 +26,18 @@ body {
     /*background-image: url(https://www.tennisforu.com/wp-content/uploads/2017/07/racquets-review.jpg);*/
     background-size: cover;
 }
+.darkblue-row {
+    background: #ffccff;
+}
+.blue-row {
+    background: #ccffff;
+}
+.yellow-row {
+    background: #ffeb99;
+}
+.znizka-row {
+    background: #b3ffd9;
+}
 article,
 aside,
 details,

@@ -23,7 +23,24 @@ namespace SystemRezerwacjiKortow.Controllers
             List<OpeningHours> openingHours = SqlCompany.GetOpeningHours();
             return View(openingHours);
         }
+        public ActionResult PriceList()
+        {
+            ViewBag.Message = "Nasza oferta";
 
+            return View();
+        }
+        public ActionResult PriceListWinter()
+        {
+            ViewBag.Message = "Nasza oferta";
+
+            return View();
+        }
+        public ActionResult PriceListGear()
+        {
+            ViewBag.Message = "Nasza oferta";
+
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -37,5 +54,6 @@ namespace SystemRezerwacjiKortow.Controllers
 
             return View();
         }
+      
     }
 }

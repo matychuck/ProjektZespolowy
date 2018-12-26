@@ -1,0 +1,234 @@
+﻿
+@{
+    ViewBag.Title = "PriceListWinter";
+}
+
+@Html.Partial("_PriceListPartial")
+
+<h3>Sezon zimowy 2019</h3>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" style="display:none;">
+                <span class="glyphicon glyphicon-ok"></span>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr style="font-size:large">
+                        <th>
+                            Kort kryty
+                        </th>
+                        <th>
+                            Dzień tygodnia
+                        </th>
+                        <th>
+                            Godzina
+                        </th>
+                        <th>
+                            Cena
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="font-size:medium">
+                    <tr class="danger">
+                        <td></td>
+                        <td>
+                            pon-pt
+                        </td>
+                        <td>
+                            7.00-15.00
+                        </td>
+                        <td>
+                            60zł
+                        </td>
+                    </tr>
+                    <tr class="danger">
+                        <td style="font-size:large">
+                            Korty ceglane nr 10-13
+                        </td>
+                        <td>
+                            pon-pt
+                        </td>
+                        <td>
+                            15.00-21.00
+                        </td>
+                        <td>
+                            80zł
+                        </td>
+                    </tr>
+                    <tr class="danger">
+                        <td></td>
+                        <td>   sob, ndz, święta  </td>
+                        <td> 7.00-21.00  </td>
+                        <td>75zł </td>
+                    </tr>
+                    <tr class="success">
+                        <td> </td>
+                        <td>  pon-pt  </td>
+                        <td>  7.00-15.00  </td>
+                        <td>70 zł </td>
+                    </tr>
+                    <tr class="success">
+                        <td style="font-size:large">  Kort trawiasty nr 19-22 </td>
+                        <td>
+                            pon-pt
+                        </td>
+                        <td>
+                            15.00-21.00
+                        </td>
+                        <td>
+                            62zł
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td> </td>
+                        <td>
+                            sob, ndz, święta
+                        </td>
+                        <td>
+                            7.00-21.00
+                        </td>
+                        <td>
+                            60zł
+                        </td>
+                    </tr>
+
+                    <tr class="active">
+                        <td> </td>
+                        <td>
+                            pon-pt
+                        </td>
+                        <td>
+                            7.00-15.00
+                        </td>
+                        <td>
+                            62zł
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td style="font-size:large">Korty akrylowy kryte nr 2,3</td>
+                        <td>
+                            pon-pt
+                        </td>
+                        <td>
+                            15.00-21.00
+                        </td>
+                        <td>
+                            70zł
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td> </td>
+                        <td> sob, ndz, święta </td>
+                        <td> 7.00-21.00 </td>
+                        <td> 80zł </td>
+                    </tr>
+                    <tr class="warning">
+                        <td style="font-size:large">
+                            Kort pokazowy nr 1
+                        </td>
+                        <td>
+                            wszystkie dni tygodnia
+                        </td>
+                        <td>
+                            7.00-21.00
+                        </td>
+                        <td>
+                            210zł
+                        </td>
+                    </tr>
+                    <tr class="darkblue-row">
+                        <td style="font-size:large">
+                            Rezerwacja turniejowa - 1 kort
+                        </td>
+                        <td>
+                            wszystkie dni tygodnia
+                        </td>
+                        <td>
+                            Cały dzień
+                        </td>
+                        <td style="color:mediumvioletred; font-size:large">
+                            550zł
+                        </td>
+                    </tr>
+                    <tr class="blue-row">
+                        <td style="font-size:large">
+                            Karnet na 10h
+                        </td>
+                        <td>
+                            wszystkie dni tygodnia
+                        </td>
+                        <td>
+                            7.00-21.00
+                        </td>
+                        <td style="color:darkblue; font-size:large">
+                            500zł
+                        </td>
+                    </tr>
+                    <tr class="znizka-row">
+                        <td style="font-size:large">
+                            Zniżka stałego klienta
+                            <img src="https://dl1.cbsistatic.com/i/r/2017/02/01/495a0923-7366-4145-80c4-01696adb5646/thumbnail/32x32/5ef057a4b4eb621949d290ef5a18ffe8/fmimg7012791019915209795.png" />
+                        <td>
+                            wszystkie dni tygodnia
+                        </td>
+                        <td>
+                            7.00-21.00
+                        </td>
+                        <td style="color:forestgreen; font-size:large">
+                            -10% od każdej ceny
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function ($) {
+        $.fn.extend({
+            tableAddCounter: function (options) {
+
+                // set up default options
+                var defaults = {
+                    title: '#',
+                    start: 1,
+                    id: false,
+                    cssClass: false
+                };
+
+                // Overwrite default options with user provided
+                var options = $.extend({}, defaults, options);
+
+                return $(this).each(function () {
+                    // Make sure this is a table tag
+                    if ($(this).is('table')) {
+
+                        // Add column title unless set to 'false'
+                        if (!options.title) options.title = '';
+                        $('th:first-child, thead td:first-child', this).each(function () {
+                            var tagName = $(this).prop('tagName');
+                            $(this).before('<' + tagName + ' rowspan="' + $('thead tr').length + '" class="' + options.cssClass + '" id="' + options.id + '">' + options.title + '</' + tagName + '>');
+                        });
+
+                        // Add counter starting counter from 'start'
+                        $('tbody td:first-child', this).each(function (i) {
+                            $(this).before('<td>' + (options.start + i) + '</td>');
+                        });
+
+                    }
+                });
+            }
+        });
+    })(jQuery);
+
+    $(document).ready(function () {
+        $('.table').tableAddCounter();
+        $.getScript("http://code.jquery.com/ui/1.9.2/jquery-ui.js").done(function (script, textStatus) { $('tbody').sortable(); $(".alert-info").alert('close'); $(".alert-success").show(); });
+    });
+</script>
+

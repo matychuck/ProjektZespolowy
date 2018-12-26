@@ -251,6 +251,10 @@
     <Content Include="Views\Gear\Edit.cshtml" />
     <Content Include="Views\Gear\Index.cshtml" />
     <Content Include="Views\Shared\_AdminPartial.cshtml" />
+    <Content Include="Views\Home\PriceList.cshtml" />
+    <Content Include="Views\Shared\_PriceListPartial.cshtml" />
+    <Content Include="Views\Home\PriceListWinter.cshtml" />
+    <Content Include="Views\Home\PriceListGear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
