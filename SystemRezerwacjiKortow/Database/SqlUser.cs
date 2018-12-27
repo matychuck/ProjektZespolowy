@@ -361,8 +361,79 @@ namespace SystemRezerwacjiKortow.Database
             return customer;
         }
 
+        // zmiana hasła użytkownika, użytkownik jest zalogowany, klika w guzik 'zmień hasło'
+        // OldPasswordHash -> wprowadzone przez użytkownika stare hasło
+        // NewPasswordHash -> wprowadzone przez użytkownika nowe hasło
+        // email -> email zalogowanego użytkownika
+        public static bool ChangePassword(string OldPasswordHash, string NewPasswordHash, string email)
+        {
+            bool result = false;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("dbo.ChangePassword", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@OldPasswordHash", OldPasswordHash);
+                    command.Parameters.AddWithValue("@NewPasswordHash", NewPasswordHash);
+                    command.CommandTimeout = SqlDatabase.Timeout;
 
+                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
+                    //command.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;
 
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        result = true;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+
+                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
+                    //customer.CustomerID = int.Parse(command.Parameters["@ReturnValue"].Value.ToString());
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return result;
+        }
+
+        // przypomnienie hasła użytkownika, użytkownik przy logowaniu klika w 'przypomnij hasło', na podany przez niego email zostaje wysłana wiadomość z kodem aktywacyjnym
+        // NewPasswordHash -> wprowadzone przez użytkownika nowe hasło
+        // ActivationCode -> wygenerowany do linka kod aktywacyjny (jak przy rejestracji)
+        public static bool RemindPassword(string NewPasswordHash, string ActivationCode)
+        {
+            bool result = false;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("dbo.ChangePassword", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ActivationCode", ActivationCode);
+                    command.Parameters.AddWithValue("@NewPasswordHash", NewPasswordHash);
+                    command.CommandTimeout = SqlDatabase.Timeout;
+
+                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
+                    //command.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        result = true;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+
+                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
+                    //customer.CustomerID = int.Parse(command.Parameters["@ReturnValue"].Value.ToString());
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return result;
+        }
 
 
     }
