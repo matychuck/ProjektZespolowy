@@ -3,17 +3,17 @@
     ViewBag.Title = "VerifyAccount";
 }
 
-<h2>Weryfikacja użytkownika</h2>
+<h2>@SystemRezerwacjiKortow.Resources.Texts.VerificationUser</h2>
 
 @if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
 {
     <div class="alert alert-success">
-        <strong>Sukces!</strong>Twoje konto zostało potwierdzone. Kliknij tutaj, żeby się zalogować @Html.ActionLink("Login", "Login", "User")
+        <strong>@SystemRezerwacjiKortow.Resources.Texts.Success!</strong>@SystemRezerwacjiKortow.Resources.Texts.VerificationSuccessful @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Login, "Login", "User")
     </div>
 }
 else
 {
     <div class="alert alert-danger">
-        <strong>Error!</strong> @ViewBag.Message
+        <strong>@SystemRezerwacjiKortow.Resources.Texts.Error!</strong> @ViewBag.Message
     </div>
 }

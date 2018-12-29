@@ -5,7 +5,7 @@
 
 @Html.Partial("_PriceListPartial")
 
-<h3>Sezon zimowy 2019</h3>
+<h3>@SystemRezerwacjiKortow.Resources.Texts.WinterSeason</h3>
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
@@ -19,16 +19,16 @@
                 <thead>
                     <tr style="font-size:large">
                         <th>
-                            Kort kryty
+                            @SystemRezerwacjiKortow.Resources.Texts.CourtIndoor
                         </th>
                         <th>
-                            Dzień tygodnia
+                            @SystemRezerwacjiKortow.Resources.Texts.DayOfWeek
                         </th>
                         <th>
-                            Godzina
+                            @SystemRezerwacjiKortow.Resources.Texts.Hour
                         </th>
                         <th>
-                            Cena
+                            @SystemRezerwacjiKortow.Resources.Texts.Price
                         </th>
                     </tr>
                 </thead>

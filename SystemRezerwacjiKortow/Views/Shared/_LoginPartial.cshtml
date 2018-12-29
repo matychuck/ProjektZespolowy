@@ -8,16 +8,16 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Witaj " + User.Identity.Name + "!", "Profile", "User", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Welcome+" " + User.Identity.Name + "!", "Profile", "User", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">@SystemRezerwacjiKortow.Resources.Texts.Logout</a></li>
         </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Zarejestruj", "Registration", "User", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Zaloguj", "Login", "User", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Register, "Registration", "User", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Login, "Login", "User", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }

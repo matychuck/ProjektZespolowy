@@ -33,8 +33,8 @@ namespace SystemRezerwacjiKortow.Controllers
                 bool isExist = SqlUser.CheckUserExists(user.Email);
                 if (isExist)
                 {
-                    ViewBag.Message = "Podany adres email już jest w bazie";
-                    ModelState.AddModelError("EmailExist", "Podany email już istnieje");
+                    ViewBag.Message = Resources.Texts.EmailExistsMessage;
+                    ModelState.AddModelError("EmailExist", Resources.Texts.EmailExistsMessage);
                     return View(user);
                 }
 
@@ -53,14 +53,13 @@ namespace SystemRezerwacjiKortow.Controllers
 
                 // wyslanie emaila do uzytkownika
                 SendVerificationLinkEmail(user.Email, user.ActivationCode, user.FirstName);
-                message = "Wszystko już prawie gotowe. Link aktywacyjny do konta " +
-                    " został wysłany na adres:" + user.Email;
+                message = Resources.Texts.EmailVerificationMessage + user.Email;
                 Status = true;
        
             }
             else
             {
-                message = "Nieprawidłowe żądanie";
+                message = Resources.Texts.InvalidRequest;
             }
 
             ViewBag.Message = message;
@@ -73,13 +72,9 @@ namespace SystemRezerwacjiKortow.Controllers
         {
             var verifyUrl = "/User/VerifyAccount/" + activationCode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
-
-            string subject = "Twoje konto zostało pomyślnie utworzone!";
-
-            string body = "Twoje konto zostało pomyślnie utworzone.<br/>" +
-                "Aby aktywować konto kliknij w poniższy link aktywacyjny:" +
+            string subject = Resources.Texts.EmailVerificationSubject + "!";
+            string body = Resources.Texts.EmailVerificationBody +
                 " <br/><a href='" + link + "'>" + link + "</a> ";
-
             Email.SendEmail(subject, body, email, firstName);
         }
 
@@ -96,7 +91,7 @@ namespace SystemRezerwacjiKortow.Controllers
             }
             else
             {
-                ViewBag.Message = "Nieprawidłowe żądanie";
+                ViewBag.Message = Resources.Texts.InvalidRequest;
             }
 
             ViewBag.Status = Status;
@@ -123,7 +118,7 @@ namespace SystemRezerwacjiKortow.Controllers
             {
                 if (!SqlUser.CheckEmailVeryfied(login))
                 {
-                    ViewBag.Message = "Najpierw zweryfikuj swój adres email";
+                    ViewBag.Message = Resources.Texts.VerifyYourEmail;
                     return View();
                 }
                 if (string.Compare(Crypto.Hash(login.Password), SqlUser.GetUserPassword(login)) == 0)
@@ -158,12 +153,12 @@ namespace SystemRezerwacjiKortow.Controllers
                 }
                 else
                 {
-                    message = "Podano błędne hasło";
+                    message = Resources.Texts.InvalidPassword;
                 }
             }
             else
             {
-                message = "Użytkownik o podanym adresie email nie istnieje";
+                message = Resources.Texts.InvalidUser;
             }
 
             ViewBag.Message = message;
@@ -176,7 +171,7 @@ namespace SystemRezerwacjiKortow.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            TempData["Logout"] = "Udało sie wylogować";
+            TempData["Logout"] = Resources.Texts.LogoutSuccessful;
             return RedirectToAction("Login", "User");
         }
 

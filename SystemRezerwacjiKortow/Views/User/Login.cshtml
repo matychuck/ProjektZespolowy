@@ -6,12 +6,12 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<h2>@SystemRezerwacjiKortow.Resources.Texts.LoginTitle</h2>
 
-@if ((string)TempData["Logout"] == "Udało sie wylogować")
+@if ((string)TempData["Logout"] == SystemRezerwacjiKortow.Resources.Texts.LogoutSuccessful)
 {
     <div class="alert alert-success">
-        <strong>Sukces!</strong> @TempData["Logout"]
+        <strong>@SystemRezerwacjiKortow.Resources.Texts.Success!</strong> @TempData["Logout"]
     </div>
 }
 
@@ -20,7 +20,7 @@
     if (ViewBag.Message != null)
     {
         <div class="alert alert-success">
-            <strong>Sukces! </strong>@ViewBag.Message
+            <strong>@SystemRezerwacjiKortow.Resources.Texts.Success! </strong>@ViewBag.Message
         </div>
     }
 }
@@ -61,24 +61,24 @@ else
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Zaloguj" class="btn btn-default" />
+                    <input type="submit" value=@SystemRezerwacjiKortow.Resources.Texts.Login class="btn btn-default" />
                 </div>
             </div>
         </div>
         if (ViewBag.Message != null)
         {
             <div class="alert alert-danger">
-                <strong>Błąd! </strong>@ViewBag.Message
+                <strong>@SystemRezerwacjiKortow.Resources.Texts.Error! </strong>@ViewBag.Message
             </div>
         }
     }
 }
 <div>
-    @Html.ActionLink("Powrót do strony głównej", "Index", "Home")
+    @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.ReturnHome, "Index", "Home")
 </div>
 
 <div>
-    Jesteś nowym użytkownikiem? <strong>@Html.ActionLink("Zarejestruj się", "Registration", "User")</strong> już dziś!
+    @SystemRezerwacjiKortow.Resources.Texts.NewUser? <strong>@Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.RegisterNow, "Registration", "User")</strong> @SystemRezerwacjiKortow.Resources.Texts.JustNow!
 </div>
 
 

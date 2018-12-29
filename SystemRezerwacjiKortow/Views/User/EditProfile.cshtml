@@ -5,7 +5,7 @@
     ViewBag.Title = "Profile";
 }
 
-<h2>Profil użytkownika</h2>
+<h2>@SystemRezerwacjiKortow.Resources.Texts.UserProfile</h2>
 
 
 
@@ -16,7 +16,7 @@
     if (ViewBag.Message != null)
     {
         <div class="alert alert-success">
-            <strong>Sukces! </strong>@ViewBag.Message
+            <strong>@SystemRezerwacjiKortow.Resources.Texts.Success! </strong>@ViewBag.Message
         </div>
     }
 }
@@ -74,14 +74,14 @@ else
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Zapisz" class="btn btn-default" />
+                    <input type="submit" value=@SystemRezerwacjiKortow.Resources.Texts.Save class="btn btn-default" />
                 </div>
             </div>
         </div>
         if (ViewBag.Message != null)
         {
             <div class="alert alert-danger">
-                <strong>Błąd! </strong>@ViewBag.Message
+                <strong>@SystemRezerwacjiKortow.Resources.Texts.Error! </strong>@ViewBag.Message
             </div>
         }
     }

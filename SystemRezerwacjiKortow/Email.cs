@@ -17,7 +17,7 @@ namespace SystemRezerwacjiKortow
             var toEmail = new MailAddress(email);
             var fromEmailPassword = ConfigurationManager.AppSettings["EmailPassword"];
 
-            string myBody = "<br/>Witaj " + firstName + ",<br/>" + body + "<br/><br/>Pozdrawiamy, <br/>Zespół najlepszych kortów w mieście";
+            string myBody = "<br/>" + Resources.Texts.EmailHello + " " + firstName + ",<br/>" + body + Resources.Texts.EmailEnding;
 
             var smtp = new SmtpClient
             {

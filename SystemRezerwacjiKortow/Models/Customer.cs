@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using SystemRezerwacjiKortow.Resources;
 
 namespace SystemRezerwacjiKortow.Models
 {
@@ -10,25 +11,25 @@ namespace SystemRezerwacjiKortow.Models
     {
         public int CustomerID { get; set; }
 
-        [Display(Name = "Nazwa firmy")]
+        [Display(Name = "CompanyName", ResourceType = typeof(Texts))]
         public string CompanyName { get; set; }
 
-        [Display(Name = "Miasto")]
+        [Display(Name = "City", ResourceType = typeof(Texts))]
         [StringLength(50)]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Miasto jest wymagane")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourCity")]
         public string City { get; set; }
 
-        [Display(Name = "Ulica")]
+        [Display(Name = "Street", ResourceType = typeof(Texts))]
         [StringLength(50)]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Ulica jest wymagana")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourStreet")]
         public string Street { get; set; }
 
-        [Display(Name = "Kod pocztowy")]
+        [Display(Name = "PostalCode", ResourceType = typeof(Texts))]
         [StringLength(6)]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Kod pocztowy jest wymagany")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourPostalCode")]
         public string ZipCode { get; set; }
 
-        [Display(Name = "Zniżka")]
+        [Display(Name = "Discount", ResourceType = typeof(Texts))]
         [DataType(DataType.Currency)]
         public decimal DiscountValue { get; set; }
     }

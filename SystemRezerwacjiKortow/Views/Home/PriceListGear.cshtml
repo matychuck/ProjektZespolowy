@@ -5,7 +5,7 @@
 
 @Html.Partial("_PriceListPartial")
 
-<h3>Wypożyczalnia sprzętu</h3>
+<h3>@SystemRezerwacjiKortow.Resources.Texts.EquipmentRental</h3>
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -19,13 +19,13 @@
                 <thead>
                     <tr style="font-size:large">
                         <th>
-                            Rodzaj sprzętu
+                            @SystemRezerwacjiKortow.Resources.Texts.EquipmentType
                         </th>
                         <th>
-                            Ilość
+                            @SystemRezerwacjiKortow.Resources.Texts.Amount
                         </th>
                         <th>
-                            Cena
+                            @SystemRezerwacjiKortow.Resources.Texts.Price
                         </th>
                     </tr>
                 </thead>

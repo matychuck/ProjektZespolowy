@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-
+using SystemRezerwacjiKortow.Resources;
 
 namespace SystemRezerwacjiKortow.Models
 {
@@ -11,38 +11,40 @@ namespace SystemRezerwacjiKortow.Models
     {
         public int UserID { get; set; }
 
-        [Display(Name = "Imię")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Imię jest wymagane")]
+        [Display(Name = "Name", ResourceType = typeof(Texts))]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourName")]
         public string FirstName { get; set; }
 
-        [Display(Name = "Nazwisko")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Nazwisko jest wymagane")]
+        [Display(Name = "Surname", ResourceType = typeof(Texts))]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourSurname")]
         public string Surname { get; set; }
 
         [Display(Name = "Email")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Email jest wymagany")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourEmail")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Display(Name = "Data urodzenia")]
+        [Display(Name = "DateOfBirth", ResourceType = typeof(Texts))]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourDateOfBirth")]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateOfBirth { get; set; }
 
-        [Display(Name = "Hasło")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Hasło jest wymagane")]
+        [Display(Name = "Password", ResourceType = typeof(Texts))]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourPassword")]
         [DataType(DataType.Password)]
-        [MinLength(6, ErrorMessage = "Hasło musi mieć minimum 6 znaków")]
+        [MinLength(6, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "ErrorPasswordLength")]
         public string Password { get; set; }
 
-        [Display(Name = "Potwierdź hasło")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(Texts))]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterYourConfirmPassword")]
         [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Hasła nie pasują do siebie")]
+        [Compare("Password", ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "ErrorPasswordMatch")]
         public string ConfirmPassword { get; set; }
 
         public bool IsEmailVeryfied { get; set; }
 
-        [Display(Name = "Rola ID")]
+        [Display(Name = "RoleID", ResourceType = typeof(Texts))]
         [Range(0, 5)]
         public int RoleID { get; set; }
 
@@ -54,7 +56,7 @@ namespace SystemRezerwacjiKortow.Models
 
         public string ActivationCode { get; set; }
 
-        [Display(Name = "Rola")]
+        [Display(Name = "Role", ResourceType = typeof(Texts))]
         public string RoleName { get; set; }
     }
 }

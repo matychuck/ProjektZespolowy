@@ -2,14 +2,14 @@
 <div class="form-horizontal">
 
     <div class="form-group">
-        @Html.Label("Pokaz:")
-        <input type="button" value="Panel" onclick="location.href='@Url.Action("Index", "Admin")'" />
-        <input type="button" value="Korty" onclick="location.href='@Url.Action("Index", "Court")'" />
-        <input type="button" value="Sprzet" onclick="location.href='@Url.Action("Index", "Gear")'" />
-        <input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Users", "Admin")'" />
-        <input type="button" value="Kompleks" onclick="location.href='@Url.Action("Complex", "Admin")'" />
-        <input type="button" value="Wydarzenia" onclick="location.href='@Url.Action("Contest", "Admin")'" />
-        <input type="button" value="Reklamy" onclick="location.href='@Url.Action("Advertisements", "Admin")'" />
+        @Html.Label(SystemRezerwacjiKortow.Resources.Texts.Show)
+        <input type="button" value=@SystemRezerwacjiKortow.Resources.Texts.Panel onclick="location.href='@Url.Action("Index", "Admin")'" />
+        <input type="button" value=@SystemRezerwacjiKortow.Resources.Texts.Courts onclick="location.href='@Url.Action("Index", "Court")'" />
+        <input type="button" value=@SystemRezerwacjiKortow.Resources.Texts.Gear onclick="location.href='@Url.Action("Index", "Gear")'" />
+        <input type="button" value=@SystemRezerwacjiKortow.Resources.Texts.Users onclick="location.href='@Url.Action("Users", "Admin")'" />
+        <input type="button" value=@SystemRezerwacjiKortow.Resources.Texts.Complex onclick="location.href='@Url.Action("Complex", "Admin")'" />
+        <input type="button" value=@SystemRezerwacjiKortow.Resources.Texts.Events onclick="location.href='@Url.Action("Contest", "Admin")'" />
+        <input type="button" value=@SystemRezerwacjiKortow.Resources.Texts.Advertisements onclick="location.href='@Url.Action("Advertisements", "Admin")'" />
     </div>
 
 </div>

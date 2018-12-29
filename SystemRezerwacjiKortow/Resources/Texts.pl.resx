@@ -117,6 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdminPanel" xml:space="preserve">
+    <value>Panel administratora</value>
+  </data>
+  <data name="Advertisements" xml:space="preserve">
+    <value>Reklamy</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Ilość</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Zmień hasło</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Miasto</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Nazwa firmy</value>
+  </data>
+  <data name="Complex" xml:space="preserve">
+    <value>Kompleks</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Potwierdź hasło</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="Court" xml:space="preserve">
+    <value>Kort</value>
+  </data>
+  <data name="CourtIndoor" xml:space="preserve">
+    <value>Kort kryty</value>
+  </data>
+  <data name="Courts" xml:space="preserve">
+    <value>Korty</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Data urodzenia</value>
+  </data>
+  <data name="DayOfWeek" xml:space="preserve">
+    <value>Dzień tygodnia</value>
+  </data>
   <data name="DayWeek1" xml:space="preserve">
     <value>Poniedziałek</value>
   </data>
@@ -138,7 +180,256 @@
   <data name="DayWeek7" xml:space="preserve">
     <value>Niedziela</value>
   </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Zniżka</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailEnding" xml:space="preserve">
+    <value>&lt;br/&gt;&lt;br/&gt;Pozdrawiamy, &lt;br/&gt;Zespół Twoich Kortów</value>
+  </data>
+  <data name="EmailExistsMessage" xml:space="preserve">
+    <value>Podany adres email już jest w bazie</value>
+  </data>
+  <data name="EmailFrom" xml:space="preserve">
+    <value>Nasze korty</value>
+  </data>
+  <data name="EmailHello" xml:space="preserve">
+    <value>Witaj</value>
+  </data>
+  <data name="EmailVerificationBody" xml:space="preserve">
+    <value>Twoje konto zostało pomyślnie utworzone.&lt;br/&gt;Aby aktywować konto kliknij w poniższy link aktywacyjny:</value>
+  </data>
+  <data name="EmailVerificationMessage" xml:space="preserve">
+    <value>Wszystko już prawie gotowe. Link aktywacyjny do konta został wysłany na adres: </value>
+  </data>
+  <data name="EmaiVerificationSubject" xml:space="preserve">
+    <value>Twoje konto zostało pomyślnie utworzone</value>
+  </data>
+  <data name="EnterYourCity" xml:space="preserve">
+    <value>Miasto jest wymagane</value>
+  </data>
+  <data name="EnterYourConfirmPassword" xml:space="preserve">
+    <value>Potwierdzenie hasła jest wymagane</value>
+  </data>
+  <data name="EnterYourDateOfBirth" xml:space="preserve">
+    <value>Data urodzenia jest wymagana</value>
+  </data>
+  <data name="EnterYourEmail" xml:space="preserve">
+    <value>Email jest wymagany</value>
+  </data>
+  <data name="EnterYourName" xml:space="preserve">
+    <value>Imię jest wymagane</value>
+  </data>
+  <data name="EnterYourPassword" xml:space="preserve">
+    <value>Hasło jest wymagane</value>
+  </data>
+  <data name="EnterYourPhone" xml:space="preserve">
+    <value>Numer telefonu jest wymagany</value>
+  </data>
+  <data name="EnterYourPostalCode" xml:space="preserve">
+    <value>Kod pocztowy jest wymagany</value>
+  </data>
+  <data name="EnterYourStreet" xml:space="preserve">
+    <value>Ulica jest wymagana</value>
+  </data>
+  <data name="EnterYourSurname" xml:space="preserve">
+    <value>Nazwisko jest wymagane</value>
+  </data>
+  <data name="EquipmentRental" xml:space="preserve">
+    <value>Wypożyczalnia sprzętu</value>
+  </data>
+  <data name="EquipmentType" xml:space="preserve">
+    <value>Rodzaj sprzętu</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="ErrorPasswordLength" xml:space="preserve">
+    <value>Hasło musi mieć minimum 6 znaków</value>
+  </data>
+  <data name="ErrorPasswordMatch" xml:space="preserve">
+    <value>Hasła nie pasują do siebie</value>
+  </data>
+  <data name="ErrorRequest" xml:space="preserve">
+    <value>Wystąpił błąd podczas przetwarzania żądania</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Wydarzenia</value>
+  </data>
+  <data name="Gear" xml:space="preserve">
+    <value>Sprzęt</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Ogólne</value>
+  </data>
+  <data name="HomeCalendar" xml:space="preserve">
+    <value>KALENDARZ</value>
+  </data>
+  <data name="HomeContact" xml:space="preserve">
+    <value>KONTAKT</value>
+  </data>
+  <data name="HomeContests" xml:space="preserve">
+    <value>TURNIEJE</value>
+  </data>
+  <data name="HomeCourts" xml:space="preserve">
+    <value>KORTY</value>
+  </data>
+  <data name="HomeGear" xml:space="preserve">
+    <value>SPRZĘT</value>
+  </data>
+  <data name="HomeNews" xml:space="preserve">
+    <value>OGŁOSZENIA</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Strona główna</value>
+  </data>
+  <data name="HomePrice" xml:space="preserve">
+    <value>CENNIK</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Godzina</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Podano błędne hasło</value>
+  </data>
+  <data name="InvalidRequest" xml:space="preserve">
+    <value>Nieprawidłowe żądanie</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>Użytkownik o podanym adresie email nie istnieje</value>
+  </data>
+  <data name="JustNow" xml:space="preserve">
+    <value>już dziś</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Język</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Zaloguj</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Logowanie</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Wyloguj się</value>
+  </data>
+  <data name="LogoutSuccessful" xml:space="preserve">
+    <value>Zostałeś pomyślnie wylogowany</value>
+  </data>
+  <data name="MondayFriday" xml:space="preserve">
+    <value>pon-pt</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>Jesteś nowym użytkownikiem</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>System rezerwacji kortów</value>
+  </data>
+  <data name="Panel" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="PaymentsHistory" xml:space="preserve">
+    <value>Historia płatności</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Kod pocztowy</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Cena</value>
+  </data>
+  <data name="PriceList" xml:space="preserve">
+    <value>Price list</value>
+  </data>
+  <data name="PriceListSummer" xml:space="preserve">
+    <value>Cennik letni</value>
+  </data>
+  <data name="PriceListWinter" xml:space="preserve">
+    <value>Cennik zimowy</value>
+  </data>
+  <data name="ProfileConfigurationGeneral" xml:space="preserve">
+    <value>Konfiguracja profilu - ogólne</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Zarejestruj</value>
+  </data>
+  <data name="RegisterNow" xml:space="preserve">
+    <value>Zarejestruj się</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Rejestracja</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Pamiętaj mnie</value>
+  </data>
+  <data name="ReturnHome" xml:space="preserve">
+    <value>Powrót do strony głównej</value>
+  </data>
+  <data name="RoleID" xml:space="preserve">
+    <value>ID roli</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>Rola</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="SetUpPayments" xml:space="preserve">
+    <value>Konfiguruj płatności</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Pokaż</value>
+  </data>
   <data name="SqlError001" xml:space="preserve">
     <value>W tabeli Court nie znaleziono kortu</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Ulica</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Sukces</value>
+  </data>
+  <data name="SummerSeason" xml:space="preserve">
+    <value>Sezon letni 2019</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="UserManual" xml:space="preserve">
+    <value>Instrukcja użytkownika</value>
+  </data>
+  <data name="UserProfile" xml:space="preserve">
+    <value>Profil użytkownika</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Użytkownicy</value>
+  </data>
+  <data name="VerificationSuccessful" xml:space="preserve">
+    <value>Twoje konto zostało potwierdzone. Kliknij tutaj, żeby się zalogować</value>
+  </data>
+  <data name="VerificationUser" xml:space="preserve">
+    <value>Weryfikacja użytkownika</value>
+  </data>
+  <data name="VerifyYourEmail" xml:space="preserve">
+    <value>Najpierw zweryfikuj swój adres email</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Witaj</value>
+  </data>
+  <data name="WelcomeInTennis" xml:space="preserve">
+    <value>Witaj w świecie tenisa</value>
+  </data>
+  <data name="WinterSeason" xml:space="preserve">
+    <value>Sezon zimowy 2019</value>
   </data>
 </root>
