@@ -3,30 +3,31 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using SystemRezerwacjiKortow.Resources;
 
 namespace SystemRezerwacjiKortow.Models
 {
     public class Advertisement
     {
-        [Display(Name = "Nazwa kortu")]
+        [Display(Name = "CourtName", ResourceType = typeof(Texts))]
         [StringLength(50)]
         public string Name { get; set; }
 
-        [Display(Name = "Data rozpoczecia")]
+        [Display(Name = "StartDate", ResourceType = typeof(Texts))]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        [Required(ErrorMessage = "Data jest wymagana")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterDate")]
         public DateTime DateFrom { get; set; }
 
-        [Display(Name = "Data zakonczenia")]
+        [Display(Name = "EndDate", ResourceType = typeof(Texts))]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        [Required(ErrorMessage = "Data jest wymagana")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterDate")]
         public DateTime DateTo { get; set; }
 
         public int CourtID { get; set; }
 
-        [Display(Name = "Należna płatność")]
+        [Display(Name = "DuePayment", ResourceType = typeof(Texts))]
         [DataType(DataType.Currency)]
         public decimal Payment { get; set; }
     }

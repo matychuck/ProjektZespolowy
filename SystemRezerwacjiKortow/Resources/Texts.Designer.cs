@@ -124,6 +124,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Complex name.
+        /// </summary>
+        public static string ComplexName {
+            get {
+                return ResourceManager.GetString("ComplexName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm password.
         /// </summary>
         public static string ConfirmPassword {
@@ -156,6 +165,24 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string CourtIndoor {
             get {
                 return ResourceManager.GetString("CourtIndoor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Court name.
+        /// </summary>
+        public static string CourtName {
+            get {
+                return ResourceManager.GetString("CourtName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Court number.
+        /// </summary>
+        public static string CourtNumber {
+            get {
+                return ResourceManager.GetString("CourtNumber", resourceCulture);
             }
         }
         
@@ -259,6 +286,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Due payment.
+        /// </summary>
+        public static string DuePayment {
+            get {
+                return ResourceManager.GetString("DuePayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {
@@ -336,6 +372,33 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string EmailVerificationSubject {
             get {
                 return ResourceManager.GetString("EmailVerificationSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End date.
+        /// </summary>
+        public static string EndDate {
+            get {
+                return ResourceManager.GetString("EndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date field is required.
+        /// </summary>
+        public static string EnterDate {
+            get {
+                return ResourceManager.GetString("EnterDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name field is required.
+        /// </summary>
+        public static string EnterName {
+            get {
+                return ResourceManager.GetString("EnterName", resourceCulture);
             }
         }
         
@@ -484,6 +547,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event name.
+        /// </summary>
+        public static string EventName {
+            get {
+                return ResourceManager.GetString("EventName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Events.
         /// </summary>
         public static string Events {
@@ -619,6 +691,24 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is covered.
+        /// </summary>
+        public static string IsCovered {
+            get {
+                return ResourceManager.GetString("IsCovered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is for doubles.
+        /// </summary>
+        public static string IsForDoubles {
+            get {
+                return ResourceManager.GetString("IsForDoubles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to totay.
         /// </summary>
         public static string JustNow {
@@ -745,7 +835,7 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Price.
+        ///   Looks up a localized string similar to Price per hour.
         /// </summary>
         public static string Price {
             get {
@@ -889,6 +979,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start date.
+        /// </summary>
+        public static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Street.
         /// </summary>
         public static string Street {
@@ -912,6 +1011,15 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string SummerSeason {
             get {
                 return ResourceManager.GetString("SummerSeason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Surface type.
+        /// </summary>
+        public static string SurfaceType {
+            get {
+                return ResourceManager.GetString("SurfaceType", resourceCulture);
             }
         }
         

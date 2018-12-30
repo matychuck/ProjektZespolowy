@@ -346,10 +346,10 @@
     <value>Kod pocztowy</value>
   </data>
   <data name="Price" xml:space="preserve">
-    <value>Cena</value>
+    <value>Cena za godzinę</value>
   </data>
   <data name="PriceList" xml:space="preserve">
-    <value>Price list</value>
+    <value>Cennik</value>
   </data>
   <data name="PriceListSummer" xml:space="preserve">
     <value>Cennik letni</value>
@@ -431,5 +431,41 @@
   </data>
   <data name="WinterSeason" xml:space="preserve">
     <value>Sezon zimowy 2019</value>
+  </data>
+  <data name="ComplexName" xml:space="preserve">
+    <value>Nazwa kompleksu</value>
+  </data>
+  <data name="CourtName" xml:space="preserve">
+    <value>Nazwa kortu</value>
+  </data>
+  <data name="CourtNumber" xml:space="preserve">
+    <value>Numer kortu</value>
+  </data>
+  <data name="DuePayment" xml:space="preserve">
+    <value>Należna płatność</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Data zakończenia</value>
+  </data>
+  <data name="EnterDate" xml:space="preserve">
+    <value>Data jest wymagana</value>
+  </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Nazwa jest wymagana</value>
+  </data>
+  <data name="EventName" xml:space="preserve">
+    <value>Nazwa wydarzenia</value>
+  </data>
+  <data name="IsCovered" xml:space="preserve">
+    <value>Czy jest zakryty</value>
+  </data>
+  <data name="IsForDoubles" xml:space="preserve">
+    <value>Czy jest deblowy</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Data rozpoczęcia</value>
+  </data>
+  <data name="SurfaceType" xml:space="preserve">
+    <value>Typ powierzchni</value>
   </data>
 </root>

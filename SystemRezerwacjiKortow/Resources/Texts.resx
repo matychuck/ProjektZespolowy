@@ -138,6 +138,9 @@
   <data name="Complex" xml:space="preserve">
     <value>Complex</value>
   </data>
+  <data name="ComplexName" xml:space="preserve">
+    <value>Complex name</value>
+  </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
   </data>
@@ -149,6 +152,12 @@
   </data>
   <data name="CourtIndoor" xml:space="preserve">
     <value>Indoor tennis court</value>
+  </data>
+  <data name="CourtName" xml:space="preserve">
+    <value>Court name</value>
+  </data>
+  <data name="CourtNumber" xml:space="preserve">
+    <value>Court number</value>
   </data>
   <data name="Courts" xml:space="preserve">
     <value>Courts</value>
@@ -183,6 +192,9 @@
   <data name="Discount" xml:space="preserve">
     <value>Discount</value>
   </data>
+  <data name="DuePayment" xml:space="preserve">
+    <value>Due payment</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
@@ -209,6 +221,15 @@
   </data>
   <data name="EmailVerificationSubject" xml:space="preserve">
     <value>Your account has been successfully created</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="EnterDate" xml:space="preserve">
+    <value>Date field is required</value>
+  </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Name field is required</value>
   </data>
   <data name="EnterYourCity" xml:space="preserve">
     <value>City field is required</value>
@@ -258,6 +279,9 @@
   <data name="ErrorRequest" xml:space="preserve">
     <value>An error occurred while processing the request</value>
   </data>
+  <data name="EventName" xml:space="preserve">
+    <value>Event name</value>
+  </data>
   <data name="Events" xml:space="preserve">
     <value>Events</value>
   </data>
@@ -303,6 +327,12 @@
   <data name="InvalidUser" xml:space="preserve">
     <value>The user with the given email address does not exist</value>
   </data>
+  <data name="IsCovered" xml:space="preserve">
+    <value>Is covered</value>
+  </data>
+  <data name="IsForDoubles" xml:space="preserve">
+    <value>Is for doubles</value>
+  </data>
   <data name="JustNow" xml:space="preserve">
     <value>totay</value>
   </data>
@@ -346,7 +376,7 @@
     <value>Postal code</value>
   </data>
   <data name="Price" xml:space="preserve">
-    <value>Price</value>
+    <value>Price per hour</value>
   </data>
   <data name="PriceList" xml:space="preserve">
     <value>Price list</value>
@@ -393,6 +423,9 @@
   <data name="SqlError001" xml:space="preserve">
     <value>No court</value>
   </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start date</value>
+  </data>
   <data name="Street" xml:space="preserve">
     <value>Street</value>
   </data>
@@ -401,6 +434,9 @@
   </data>
   <data name="SummerSeason" xml:space="preserve">
     <value>Summer season 2019</value>
+  </data>
+  <data name="SurfaceType" xml:space="preserve">
+    <value>Surface type</value>
   </data>
   <data name="Surname" xml:space="preserve">
     <value>Surname</value>

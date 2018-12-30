@@ -104,5 +104,32 @@ namespace SystemRezerwacjiKortow.Database
             }
             return list;
         }
+
+        // zwraca kompleks -> dane kompleksu, w tabeli kompleks zawsze jest jeden rekord
+        public static ComplexCourt GetComplex()
+        {
+            ComplexCourt complexCourt = null;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("SELECT * FROM ComplexCourt", connection);
+
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        complexCourt = new ComplexCourt()
+                        {
+                            ComplexName = (string)reader["ComplexName"],
+                            City = (string)reader["City"],
+                            Street = (string)reader["Street"],
+                            ZipCode = (string)reader["ZipCode"],
+                        };
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return complexCourt;
+        }
     }
 }

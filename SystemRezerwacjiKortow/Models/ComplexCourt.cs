@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using SystemRezerwacjiKortow.Resources;
 
 namespace SystemRezerwacjiKortow.Models
 {
     public class ComplexCourt
     {
-        [Display(Name = "Nazwa kompleksu")]
+        [Display(Name = "ComplexName", ResourceType = typeof(Texts))]
         [StringLength(50)]
         public string ComplexName { get; set; }
 
-        [Display(Name = "Miasto")]
+        [Display(Name = "City", ResourceType = typeof(Texts))]
         [StringLength(50)]
         public string City { get; set; }
 
-        [Display(Name = "Ulica")]
+        [Display(Name = "Street", ResourceType = typeof(Texts))]
         [StringLength(50)]
         public string Street { get; set; }
 
-        [Display(Name = "Kod pocztowy")]
+        [Display(Name = "PostalCode", ResourceType = typeof(Texts))]
         [StringLength(6)]
         public string ZipCode { get; set; }
     }

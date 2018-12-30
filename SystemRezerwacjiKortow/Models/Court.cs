@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using SystemRezerwacjiKortow.Resources;
 
 namespace SystemRezerwacjiKortow.Models
 {
@@ -10,27 +11,51 @@ namespace SystemRezerwacjiKortow.Models
     {
         public int CourtID { get; set; }
 
-        [Display(Name = "Numer Kortu")]
+        [Display(Name = "CourtNumber", ResourceType = typeof(Texts))]
         public int CourtNumber { get; set; }
 
-        [Display(Name = "Typ powierzchni")]
+        [Display(Name = "SurfaceType", ResourceType = typeof(Texts))]
         [StringLength(50)]
         public string SurfaceType { get; set; }
 
-        [Display(Name = "czy jest deblowy")]
+        [Display(Name = "IsForDoubles", ResourceType = typeof(Texts))]
         [Range(0, 1)]
         public bool IsForDoubles { get; set; }
 
-        [Display(Name = "Czy kort jest zakryty")]
+        [Display(Name = "IsCovered", ResourceType = typeof(Texts))]
         [Range(0, 1)]
         public bool IsCovered { get; set; }
 
-        [Display(Name = "Cena za godzine")]
+        [Display(Name = "Price", ResourceType = typeof(Texts))]
         [DataType(DataType.Currency)]
         public decimal PriceH { get; set; }
 
-        [Display(Name = "Nazwa kortu")]
+        [Display(Name = "CourtName", ResourceType = typeof(Texts))]
         [StringLength(50)]
         public string Name { get; set; }
+
+       // [Display(Name = "Price", ResourceType = typeof(Texts))]
+        [DataType(DataType.Currency)]
+        public decimal PriceWinterRatio { get; set; }
+
+        //[Display(Name = "Price", ResourceType = typeof(Texts))]
+        [DataType(DataType.Currency)]
+        public decimal PriceWeekendRatio { get; set; }
+
+        //[Display(Name = "Price", ResourceType = typeof(Texts))]
+        [DataType(DataType.Currency)]
+        public decimal PriceWinter { get; set; }
+
+        //[Display(Name = "Price", ResourceType = typeof(Texts))]
+        [DataType(DataType.Currency)]
+        public decimal PriceWinterWeekend { get; set; }
+
+        //[Display(Name = "Price", ResourceType = typeof(Texts))]
+        [DataType(DataType.Currency)]
+        public decimal PriceSummerWeekend { get; set; }
+
+        //[Display(Name = "Price", ResourceType = typeof(Texts))]
+        [DataType(DataType.Currency)]
+        public decimal PriceSummer { get; set; }
     }
 }

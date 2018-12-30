@@ -28,6 +28,8 @@ namespace SystemRezerwacjiKortow.Database
                     command.Parameters.AddWithValue("@IsCovered", court.IsCovered);
                     command.Parameters.AddWithValue("@PriceH", court.PriceH);
                     command.Parameters.AddWithValue("@Name", court.Name);
+                    command.Parameters.AddWithValue("@PriceWinterRatio", court.PriceWinterRatio);
+                    command.Parameters.AddWithValue("@PriceWeekendRation", court.PriceWinterWeekend);
                     command.Parameters.AddWithValue("@CourtID", court.CourtID);
                     command.Parameters["@CourtID"].Direction = ParameterDirection.Output;  // żeby móc wyciągać dane
 
@@ -108,7 +110,13 @@ namespace SystemRezerwacjiKortow.Database
                             IsForDoubles = (bool)reader["IsForDoubles"],
                             IsCovered = (bool)reader["IsCovered"],
                             PriceH = (decimal)reader["PriceH"],
-                            Name = (string)reader["Name"]
+                            Name = (string)reader["Name"],
+                            PriceWinterRatio = (decimal)reader["PriceWinterRatio"],
+                            PriceWeekendRatio = (decimal)reader["PriceWeekendRatio"],
+                            PriceWinter = (decimal)reader["PriceWinter"],
+                            PriceWinterWeekend = (decimal)reader["PriceWinterWeekend"],
+                            PriceSummerWeekend = (decimal)reader["PriceSummerWeekend"],
+                            PriceSummer = (decimal)reader["PriceSummer"],
                         });
                     }
                     SqlDatabase.CloseConnection(connection);
@@ -140,12 +148,41 @@ namespace SystemRezerwacjiKortow.Database
                             IsCovered = (bool)reader["IsCovered"],
                             PriceH = (decimal)reader["PriceH"],
                             Name = (string)reader["Name"],
+                            PriceWinterRatio = (decimal)reader["PriceWinterRatio"],
+                            PriceWeekendRatio = (decimal)reader["PriceWeekendRatio"],
+                            PriceWinter = (decimal)reader["PriceWinter"],
+                            PriceWinterWeekend = (decimal)reader["PriceWinterWeekend"],
+                            PriceSummerWeekend = (decimal)reader["PriceSummerWeekend"],
+                            PriceSummer = (decimal)reader["PriceSummer"],
                         };
                     }
                     SqlDatabase.CloseConnection(connection);
                 }
             }
             return court;
+        }
+
+        // zwraca konkretny kort
+        public static decimal GetCourtPrice(DateTime DateStart, DateTime DateEnd, int CourtID)
+        {
+            decimal price = 0;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("select [dbo].[GetPriceRentalCourt] (@DateStart, @DateEnd, @CourtID) as Price", connection);
+                    command.Parameters.AddWithValue("@DateStart", DateStart);
+                    command.Parameters.AddWithValue("@DateEnd", DateEnd);
+                    command.Parameters.AddWithValue("@CourtID", CourtID);
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        price = (decimal)reader["Price"];
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return price;
         }
     }
 }
