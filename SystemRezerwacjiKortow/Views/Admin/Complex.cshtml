@@ -4,13 +4,13 @@
     ViewBag.Title = "Complex";
 }
 
-<h2>Komples</h2>
+<h2>@SystemRezerwacjiKortow.Resources.Texts.Complex</h2>
 
 @Html.Partial("_AdminPartial")
 
 <div class="form-horizontal">
     <div>
-        <h2>Godziny Otwarcia</h2>
+        <h2>@SystemRezerwacjiKortow.Resources.Texts.OpeningHours</h2>
         <table class="table">
             <tr>
                 <th>
@@ -44,8 +44,8 @@
                         @Html.DisplayFor(modelItem => item.DayName)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.DayOfWeek }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Edit, "Edit", new { id = item.DayOfWeek }) |
+                        @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Delete, "Delete", new { /* id=item.PrimaryKey */ })
                     </td>
                 </tr>
             }
@@ -53,7 +53,7 @@
         </table>
     </div>
     <div>
-        <h2>Dane Kompleksu</h2>
+        <h2>@SystemRezerwacjiKortow.Resources.Texts.ComplexData</h2>
 
     </div>
 </div>

@@ -64,26 +64,26 @@ namespace SystemRezerwacjiKortow.Database
                         oH.TimeTo = (TimeSpan)reader["TimeTo"];
                         switch (oH.DayOfWeek)
                         {
-                            case 1:
-                                oH.DayName = Resources.Texts.DayWeek1;
+                            case 1: // dla sqla pierwszy dzien tygodnia to niedziela
+                                oH.DayName = Resources.Texts.DayWeek7;
                                 break;
                             case 2:
-                                oH.DayName = Resources.Texts.DayWeek2;
+                                oH.DayName = Resources.Texts.DayWeek1;
                                 break;
                             case 3:
-                                oH.DayName = Resources.Texts.DayWeek3;
+                                oH.DayName = Resources.Texts.DayWeek2;
                                 break;
                             case 4:
-                                oH.DayName = Resources.Texts.DayWeek4;
+                                oH.DayName = Resources.Texts.DayWeek3;
                                 break;
                             case 5:
-                                oH.DayName = Resources.Texts.DayWeek5;
+                                oH.DayName = Resources.Texts.DayWeek4;
                                 break;
                             case 6:
-                                oH.DayName = Resources.Texts.DayWeek6;
+                                oH.DayName = Resources.Texts.DayWeek5;
                                 break;
                             case 7:
-                                oH.DayName = Resources.Texts.DayWeek7;
+                                oH.DayName = Resources.Texts.DayWeek6;
                                 break;
 
                         }
@@ -105,6 +105,60 @@ namespace SystemRezerwacjiKortow.Database
             return list;
         }
 
+        // zwraca godziny otwarcia daneogo dnia
+        public static OpeningHours GetOpeningHour(int dayOfWeek)
+        {
+            OpeningHours openingHours = null;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("select * from dbo.VOpeningHours where DayOfWeek = @dayOfWeek", connection);
+                    command.Parameters.AddWithValue("@dayOfWeek", dayOfWeek);
+                    command.CommandTimeout = SqlDatabase.Timeout;
+
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        openingHours = new OpeningHours()
+                        {
+                            DayOfWeek = (int)reader["DayOfWeek"],
+                            DayName = "",
+                            TimeFrom = (TimeSpan)reader["TimeFrom"],
+                            TimeTo = (TimeSpan)reader["TimeTo"],
+                        };                   
+                    }
+
+                    switch (openingHours.DayOfWeek)
+                    {
+                        case 1: // dla sqla pierwszy dzien tygodnia to niedziela
+                            openingHours.DayName = Resources.Texts.DayWeek7;
+                            break;
+                        case 2:
+                            openingHours.DayName = Resources.Texts.DayWeek1;
+                            break;
+                        case 3:
+                            openingHours.DayName = Resources.Texts.DayWeek2;
+                            break;
+                        case 4:
+                            openingHours.DayName = Resources.Texts.DayWeek3;
+                            break;
+                        case 5:
+                            openingHours.DayName = Resources.Texts.DayWeek4;
+                            break;
+                        case 6:
+                            openingHours.DayName = Resources.Texts.DayWeek5;
+                            break;
+                        case 7:
+                            openingHours.DayName = Resources.Texts.DayWeek6;
+                            break;
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return openingHours;
+        }
+
         // zwraca kompleks -> dane kompleksu, w tabeli kompleks zawsze jest jeden rekord
         public static ComplexCourt GetComplex()
         {
@@ -124,6 +178,8 @@ namespace SystemRezerwacjiKortow.Database
                             City = (string)reader["City"],
                             Street = (string)reader["Street"],
                             ZipCode = (string)reader["ZipCode"],
+                            FirstWinterSeasonMonth = (int)reader["FirstWinterSeasonMonth"],
+                            LastWinterSeasonMonth = (int)reader["LastWinterSeasonMonth"],
                         };
                     }
                     SqlDatabase.CloseConnection(connection);

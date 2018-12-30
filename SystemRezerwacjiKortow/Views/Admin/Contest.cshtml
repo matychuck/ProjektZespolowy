@@ -4,12 +4,12 @@
     ViewBag.Title = "Contest";
 }
 
-<h2>Contest</h2>
+<h2>@SystemRezerwacjiKortow.Resources.Texts.Contests</h2>
 
 @Html.Partial("_AdminPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.CreateNew, "Create")
 </p>
 <table class="table">
     <tr>
@@ -38,9 +38,9 @@
                 @Html.DisplayFor(modelItem => item.DateTo)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ContestID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ContestID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ContestID })
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Edit, "Edit", new { id = item.ContestID }) |
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Details, "Details", new { id = item.ContestID }) |
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Delete, "Delete", new { id = item.ContestID })
             </td>
         </tr>
     }

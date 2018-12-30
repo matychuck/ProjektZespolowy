@@ -24,5 +24,9 @@ namespace SystemRezerwacjiKortow.Models
         [Display(Name = "PostalCode", ResourceType = typeof(Texts))]
         [StringLength(6)]
         public string ZipCode { get; set; }
+
+        public int FirstWinterSeasonMonth { get; set; } // start sezonu ziomoweo - miesiąc
+
+        public int LastWinterSeasonMonth { get; set; }  // koniec sezonu zimowego - miesiąc
     }
 }

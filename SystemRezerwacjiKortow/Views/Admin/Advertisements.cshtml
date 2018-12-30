@@ -4,12 +4,12 @@
     ViewBag.Title = "Advertisements";
 }
 
-<h2>Advertisements</h2>
+<h2>@SystemRezerwacjiKortow.Resources.Texts.Advertisements</h2>
 
 @Html.Partial("_AdminPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.CreateNew, "Create")
 </p>
 <table class="table">
     <tr>
@@ -50,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.Payment)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Edit, "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Details, "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Delete, "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
     }

@@ -42,12 +42,14 @@ namespace SystemRezerwacjiKortow.Models
         [Compare("Password", ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "ErrorPasswordMatch")]
         public string ConfirmPassword { get; set; }
 
+        [Display(Name = "IsEmailVeryfied", ResourceType = typeof(Texts))]
         public bool IsEmailVeryfied { get; set; }
 
         [Display(Name = "RoleID", ResourceType = typeof(Texts))]
         [Range(0, 5)]
         public int RoleID { get; set; }
 
+        [Display(Name = "CustomerID", ResourceType = typeof(Texts))]
         public int CustomerID { get; set; }
 
        // [Display(Name = "Adres")]
@@ -56,7 +58,7 @@ namespace SystemRezerwacjiKortow.Models
 
         public string ActivationCode { get; set; }
 
-        [Display(Name = "Role", ResourceType = typeof(Texts))]
+        [Display(Name = "RoleName", ResourceType = typeof(Texts))]
         public string RoleName { get; set; }
     }
 }

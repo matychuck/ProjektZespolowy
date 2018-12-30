@@ -25,6 +25,7 @@ namespace SystemRezerwacjiKortow.Models
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterDate")]
         public DateTime DateTo { get; set; }
 
+        [Display(Name = "CourtID", ResourceType = typeof(Texts))]
         public int CourtID { get; set; }
 
         [Display(Name = "DuePayment", ResourceType = typeof(Texts))]

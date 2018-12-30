@@ -468,4 +468,52 @@
   <data name="SurfaceType" xml:space="preserve">
     <value>Typ powierzchni</value>
   </data>
+  <data name="ComplexData" xml:space="preserve">
+    <value>Dane kompleksu</value>
+  </data>
+  <data name="Contests" xml:space="preserve">
+    <value>Turnieje</value>
+  </data>
+  <data name="CourtID" xml:space="preserve">
+    <value>Kort ID</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Utwórz nowy</value>
+  </data>
+  <data name="CustomerID" xml:space="preserve">
+    <value>ID klienta</value>
+  </data>
+  <data name="DayOfWeekNumer" xml:space="preserve">
+    <value>Numer dnia tygodnia</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Szczegóły</value>
+  </data>
+  <data name="EditComplex" xml:space="preserve">
+    <value>Edycja danych kompleksu</value>
+  </data>
+  <data name="EditOpeningHours" xml:space="preserve">
+    <value>Edycja godzin otwarcia</value>
+  </data>
+  <data name="GearName" xml:space="preserve">
+    <value>Nazwa sprzętu</value>
+  </data>
+  <data name="IsEmailVeryfied" xml:space="preserve">
+    <value>Czy email potwierdzony</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Godziny otwarcia</value>
+  </data>
+  <data name="ReturnToList" xml:space="preserve">
+    <value>Powrót do listy</value>
+  </data>
+  <data name="TimeFrom" xml:space="preserve">
+    <value>Czas od</value>
+  </data>
+  <data name="TimeTo" xml:space="preserve">
+    <value>Czas do</value>
+  </data>
 </root>

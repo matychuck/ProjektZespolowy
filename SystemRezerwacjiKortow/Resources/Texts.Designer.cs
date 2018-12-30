@@ -124,6 +124,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Complex data.
+        /// </summary>
+        public static string ComplexData {
+            get {
+                return ResourceManager.GetString("ComplexData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Complex name.
         /// </summary>
         public static string ComplexName {
@@ -151,11 +160,29 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contests.
+        /// </summary>
+        public static string Contests {
+            get {
+                return ResourceManager.GetString("Contests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Court.
         /// </summary>
         public static string Court {
             get {
                 return ResourceManager.GetString("Court", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Court ID.
+        /// </summary>
+        public static string CourtID {
+            get {
+                return ResourceManager.GetString("CourtID", resourceCulture);
             }
         }
         
@@ -196,6 +223,24 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create new.
+        /// </summary>
+        public static string CreateNew {
+            get {
+                return ResourceManager.GetString("CreateNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer ID.
+        /// </summary>
+        public static string CustomerID {
+            get {
+                return ResourceManager.GetString("CustomerID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date of birth.
         /// </summary>
         public static string DateOfBirth {
@@ -210,6 +255,15 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string DayOfWeek {
             get {
                 return ResourceManager.GetString("DayOfWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of day of week.
+        /// </summary>
+        public static string DayOfWeekNumer {
+            get {
+                return ResourceManager.GetString("DayOfWeekNumer", resourceCulture);
             }
         }
         
@@ -277,6 +331,24 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discount.
         /// </summary>
         public static string Discount {
@@ -300,6 +372,24 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit complex date.
+        /// </summary>
+        public static string EditComplex {
+            get {
+                return ResourceManager.GetString("EditComplex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit opening hours.
+        /// </summary>
+        public static string EditOpeningHours {
+            get {
+                return ResourceManager.GetString("EditOpeningHours", resourceCulture);
             }
         }
         
@@ -574,6 +664,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gear name.
+        /// </summary>
+        public static string GearName {
+            get {
+                return ResourceManager.GetString("GearName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
         public static string General {
@@ -700,6 +799,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is email veryfied.
+        /// </summary>
+        public static string IsEmailVeryfied {
+            get {
+                return ResourceManager.GetString("IsEmailVeryfied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is for doubles.
         /// </summary>
         public static string IsForDoubles {
@@ -786,6 +894,15 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string NewUser {
             get {
                 return ResourceManager.GetString("NewUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opening hours.
+        /// </summary>
+        public static string OpeningHours {
+            get {
+                return ResourceManager.GetString("OpeningHours", resourceCulture);
             }
         }
         
@@ -925,6 +1042,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Return to list.
+        /// </summary>
+        public static string ReturnToList {
+            get {
+                return ResourceManager.GetString("ReturnToList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Role ID.
         /// </summary>
         public static string RoleID {
@@ -1029,6 +1155,24 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string Surname {
             get {
                 return ResourceManager.GetString("Surname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time from.
+        /// </summary>
+        public static string TimeFrom {
+            get {
+                return ResourceManager.GetString("TimeFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time to.
+        /// </summary>
+        public static string TimeTo {
+            get {
+                return ResourceManager.GetString("TimeTo", resourceCulture);
             }
         }
         

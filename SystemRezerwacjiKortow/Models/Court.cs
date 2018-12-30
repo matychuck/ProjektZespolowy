@@ -9,6 +9,7 @@ namespace SystemRezerwacjiKortow.Models
 {
     public class Court
     {
+        [Display(Name = "CourtID", ResourceType = typeof(Texts))]
         public int CourtID { get; set; }
 
         [Display(Name = "CourtNumber", ResourceType = typeof(Texts))]

@@ -138,6 +138,9 @@
   <data name="Complex" xml:space="preserve">
     <value>Complex</value>
   </data>
+  <data name="ComplexData" xml:space="preserve">
+    <value>Complex data</value>
+  </data>
   <data name="ComplexName" xml:space="preserve">
     <value>Complex name</value>
   </data>
@@ -147,8 +150,14 @@
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
+  <data name="Contests" xml:space="preserve">
+    <value>Contests</value>
+  </data>
   <data name="Court" xml:space="preserve">
     <value>Court</value>
+  </data>
+  <data name="CourtID" xml:space="preserve">
+    <value>Court ID</value>
   </data>
   <data name="CourtIndoor" xml:space="preserve">
     <value>Indoor tennis court</value>
@@ -162,11 +171,20 @@
   <data name="Courts" xml:space="preserve">
     <value>Courts</value>
   </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Create new</value>
+  </data>
+  <data name="CustomerID" xml:space="preserve">
+    <value>Customer ID</value>
+  </data>
   <data name="DateOfBirth" xml:space="preserve">
     <value>Date of birth</value>
   </data>
   <data name="DayOfWeek" xml:space="preserve">
     <value>Day of week</value>
+  </data>
+  <data name="DayOfWeekNumer" xml:space="preserve">
+    <value>Number of day of week</value>
   </data>
   <data name="DayWeek1" xml:space="preserve">
     <value>Monday</value>
@@ -189,6 +207,12 @@
   <data name="DayWeek7" xml:space="preserve">
     <value>Sunday</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="Discount" xml:space="preserve">
     <value>Discount</value>
   </data>
@@ -197,6 +221,12 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
+  </data>
+  <data name="EditComplex" xml:space="preserve">
+    <value>Edit complex date</value>
+  </data>
+  <data name="EditOpeningHours" xml:space="preserve">
+    <value>Edit opening hours</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
@@ -288,6 +318,9 @@
   <data name="Gear" xml:space="preserve">
     <value>Gear</value>
   </data>
+  <data name="GearName" xml:space="preserve">
+    <value>Gear name</value>
+  </data>
   <data name="General" xml:space="preserve">
     <value>General</value>
   </data>
@@ -330,6 +363,9 @@
   <data name="IsCovered" xml:space="preserve">
     <value>Is covered</value>
   </data>
+  <data name="IsEmailVeryfied" xml:space="preserve">
+    <value>Is email veryfied</value>
+  </data>
   <data name="IsForDoubles" xml:space="preserve">
     <value>Is for doubles</value>
   </data>
@@ -359,6 +395,9 @@
   </data>
   <data name="NewUser" xml:space="preserve">
     <value>Are you a new user</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Opening hours</value>
   </data>
   <data name="PageTitle" xml:space="preserve">
     <value>Tennis court system</value>
@@ -405,6 +444,9 @@
   <data name="ReturnHome" xml:space="preserve">
     <value>Return to homepage</value>
   </data>
+  <data name="ReturnToList" xml:space="preserve">
+    <value>Return to list</value>
+  </data>
   <data name="RoleID" xml:space="preserve">
     <value>Role ID</value>
   </data>
@@ -440,6 +482,12 @@
   </data>
   <data name="Surname" xml:space="preserve">
     <value>Surname</value>
+  </data>
+  <data name="TimeFrom" xml:space="preserve">
+    <value>Time from</value>
+  </data>
+  <data name="TimeTo" xml:space="preserve">
+    <value>Time to</value>
   </data>
   <data name="UserManual" xml:space="preserve">
     <value>User's manual</value>
