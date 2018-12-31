@@ -11,7 +11,7 @@ namespace SystemRezerwacjiKortow.Models
     {
         public int ContestID { get; set; }
 
-        [Display(Name = "Nazwa eventu")]
+        [Display(Name = "EventName", ResourceType = typeof(Texts))]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Texts), ErrorMessageResourceName = "EnterName")]
         public string Name { get; set; }
 

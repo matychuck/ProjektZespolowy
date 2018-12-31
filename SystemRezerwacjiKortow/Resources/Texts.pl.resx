@@ -475,7 +475,7 @@
     <value>Turnieje</value>
   </data>
   <data name="CourtID" xml:space="preserve">
-    <value>Kort ID</value>
+    <value>ID kortu</value>
   </data>
   <data name="CreateNew" xml:space="preserve">
     <value>Utwórz nowy</value>
@@ -483,7 +483,7 @@
   <data name="CustomerID" xml:space="preserve">
     <value>ID klienta</value>
   </data>
-  <data name="DayOfWeekNumer" xml:space="preserve">
+  <data name="DayOfWeekNumber" xml:space="preserve">
     <value>Numer dnia tygodnia</value>
   </data>
   <data name="Delete" xml:space="preserve">
@@ -515,5 +515,71 @@
   </data>
   <data name="TimeTo" xml:space="preserve">
     <value>Czas do</value>
+  </data>
+  <data name="AddingCourt" xml:space="preserve">
+    <value>Dodawanie kortu</value>
+  </data>
+  <data name="AddingGear" xml:space="preserve">
+    <value>Dodawanie sprzętu</value>
+  </data>
+  <data name="CanReserver" xml:space="preserve">
+    <value>Czy może rezerwować</value>
+  </data>
+  <data name="DeleteQuestion" xml:space="preserve">
+    <value>Czy na pewno chcesz to usunąć</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Usuwanie</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Edytowanie</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>Czy jest adminem</value>
+  </data>
+  <data name="ContestID" xml:space="preserve">
+    <value>ID wydarzenia</value>
+  </data>
+  <data name="CyclicReservationID" xml:space="preserve">
+    <value>ID rezerwacji cyklicznej</value>
+  </data>
+  <data name="DateCancel" xml:space="preserve">
+    <value>Data anulowania rezerwacji</value>
+  </data>
+  <data name="DateEnd" xml:space="preserve">
+    <value>Data zakończenia</value>
+  </data>
+  <data name="DateInsert" xml:space="preserve">
+    <value>Data wpłynięcia rezerwacji</value>
+  </data>
+  <data name="DatePayment" xml:space="preserve">
+    <value>Data płatności</value>
+  </data>
+  <data name="DateStart" xml:space="preserve">
+    <value>Data rozpoczęcia</value>
+  </data>
+  <data name="DayInterval" xml:space="preserve">
+    <value>Częstotliwość (co ile dni)</value>
+  </data>
+  <data name="DayOfMonth" xml:space="preserve">
+    <value>Dzień miesiąca</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="EnterDescription" xml:space="preserve">
+    <value>Opis jest wymagany</value>
+  </data>
+  <data name="GearAmount" xml:space="preserve">
+    <value>Ilość sprzętu</value>
+  </data>
+  <data name="GearID" xml:space="preserve">
+    <value>ID sprzętu</value>
+  </data>
+  <data name="IsExecuted" xml:space="preserve">
+    <value>Czy zakończone</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>ID użytkownika</value>
   </data>
 </root>

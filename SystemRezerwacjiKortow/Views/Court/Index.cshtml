@@ -4,12 +4,12 @@
     ViewBag.Title = "Korty";
 }
 
-<h2>Korty</h2>
+<h2>@SystemRezerwacjiKortow.Resources.Texts.Courts</h2>
 
 @Html.Partial("_AdminPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.CreateNew, "Create")
 </p>
 <table class="table">
     <tr>
@@ -56,8 +56,8 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CourtID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CourtID })
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Edit, "Edit", new { id = item.CourtID }) |
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Delete, "Delete", new { id = item.CourtID })
             </td>
         </tr>
     }

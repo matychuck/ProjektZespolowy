@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddingCourt" xml:space="preserve">
+    <value>Adding court</value>
+  </data>
+  <data name="AddingGear" xml:space="preserve">
+    <value>Adding gear</value>
+  </data>
   <data name="AdminPanel" xml:space="preserve">
     <value>Admin panel</value>
   </data>
@@ -125,6 +131,9 @@
   </data>
   <data name="Amount" xml:space="preserve">
     <value>Amount</value>
+  </data>
+  <data name="CanReserver" xml:space="preserve">
+    <value>Can reserve</value>
   </data>
   <data name="ChangePassword" xml:space="preserve">
     <value>Change password</value>
@@ -177,13 +186,31 @@
   <data name="CustomerID" xml:space="preserve">
     <value>Customer ID</value>
   </data>
+  <data name="DateCancel" xml:space="preserve">
+    <value>Date cancel reservation</value>
+  </data>
+  <data name="DateEnd" xml:space="preserve">
+    <value>Date end</value>
+  </data>
   <data name="DateOfBirth" xml:space="preserve">
     <value>Date of birth</value>
+  </data>
+  <data name="DatePayment" xml:space="preserve">
+    <value>Date payment</value>
+  </data>
+  <data name="DateStart" xml:space="preserve">
+    <value>Date start</value>
+  </data>
+  <data name="DayInterval" xml:space="preserve">
+    <value>Interval (how many days)</value>
+  </data>
+  <data name="DayOfMonth" xml:space="preserve">
+    <value>Day of month</value>
   </data>
   <data name="DayOfWeek" xml:space="preserve">
     <value>Day of week</value>
   </data>
-  <data name="DayOfWeekNumer" xml:space="preserve">
+  <data name="DayOfWeekNumber" xml:space="preserve">
     <value>Number of day of week</value>
   </data>
   <data name="DayWeek1" xml:space="preserve">
@@ -210,6 +237,15 @@
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="DeleteQuestion" xml:space="preserve">
+    <value>Are you sure you want to delete this</value>
+  </data>
+  <data name="DeleteTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
   </data>
@@ -227,6 +263,9 @@
   </data>
   <data name="EditOpeningHours" xml:space="preserve">
     <value>Edit opening hours</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
@@ -257,6 +296,9 @@
   </data>
   <data name="EnterDate" xml:space="preserve">
     <value>Date field is required</value>
+  </data>
+  <data name="EnterDescription" xml:space="preserve">
+    <value>Description field is required</value>
   </data>
   <data name="EnterName" xml:space="preserve">
     <value>Name field is required</value>
@@ -318,6 +360,12 @@
   <data name="Gear" xml:space="preserve">
     <value>Gear</value>
   </data>
+  <data name="GearAmount" xml:space="preserve">
+    <value>Gear amount</value>
+  </data>
+  <data name="GearID" xml:space="preserve">
+    <value>Gear ID</value>
+  </data>
   <data name="GearName" xml:space="preserve">
     <value>Gear name</value>
   </data>
@@ -359,6 +407,9 @@
   </data>
   <data name="InvalidUser" xml:space="preserve">
     <value>The user with the given email address does not exist</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>Is admin</value>
   </data>
   <data name="IsCovered" xml:space="preserve">
     <value>Is covered</value>
@@ -488,6 +539,9 @@
   </data>
   <data name="TimeTo" xml:space="preserve">
     <value>Time to</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>User ID</value>
   </data>
   <data name="UserManual" xml:space="preserve">
     <value>User's manual</value>

@@ -4,12 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Sprzęt</h2>
+<h2>@SystemRezerwacjiKortow.Resources.Texts.Gear</h2>
 
 @Html.Partial("_AdminPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.CreateNew, "Create")
 </p>
 <table class="table">
     <tr>
@@ -38,8 +38,8 @@
                 @Html.DisplayFor(modelItem => item.Amount)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.GearID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.GearID })
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Edit, "Edit", new { id = item.GearID }) |
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Delete, "Delete", new { id = item.GearID })
             </td>
         </tr>
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using SystemRezerwacjiKortow.Resources;
 
 namespace SystemRezerwacjiKortow.Models
 {
@@ -10,49 +11,50 @@ namespace SystemRezerwacjiKortow.Models
     {
         public int ReservationID { get; set; }
 
+        [Display(Name = "UserID", ResourceType = typeof(Texts))]
         public int UserID { get; set; }
 
-        [Display(Name = "Data rozpoczecia")]
+        [Display(Name = "DateStart", ResourceType = typeof(Texts))]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateFrom { get; set; }
 
-        [Display(Name = "Data zakonczenia")]
+        [Display(Name = "DateEnd", ResourceType = typeof(Texts))]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateTo { get; set; }
 
-        [Display(Name = "Należna płatność")]
+        [Display(Name = "DuePayment", ResourceType = typeof(Texts))]
         [DataType(DataType.Currency)]
         public decimal Payment { get; set; }
 
-        [Display(Name = "Numer sprzętu")]
+        [Display(Name = "GearID", ResourceType = typeof(Texts))]
         public int GearID { get; set; }
 
-        [Display(Name = "Ilość sprzętu")]
+        [Display(Name = "GearAmount", ResourceType = typeof(Texts))]
         public int GearAmount { get; set; }
 
-        [Display(Name = "Numer kortu")]
+        [Display(Name = "CourtID", ResourceType = typeof(Texts))]
         public int CourtID { get; set; }
 
-        [Display(Name = "Data wpłynięcia rezerwacji")]
+        [Display(Name = "DateInsert", ResourceType = typeof(Texts))]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateOfInsert { get; set; }
 
-        [Display(Name = "Data anulowania rezerwacji")]
+        [Display(Name = "DateCancel", ResourceType = typeof(Texts))]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateOfCancel { get; set; }
 
-        [Display(Name = "Czy zakończone")]
+        [Display(Name = "IsExecuted", ResourceType = typeof(Texts))]
         [Range(0, 1)]
         public int IsExecuted { get; set; }
 
-        [Display(Name = "Numer rezerwacji cyklicznej")]
+        [Display(Name = "CyclicReservationID", ResourceType = typeof(Texts))]
         public int CyclicReservationID { get; set; }
 
-        [Display(Name = "Numer wydarzenia")]
+        [Display(Name = "ContestID", ResourceType = typeof(Texts))]
         public int ContestID { get; set; }
     }
 }
