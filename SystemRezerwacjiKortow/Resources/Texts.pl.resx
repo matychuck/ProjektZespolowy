@@ -582,4 +582,19 @@
   <data name="UserID" xml:space="preserve">
     <value>ID użytkownika</value>
   </data>
+  <data name="Weekend" xml:space="preserve">
+    <value>Weekend</value>
+  </data>
+  <data name="WorkingDays" xml:space="preserve">
+    <value>Poniedziałek - Piątek</value>
+  </data>
+  <data name="ClientDiscount" xml:space="preserve">
+    <value>10% zniżki od każdej ceny</value>
+  </data>
+  <data name="AllGears" xml:space="preserve">
+    <value>Wszystkie sprzęty</value>
+  </data>
+  <data name="AllCourts" xml:space="preserve">
+    <value>Wszystkie korty</value>
+  </data>
 </root>

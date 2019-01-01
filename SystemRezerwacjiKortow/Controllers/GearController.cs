@@ -16,6 +16,12 @@ namespace SystemRezerwacjiKortow.Controllers
         {
             return View(list);
         }
+        public ActionResult PriceListGear()
+        {
+            ViewBag.Message = "Nasza oferta";
+            List<Gear> listGear = SqlGear.GetGears();
+            return View(listGear);
+        }
 
         // GET: Gear/Details/5
         public ActionResult Details(int id)
@@ -28,6 +34,7 @@ namespace SystemRezerwacjiKortow.Controllers
         {
             return View();
         }
+
 
         // POST: Gear/Create
         [HttpPost]

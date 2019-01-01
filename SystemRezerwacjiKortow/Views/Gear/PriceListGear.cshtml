@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<SystemRezerwacjiKortow.Models.Gear>
 @{
     ViewBag.Title = "PriceListGear";
 }
@@ -29,79 +29,40 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody style="font-size:medium">
-                    <tr class="success">
-                        <td>Rakieta tenisowa Wilson Blade</td>
-                        <td>1</td>
-                        <td> 10zł </td>
-                    </tr>
-                    <tr class="success">
-                        <td > Rakieta tenisowa Babolat Aero
-                        </td>
-                        <td>1</td>
-                        <td> 12zł </td>
-                    </tr>
-                    <tr class="success">
-                        <td>Rakieta tenisowa Head MXG</td>
-                        <td>1</td>
-                        <td> 15zł </td>
-                    </tr>
-                    <tr class="success">
-                        <td>Rakieta tenisowa Wilson Pro Staff RF97 </td>
-                        <td>1</td>
-                        <td> 18zł </td>
-                    </tr>
-                    <tr class="warning">
-                        <td>Piłki seniorskie Babolat </td>
-                        <td>5</td>
-                        <td>5zł </td>
-                    </tr>
-                    <tr class="warning">
-                        <td>Piłki seniorskie Babolat </td>
-                        <td>25</td>
-                        <td> 15zł </td>
-                    </tr>
-                    <tr class="yellow-row">
-                        <td>Piłki juniorskie Tecnifibre </td>
-                        <td>15</td>
-                        <td> 10zł </td>
-                    </tr>
-                    <tr class="yellow-row">
-                        <td>Piłki juniorskie Tecnifibre </td>
-                        <td>40</td>
-                        <td> 15zł </td>
-                    </tr>
-                    <tr class="blue-row">
-                        <td>Maszyna do wyrzucania piłek </td>
-                        <td>1</td>
-                        <td> 15zł/h </td>
-                    </tr>
-                    <tr class="blue-row">
-                        <td>Maszyna do wyrzucania piłek - karnet na 10godzin </td>
-                        <td>1</td>
-                        <td> 100zł/h </td>
-                    </tr>
-
-                    <tr class="znizka-row">
-                        <td style="font-size:large">
-                            Zniżka stałego klienta
-                            <img src="https://dl1.cbsistatic.com/i/r/2017/02/01/495a0923-7366-4145-80c4-01696adb5646/thumbnail/32x32/5ef057a4b4eb621949d290ef5a18ffe8/fmimg7012791019915209795.png" />
+                @foreach (var item in Model)
+                {
+                    <tr>
                         <td>
-                            dowolna ilość
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PriceH)
                         </td>
 
-                        <td style="color:forestgreen; font-size:large">
-                            -10% od każdej ceny
-                        </td>
                     </tr>
-                </tbody>
+                }
+                <tr class="znizka-row">
+                    <td >
+                        @SystemRezerwacjiKortow.Resources.Texts.Discount
+                        <img src="https://dl1.cbsistatic.com/i/r/2017/02/01/495a0923-7366-4145-80c4-01696adb5646/thumbnail/32x32/5ef057a4b4eb621949d290ef5a18ffe8/fmimg7012791019915209795.png" />
+                    <td>
+                        @SystemRezerwacjiKortow.Resources.Texts.AllGears
+                    </td>
+                    
+            <td style="color:forestgreen">
+                @SystemRezerwacjiKortow.Resources.Texts.ClientDiscount
+            </td>
+                </tr>
             </table>
         </div>
     </div>
 </div>
 
 <script>
-    (function ($) {
+(function ($) {
         $.fn.extend({
             tableAddCounter: function (options) {
 
@@ -136,11 +97,11 @@
                 });
             }
         });
-    })(jQuery);
+})(jQuery);
 
-    $(document).ready(function () {
+$(document).ready(function () {
         $('.table').tableAddCounter();
         $.getScript("http://code.jquery.com/ui/1.9.2/jquery-ui.js").done(function (script, textStatus) { $('tbody').sortable(); $(".alert-info").alert('close'); $(".alert-success").show(); });
-    });
+});
 </script>
 

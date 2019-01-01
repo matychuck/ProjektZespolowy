@@ -20,7 +20,16 @@ namespace SystemRezerwacjiKortow.Controllers
 
             return View(list);
         }
-       
+
+        public ActionResult PriceList()
+        {
+            return View(list);
+        }
+        public ActionResult PriceListWinter()
+        {
+            return View(list);
+        }
+
 
         // GET: Court/Details/5
         public ActionResult Details(int id)

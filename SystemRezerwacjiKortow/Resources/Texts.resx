@@ -129,6 +129,12 @@
   <data name="Advertisements" xml:space="preserve">
     <value>Advertisements</value>
   </data>
+  <data name="AllCourts" xml:space="preserve">
+    <value>All Courts</value>
+  </data>
+  <data name="AllGears" xml:space="preserve">
+    <value>All Gears</value>
+  </data>
   <data name="Amount" xml:space="preserve">
     <value>Amount</value>
   </data>
@@ -140,6 +146,9 @@
   </data>
   <data name="City" xml:space="preserve">
     <value>City</value>
+  </data>
+  <data name="ClientDiscount" xml:space="preserve">
+    <value>-10% from each price</value>
   </data>
   <data name="CompanyName" xml:space="preserve">
     <value>Company name</value>
@@ -561,6 +570,9 @@
   <data name="VerifyYourEmail" xml:space="preserve">
     <value>First, verify your email address</value>
   </data>
+  <data name="Weekend" xml:space="preserve">
+    <value>Weekend</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
   </data>
@@ -569,5 +581,8 @@
   </data>
   <data name="WinterSeason" xml:space="preserve">
     <value>Winter season 2019</value>
+  </data>
+  <data name="WorkingDays" xml:space="preserve">
+    <value>Monday - Friday</value>
   </data>
 </root>
