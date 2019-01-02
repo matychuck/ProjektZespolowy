@@ -255,6 +255,10 @@
     <Content Include="Views\Shared\_PriceListPartial.cshtml" />
     <Content Include="Views\Court\PriceListWinter.cshtml" />
     <Content Include="Views\Gear\PriceListGear.cshtml" />
+    <Content Include="Views\User\RemindPassword.cshtml" />
+    <Content Include="Views\User\VerifyRemindPassword.cshtml" />
+    <Content Include="Views\User\Sent.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

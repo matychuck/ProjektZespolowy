@@ -435,6 +435,64 @@ namespace SystemRezerwacjiKortow.Database
             return result;
         }
 
+        public static string GetUserPassword(User login)
+        {
+            string password = "";
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("SELECT Password FROM [VUser] WHERE Email = @email", connection);
+                    command.Parameters.AddWithValue("@email", login.Email);
+
+                    command.CommandTimeout = SqlDatabase.Timeout;
+
+                    var result = command.ExecuteReader();
+                    while (result.Read())
+                    {
+                        password = result.GetString(0);
+                    }
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return password;
+        }
+
+        // zapis nowego kodu aktywacyjnego
+        // email -> wprowadzony przez użytkownika email
+        // ActivationCode -> kod aktywacyjny wycięty z linka (guid ma stałą liczbę znaków)
+        public static bool SaveUserActivationCode(string email, string ActivationCode)
+        {
+            bool result = false;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("dbo.SaveUserActivationCode", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ActivationCode", ActivationCode);
+                    command.Parameters.AddWithValue("@email", email);
+                    command.CommandTimeout = SqlDatabase.Timeout;
+
+                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
+                    //command.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        result = true;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+
+                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
+                    //customer.CustomerID = int.Parse(command.Parameters["@ReturnValue"].Value.ToString());
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return result;
+        }
 
     }
 }

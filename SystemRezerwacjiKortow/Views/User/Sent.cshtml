@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Sent";
+}
+@if (Convert.ToBoolean(ViewBag.Message) == true)
+{
+    <h2>Wiadomość z Twoim hasłem została wysłana na poczte.</h2><br />
+    @Html.ActionLink("Powrót na stronę główną", "Index", "Home")
+}
+else if (Convert.ToBoolean(ViewBag.Message) == false)
+{
+    <h2>Error: klient o podanym adresie email nie istnieje w naszej bazie</h2><br />
+    @Html.ActionLink("Powrót na stronę główną", "Index", "Home")
+}

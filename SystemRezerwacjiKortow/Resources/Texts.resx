@@ -309,8 +309,17 @@
   <data name="EnterDescription" xml:space="preserve">
     <value>Description field is required</value>
   </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Enter your e-mail</value>
+  </data>
   <data name="EnterName" xml:space="preserve">
     <value>Name field is required</value>
+  </data>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>Enter new password</value>
+  </data>
+  <data name="EnterOldPassword" xml:space="preserve">
+    <value>Enter old password</value>
   </data>
   <data name="EnterYourCity" xml:space="preserve">
     <value>City field is required</value>
@@ -500,6 +509,12 @@
   </data>
   <data name="RememberMe" xml:space="preserve">
     <value>Remember me</value>
+  </data>
+  <data name="RemindPassword" xml:space="preserve">
+    <value>I forgot my password</value>
+  </data>
+  <data name="RepeatPassword" xml:space="preserve">
+    <value>Repeat password</value>
   </data>
   <data name="ReturnHome" xml:space="preserve">
     <value>Return to homepage</value>

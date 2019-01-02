@@ -19,66 +19,67 @@
             <td width="20%">
                 <center>
                     <a href="#"><font color="black">@SystemRezerwacjiKortow.Resources.Texts.General</font></a><br /><br />
-                    <a href="#"><font color="black">@SystemRezerwacjiKortow.Resources.Texts.ChangePassword</font></a><br /><br />
-                    <a href="#"><font color="black">@SystemRezerwacjiKortow.Resources.Texts.SetUpPayments</font></a><br /><br />
-                    <a href="#"><font color="black">@SystemRezerwacjiKortow.Resources.Texts.PaymentsHistory</font></a>
-                </center>
-            </td>
-            <td width="60%">
-                <center> @ViewBag.user.FirstName  @ViewBag.user.Surname</center><br />
-                <center> @SystemRezerwacjiKortow.Resources.Texts.Email: @ViewBag.user.Email</center>
-            </td>
-            <td width="20%"><input onclick="location.href = '@(Url.Action("EditProfile", "User"))'" value=@SystemRezerwacjiKortow.Resources.Texts.Edit class="btn btn-default" /></td>
-        </tr>
+                    <a href="#"><font color="black">
+    @Html.ActionLink(@SystemRezerwacjiKortow.Resources.Texts.ChangePassword,"ChangePassword")</font></a><br /><br />
+<a href="#"><font color="black">@SystemRezerwacjiKortow.Resources.Texts.SetUpPayments</font></a><br /><br />
+<a href="#"><font color="black">@SystemRezerwacjiKortow.Resources.Texts.PaymentsHistory</font></a>
+</center>
+</td>
+<td width="60%">
+<center> @ViewBag.user.FirstName  @ViewBag.user.Surname</center><br />
+<center> @SystemRezerwacjiKortow.Resources.Texts.Email: @ViewBag.user.Email</center>
+</td>
+<td width="20%"><input onclick="location.href = '@(Url.Action("EditProfile", "User"))'" value=@SystemRezerwacjiKortow.Resources.Texts.Edit class="btn btn-default" /></td>
+</tr>
 
 
-    </table>
-    @*
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.CompanyName)
+</table>
+@*
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.CompanyName)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.City)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Street, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Street)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.ZipCode)
+        </div>
+    </div>
+
+    <div class="form-group" >
+        @Html.LabelFor(model => model.DiscountValue, htmlAttributes: new { @class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DiscountValue)
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <div>
+                @Html.ActionLink("Edytuj", "EditProfile", "User")
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.City)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Street, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.Street)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.ZipCode)
-            </div>
-        </div>
-
-        <div class="form-group" >
-            @Html.LabelFor(model => model.DiscountValue, htmlAttributes: new { @class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.DisplayFor(model => model.DiscountValue)
-            </div>
-        </div>
-
-
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <div>
-                    @Html.ActionLink("Edytuj", "EditProfile", "User")
-                </div>
-            </div>
-        </div>*@
+    </div>*@
 </div>
 
 

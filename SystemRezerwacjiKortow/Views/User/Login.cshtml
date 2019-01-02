@@ -73,9 +73,9 @@ else
         }
     }
 }
-<div>
-    @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.ReturnHome, "Index", "Home")
-</div>
+            <div>
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.ReturnHome, "Index", "Home")  @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.RemindPassword, "RemindPassword", "User")
+            </div>
 
 <div>
     @SystemRezerwacjiKortow.Resources.Texts.NewUser? <strong>@Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.RegisterNow, "Registration", "User")</strong> @SystemRezerwacjiKortow.Resources.Texts.JustNow!

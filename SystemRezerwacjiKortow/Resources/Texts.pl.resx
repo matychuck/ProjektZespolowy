@@ -597,4 +597,19 @@
   <data name="AllCourts" xml:space="preserve">
     <value>Wszystkie korty</value>
   </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Wpisz swój e-mail</value>
+  </data>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>Wpisz nowe hasło</value>
+  </data>
+  <data name="EnterOldPassword" xml:space="preserve">
+    <value>Wpisz stare hasło</value>
+  </data>
+  <data name="RemindPassword" xml:space="preserve">
+    <value>Zapomniałem hasła</value>
+  </data>
+  <data name="RepeatPassword" xml:space="preserve">
+    <value>Powtórz hasło</value>
+  </data>
 </root>

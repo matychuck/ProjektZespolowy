@@ -97,6 +97,152 @@ namespace SystemRezerwacjiKortow.Controllers
             ViewBag.Status = Status;
             return View();
         }
+        //Przypomnienie hasła
+        [NonAction]
+        public void SendRemindPasswordLink(string email, string activationCode, string firstName)
+        {
+            var verifyUrl = "/User/VerifyRemindPassword/" + activationCode;
+            var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
+
+            string subject = "Przypomnienie hasła";
+
+            string body = "Kliknij w poniższy link, aby kontynuować procedurę zmiany hasła.<br/>" +
+                "Jeśli to nie ty wysyłałeś prośbę o przypomnienie hasła, zignoruj tego e-maila lub skontaktuj się z administratorem" +
+                " <br/><a href='" + link + "'>" + link + "</a> ";
+
+            Email.SendEmail(subject, body, email, firstName);
+        }
+        [HttpGet]
+        public ActionResult VerifyRemindPassword(string id)
+        {
+            bool Status = false;
+           
+
+            if (id!=null)
+            {
+
+                Status = true;
+            }
+            else
+            {
+                ViewBag.Message = "Nieprawidłowe żądanie";
+            }
+            ViewBag.Code = id;
+            ViewBag.Status = Status;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult VerifyRemindPassword(string newPassword, string repeatPassword)
+        {
+            string code=null;
+            string url = null;
+            url = Request.Url.ToString();
+            string[] collection = url.Split('/');
+            bool Status = false;
+            
+            if ((newPassword == repeatPassword))
+            {
+                code = collection[collection.Length - 1];
+                    Status = SqlUser.RemindPassword(Crypto.Hash(newPassword), code);
+                
+                
+            }
+            else
+            {
+                ViewBag.Message = "Nieprawidłowe żądanie ";
+            }
+
+
+            return RedirectToAction("Logout");
+        }
+
+        
+        public ActionResult Sent(bool mode)
+        {
+            ViewBag.Message = mode;
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangePassword(string oldPassword, string newPassword, string repeatPassword)
+        {
+            string password = null;
+            User tmp = SqlUser.GetUser(User.Identity.Name);
+            password = SqlUser.GetUserPassword(tmp);
+
+            if (Crypto.Hash(oldPassword) != password)
+            {
+                ViewBag.Message = "Stare hasło nie jest prawidłowe! ";
+                return View();
+            }
+            else if(newPassword != repeatPassword)
+            {
+                ViewBag.Message = "Hasła nie są takie same! ";
+                return View();
+
+            }
+            else if (newPassword == repeatPassword)
+            {
+                
+                bool status = SqlUser.ChangePassword(Crypto.Hash(oldPassword), Crypto.Hash(newPassword), tmp.Email);
+                return RedirectToAction("Logout");
+            }
+            else
+            {
+                ViewBag.Message = "Nie wiem jak to zrobiłeś/aś ale no nie pykło ";
+                return View();
+            }
+           
+
+        }
+
+        [HttpGet]
+        public ActionResult RemindPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemindPassword(string emailToSend)
+        {
+
+            bool Status = false;
+            User tmp = SqlUser.GetUser(emailToSend);
+
+            //string pass = SqlUser.GetUserPassword(tmp);
+            if (tmp != null)
+            {
+                string activationCode = Guid.NewGuid().ToString();
+                if(SqlUser.SaveUserActivationCode(emailToSend,activationCode))
+                {
+                    SendRemindPasswordLink(emailToSend, activationCode, tmp.FirstName);
+                    Status = true; //wyświetli się w widoku komunikat o udanej próbie wysłania powiadomienia o haśle
+                }
+                
+            }
+            else
+            {
+                Status = false; //wyświetli się w widoku komunikat o błędzie
+            }
+            ViewBag.Message = Status;
+            return RedirectToAction("Sent", new { mode = Status });
+        }
+
+
+
+
+
+
+
+
 
         // do logowania
         [HttpGet]
