@@ -162,18 +162,25 @@ namespace SystemRezerwacjiKortow.Database
             return court;
         }
 
-        // zwraca konkretny kort
-        public static decimal GetCourtPrice(DateTime DateStart, DateTime DateEnd, int CourtID)
+        // zwraca cenę konkretnego kortu uwzględniając zniżkę klienta
+        // DateStart - data rozpoczęcia wypożyczenia/rezerwacji
+        // DateEnd - data zakończenia wypożyczenia/rezerwacji
+        // CourtID - id kortu, którego cenę chcemy policzyć (otrzymana cena uwzględnia godziny otwarcia kortów
+        // cena w niedzielę dla kortu o id 2 przy cenniku zimowym jest 300, godziny otwarcia w niedzielę np. 12-15, rezerwacja 10-12 da cenę 0, 12-13 da 300
+        // UserID - id użytkownika, który wypozycza (pozwala to na uwzględnienie zniżki dla danego klienta)
+        // 0 - oznacza ogólną cenę kortu w danym czasie, bez uwzględnienia klienta
+        public static decimal GetCourtPrice(DateTime DateStart, DateTime DateEnd, int CourtID, int UserID)
         {
             decimal price = 0;
             using (SqlConnection connection = SqlDatabase.NewConnection())
             {
                 if (SqlDatabase.OpenConnection(connection))
                 {
-                    var command = new SqlCommand("select [dbo].[GetPriceRentalCourt] (@DateStart, @DateEnd, @CourtID) as Price", connection);
+                    var command = new SqlCommand("select [dbo].[GetPriceRentalCourt] (@DateStart, @DateEnd, @CourtID, @UserID) as Price", connection);
                     command.Parameters.AddWithValue("@DateStart", DateStart);
                     command.Parameters.AddWithValue("@DateEnd", DateEnd);
                     command.Parameters.AddWithValue("@CourtID", CourtID);
+                    command.Parameters.AddWithValue("@UserID", UserID);
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
