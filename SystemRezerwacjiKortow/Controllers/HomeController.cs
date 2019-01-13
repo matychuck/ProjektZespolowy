@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,8 +39,9 @@ namespace SystemRezerwacjiKortow.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Complex = SqlCompany.GetComplex();
+            ViewBag.ContactEmail = ConfigurationManager.AppSettings["EmailAddress"];
+            ViewBag.OpeningHours = SqlCompany.GetOpeningHours();
             return View();
         }
       

@@ -79,6 +79,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Address.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Admin panel.
         /// </summary>
         public static string AdminPanel {
@@ -120,6 +129,15 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string Amount {
             get {
                 return ResourceManager.GetString("Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu In case of any questions about specific tennis court, please contact court&apos;s manager first (available at &lt;a href=&quot;#&quot;&gt;Courts&lt;/a&gt; page)..
+        /// </summary>
+        public static string CallCourtManagerNote {
+            get {
+                return ResourceManager.GetString("CallCourtManagerNote", resourceCulture);
             }
         }
         
@@ -1497,6 +1515,24 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string WinterSeason {
             get {
                 return ResourceManager.GetString("WinterSeason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Winter Season Beginning.
+        /// </summary>
+        public static string WinterSeasonBeginning {
+            get {
+                return ResourceManager.GetString("WinterSeasonBeginning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Winter Season Ending.
+        /// </summary>
+        public static string WinterSeasonEnding {
+            get {
+                return ResourceManager.GetString("WinterSeasonEnding", resourceCulture);
             }
         }
         
