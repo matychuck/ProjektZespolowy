@@ -4,72 +4,74 @@
 <h2>@SystemRezerwacjiKortow.Resources.Texts.Contact</h2>
 
 <address>
-    <p>
-        <strong>@SystemRezerwacjiKortow.Resources.Texts.Email: </strong>@ViewBag.ContactEmail
-    </p>
+    <div>
+        <p>
+            <strong>@SystemRezerwacjiKortow.Resources.Texts.Email: </strong>@ViewBag.ContactEmail
+        </p>
 
-    <p>
-        <strong>@SystemRezerwacjiKortow.Resources.Texts.ComplexName: </strong>@ViewBag.Complex.ComplexName<br />
-        <strong>@SystemRezerwacjiKortow.Resources.Texts.Address:</strong><br />
-        ul. @ViewBag.Complex.Street<br />
-        @ViewBag.Complex.ZipCode, @ViewBag.Complex.City
-    </p>
+        <p>
+            <strong>@SystemRezerwacjiKortow.Resources.Texts.ComplexName: </strong>@ViewBag.Complex.ComplexName<br />
+            <strong>@SystemRezerwacjiKortow.Resources.Texts.Address:</strong><br />
+            ul. @ViewBag.Complex.Street<br />
+            @ViewBag.Complex.ZipCode, @ViewBag.Complex.City
+        </p>
+    </div>
 
-    <p>
-        <strong>@SystemRezerwacjiKortow.Resources.Texts.OpeningHours:</strong><br />
-        <ul>
-            @foreach (var weekday in ViewBag.OpeningHours)
+    <div>
+        <iframe width="100%" height="320" src="https://maps.google.com/maps?width=100%&amp;height=320&amp;hl=en&amp;q=Bia%C5%82ystok%2C%20ul.%20Zwierzyniecka%2045A%2C%2015-333+(Korty)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            <a href="https://www.maps.ie/map-my-route/">Plot a route map</a>
+        </iframe>
+    </div>
+
+    <div>
+        @model IEnumerable<SystemRezerwacjiKortow.Models.OpeningHours>
+
+        @{
+            ViewBag.Title = "OpeningHoursList";
+        }
+
+        <strong>@SystemRezerwacjiKortow.Resources.Texts.OpeningHours: </strong>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DayName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeFrom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeTo)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
             {
-                <li> @SystemRezerwacjiKortow.Resources.Texts.DayOfWeek @weekday.DayOfWeek - @weekday.TimeFrom-@weekday.TimeTo</li>
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.DayName)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.TimeFrom)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.TimeTo)
+                    </th>
+                </tr>
             }
-        </ul>
-    </p>
+
+        </table>
+    </div>
 
     <p>
         <strong>@SystemRezerwacjiKortow.Resources.Texts.WinterSeasonBeginning: </strong> 1-@ViewBag.Complex.FirstWinterSeasonMonth-2018<br />
         <strong>@SystemRezerwacjiKortow.Resources.Texts.WinterSeasonEnding: </strong> 30-@ViewBag.Complex.LastWinterSeasonMonth-2019
     </p>
-
-    @model IEnumerable<SystemRezerwacjiKortow.Models.OpeningHours>
-
-    @{
-        ViewBag.Title = "OpeningHoursList";
-    }
-
-    <h2>Opening Hours</h2>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DayName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeFrom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeTo)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <th>
-                    @Html.DisplayFor(modelItem => item.DayName)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.TimeFrom)
-                </th>
-                <th>
-                    @Html.DisplayFor(modelItem => item.TimeTo)
-                </th>
-            </tr>
-        }
-
-    </table>
-
 </address>
 
 <p>
     @Html.Raw(SystemRezerwacjiKortow.Resources.Texts.CallCourtManagerNote)
 </p>
+
+<style scoped>
+</style>
