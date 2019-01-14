@@ -11,14 +11,14 @@
     <p>
         <strong>@SystemRezerwacjiKortow.Resources.Texts.ComplexName: </strong>@ViewBag.Complex.ComplexName<br />
         <strong>@SystemRezerwacjiKortow.Resources.Texts.Address:</strong><br />
-        ul. @ViewBag.Complex.Street<br/>
+        ul. @ViewBag.Complex.Street<br />
         @ViewBag.Complex.ZipCode, @ViewBag.Complex.City
     </p>
 
     <p>
-        <strong>@SystemRezerwacjiKortow.Resources.Texts.OpeningHours:</strong><br/>
+        <strong>@SystemRezerwacjiKortow.Resources.Texts.OpeningHours:</strong><br />
         <ul>
-            @foreach(var weekday in ViewBag.OpeningHours)
+            @foreach (var weekday in ViewBag.OpeningHours)
             {
                 <li> @SystemRezerwacjiKortow.Resources.Texts.DayOfWeek @weekday.DayOfWeek - @weekday.TimeFrom-@weekday.TimeTo</li>
             }
@@ -29,6 +29,44 @@
         <strong>@SystemRezerwacjiKortow.Resources.Texts.WinterSeasonBeginning: </strong> 1-@ViewBag.Complex.FirstWinterSeasonMonth-2018<br />
         <strong>@SystemRezerwacjiKortow.Resources.Texts.WinterSeasonEnding: </strong> 30-@ViewBag.Complex.LastWinterSeasonMonth-2019
     </p>
+
+    @model IEnumerable<SystemRezerwacjiKortow.Models.OpeningHours>
+
+    @{
+        ViewBag.Title = "OpeningHoursList";
+    }
+
+    <h2>Opening Hours</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DayName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeTo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.DayName)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.TimeFrom)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.TimeTo)
+                </th>
+            </tr>
+        }
+
+    </table>
 
 </address>
 

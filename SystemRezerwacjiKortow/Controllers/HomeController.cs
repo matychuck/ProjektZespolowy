@@ -42,7 +42,9 @@ namespace SystemRezerwacjiKortow.Controllers
             ViewBag.Complex = SqlCompany.GetComplex();
             ViewBag.ContactEmail = ConfigurationManager.AppSettings["EmailAddress"];
             ViewBag.OpeningHours = SqlCompany.GetOpeningHours();
-            return View();
+            //return View();
+            List<OpeningHours> openingHours = SqlCompany.GetOpeningHours();
+            return View(openingHours);
         }
       
     }
