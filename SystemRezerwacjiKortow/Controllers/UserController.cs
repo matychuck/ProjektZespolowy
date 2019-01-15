@@ -154,7 +154,7 @@ namespace SystemRezerwacjiKortow.Controllers
             }
 
 
-            return RedirectToAction("Logout");
+            return RedirectToAction("Login");  // użytkownik niezalogowany nie mół być wylogowany
         }
 
         
