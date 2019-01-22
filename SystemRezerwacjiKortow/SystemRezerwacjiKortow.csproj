@@ -160,6 +160,7 @@
     <Compile Include="Database\SqlCourt.cs" />
     <Compile Include="Database\SqlDatabase.cs" />
     <Compile Include="Database\SqlGear.cs" />
+    <Compile Include="Database\SqlPost.cs" />
     <Compile Include="Database\SqlTesty.cs" />
     <Compile Include="Database\SqlUser.cs" />
     <Compile Include="Email.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Models\Gear.cs" />
     <Compile Include="Models\Hire.cs" />
     <Compile Include="Models\OpeningHours.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />

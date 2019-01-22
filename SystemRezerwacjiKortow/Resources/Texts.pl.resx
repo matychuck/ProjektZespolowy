@@ -627,4 +627,28 @@
   <data name="UserName" xml:space="preserve">
     <value>Imię i nazwisko</value>
   </data>
+  <data name="DateOfInsert" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DescriptionDE" xml:space="preserve">
+    <value>Treść DE</value>
+  </data>
+  <data name="DescriptionEN" xml:space="preserve">
+    <value>Treść EN</value>
+  </data>
+  <data name="DescriptionPL" xml:space="preserve">
+    <value>Treść PL</value>
+  </data>
+  <data name="PostID" xml:space="preserve">
+    <value>ID posta</value>
+  </data>
+  <data name="TitleDE" xml:space="preserve">
+    <value>Tytuł DE</value>
+  </data>
+  <data name="TitleEN" xml:space="preserve">
+    <value>Tytuł EN</value>
+  </data>
+  <data name="TitlePL" xml:space="preserve">
+    <value>Tytuł PL</value>
+  </data>
 </root>

@@ -26,6 +26,12 @@ namespace SystemRezerwacjiKortow.Database
             //testDeleteAdvertisement();
             //SqlAdvertisement.GetAdvertisements(13);
 
+            // testy postu
+            //testInsertPost();
+            //testUpdatePost();
+            //SqlPost.GetPosts();
+            //SqlPost.GetPost(1);
+            //SqlPost.DeletePost(2);
         }
         #region User
         private static void testInsertUser()
@@ -118,5 +124,31 @@ namespace SystemRezerwacjiKortow.Database
         }
         #endregion
 
+        #region Post
+        private static void testInsertPost()
+        {
+            Post post = new Post();
+            post.TitlePL = "T_pl 3";
+            post.TitleEN = "T_en 3";
+            post.TitleDE = "T_de 3";
+            post.DescriptionPL = "D_pl 3";
+            post.DescriptionEN = "D_en 3";
+            post.DescriptionDE = "D_de 3";
+            SqlPost.InsertPost(post);
+        }
+
+        private static void testUpdatePost()
+        {
+            Post post = new Post();
+            post.TitlePL = "111T_pl";
+            post.TitleEN = "111T_en";
+            post.TitleDE = "2222T_de";
+            post.DescriptionPL = "2222D_pl";
+            post.DescriptionEN = "111D_en";
+            post.DescriptionDE = "222D_de";
+            SqlPost.UpdatePost(2, post);
+        }
+
+        #endregion
     }
 }

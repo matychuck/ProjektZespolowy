@@ -340,6 +340,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string DateOfInsert {
+            get {
+                return ResourceManager.GetString("DateOfInsert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date payment.
         /// </summary>
         public static string DatePayment {
@@ -489,6 +498,33 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content DE.
+        /// </summary>
+        public static string DescriptionDE {
+            get {
+                return ResourceManager.GetString("DescriptionDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content EN.
+        /// </summary>
+        public static string DescriptionEN {
+            get {
+                return ResourceManager.GetString("DescriptionEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content PL.
+        /// </summary>
+        public static string DescriptionPL {
+            get {
+                return ResourceManager.GetString("DescriptionPL", resourceCulture);
             }
         }
         
@@ -1177,6 +1213,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Post ID.
+        /// </summary>
+        public static string PostID {
+            get {
+                return ResourceManager.GetString("PostID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price per hour.
         /// </summary>
         public static string Price {
@@ -1416,6 +1461,33 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string TimeTo {
             get {
                 return ResourceManager.GetString("TimeTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title DE.
+        /// </summary>
+        public static string TitleDE {
+            get {
+                return ResourceManager.GetString("TitleDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title EN.
+        /// </summary>
+        public static string TitleEN {
+            get {
+                return ResourceManager.GetString("TitleEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title PL.
+        /// </summary>
+        public static string TitlePL {
+            get {
+                return ResourceManager.GetString("TitlePL", resourceCulture);
             }
         }
         

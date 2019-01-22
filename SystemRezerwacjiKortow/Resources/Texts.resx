@@ -489,6 +489,9 @@
   <data name="PostalCode" xml:space="preserve">
     <value>Postal code</value>
   </data>
+  <data name="PostID" xml:space="preserve">
+    <value>Post ID</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>Price per hour</value>
   </data>
@@ -614,5 +617,26 @@
   </data>
   <data name="WorkingDays" xml:space="preserve">
     <value>Monday - Friday</value>
+  </data>
+  <data name="DateOfInsert" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DescriptionDE" xml:space="preserve">
+    <value>Content DE</value>
+  </data>
+  <data name="DescriptionEN" xml:space="preserve">
+    <value>Content EN</value>
+  </data>
+  <data name="DescriptionPL" xml:space="preserve">
+    <value>Content PL</value>
+  </data>
+  <data name="TitleDE" xml:space="preserve">
+    <value>Title DE</value>
+  </data>
+  <data name="TitleEN" xml:space="preserve">
+    <value>Title EN</value>
+  </data>
+  <data name="TitlePL" xml:space="preserve">
+    <value>Title PL</value>
   </data>
 </root>
