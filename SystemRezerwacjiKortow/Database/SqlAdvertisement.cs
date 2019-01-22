@@ -26,11 +26,7 @@ namespace SystemRezerwacjiKortow.Database
                     command.Parameters.AddWithValue("@CourtID", advertisement.CourtID);
                     command.Parameters.AddWithValue("@Payment", advertisement.Payment);
                     command.Parameters.AddWithValue("@UserID", advertisement.UserID);
-
                     command.CommandTimeout = SqlDatabase.Timeout;
-
-                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
-                    //command.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;
                     try
                     {
                         command.ExecuteNonQuery();   
@@ -39,10 +35,6 @@ namespace SystemRezerwacjiKortow.Database
                     catch (Exception ex)
                     {
                     }
-
-                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
-                    //customer.CustomerID = int.Parse(command.Parameters["@ReturnValue"].Value.ToString());
-
                     SqlDatabase.CloseConnection(connection);
                 }
             }
@@ -50,6 +42,9 @@ namespace SystemRezerwacjiKortow.Database
         }
 
         // usuwanie reklamy
+        // advertisement -> reklama, która ma być usunięta
+        // userId -> id użytkownika, który jest zalogowany
+        // zwykły user moze usuwać tylko swoje reklamy, admin wszystkie
         public static bool DeleteAdvertisement(Advertisement advertisement, int userID)
         {
             bool result = false;
@@ -63,11 +58,8 @@ namespace SystemRezerwacjiKortow.Database
                     command.Parameters.AddWithValue("@DateTo", advertisement.DateTo);
                     command.Parameters.AddWithValue("@CourtID", advertisement.CourtID);
                     command.Parameters.AddWithValue("@UserIDDeleting", userID);
-
                     command.CommandTimeout = SqlDatabase.Timeout;
 
-                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
-                    //command.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;
                     try
                     {
                         command.ExecuteNonQuery();
@@ -76,10 +68,6 @@ namespace SystemRezerwacjiKortow.Database
                     catch (Exception ex)
                     {
                     }
-
-                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
-                    //customer.CustomerID = int.Parse(command.Parameters["@ReturnValue"].Value.ToString());
-
                     SqlDatabase.CloseConnection(connection);
                 }
             }
@@ -87,6 +75,9 @@ namespace SystemRezerwacjiKortow.Database
         }
 
         // zwraca listę reklam
+        // userID -> id użytkownika, który wyświetla listę
+        // dla zwykłego usera wynik to lista jego reklam
+        // dla admina lista wszystkich reklam
         public static List<Advertisement> GetAdvertisements(int userID)
         {
             var list = new List<Advertisement>();
@@ -122,6 +113,10 @@ namespace SystemRezerwacjiKortow.Database
             return list;
         }
 
+        // zwraca konkretną reklamę
+        // dateFrom - data rozpoczęcia szukanej reklamy
+        // dateTo - data zakończenia szukanej reklamy
+        // courtID -> id kortu, na którym ma być reklama
         public static Advertisement GetAdvertisement(DateTime dateFrom, DateTime dateTo, int courtID)
         {
             Advertisement advertisement = null;
