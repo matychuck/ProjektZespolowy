@@ -19,6 +19,13 @@ namespace SystemRezerwacjiKortow.Database
 
             // testy kortu
             //testAddModyfyCourt();
+
+            // testy reklamy
+            //testGetAdvertisement();
+            //testAddModyfyAdvertisement();
+            //testDeleteAdvertisement();
+            //SqlAdvertisement.GetAdvertisements(13);
+
         }
         #region User
         private static void testInsertUser()
@@ -77,5 +84,39 @@ namespace SystemRezerwacjiKortow.Database
             SqlCourt.AddModifyCourt(court);
         }
         #endregion
+
+        #region Advertisement
+        private static void testAddModyfyAdvertisement()
+        {
+            Advertisement advertisement = new Advertisement();
+            advertisement.CourtID = 102;
+            advertisement.DateFrom = DateTime.Now;
+            advertisement.DateTo = DateTime.Now.AddDays(10);
+            advertisement.UserID = 1;
+            advertisement.Name = "Reklama 1";
+            advertisement.Payment = 0;
+
+            SqlAdvertisement.AddModifyAdvertisement(advertisement);
+        }
+        private static void testDeleteAdvertisement()
+        {
+            Advertisement advertisement = new Advertisement();
+            List<Advertisement> list = SqlAdvertisement.GetAdvertisements(1);
+            foreach(var item in list)
+            {
+                SqlAdvertisement.DeleteAdvertisement(item, 13);
+            }
+        }
+        private static void testGetAdvertisement()
+        {
+            Advertisement advertisement = new Advertisement();
+            List<Advertisement> list = SqlAdvertisement.GetAdvertisements(1);
+            foreach (var item in list)
+            {
+                SqlAdvertisement.GetAdvertisement(item.DateFrom,item.DateTo, item.CourtID);
+            }
+        }
+        #endregion
+
     }
 }

@@ -576,6 +576,9 @@
   <data name="UserManual" xml:space="preserve">
     <value>User's manual</value>
   </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Name and surname</value>
+  </data>
   <data name="UserProfile" xml:space="preserve">
     <value>User profile</value>
   </data>

@@ -31,5 +31,21 @@ namespace SystemRezerwacjiKortow.Models
         [Display(Name = "DuePayment", ResourceType = typeof(Texts))]
         [DataType(DataType.Currency)]
         public decimal Payment { get; set; }
+
+        [Display(Name = "UserID", ResourceType = typeof(Texts))]
+        public int UserID { get; set; }
+
+        // // potrzebne do widoku
+        [Display(Name = "CourtNumber", ResourceType = typeof(Texts))]
+        public int CourtNumber { get; set; }
+
+        [Display(Name = "CourtName", ResourceType = typeof(Texts))]
+        public string CourtName { get; set; }
+
+        [Display(Name = "UserName", ResourceType = typeof(Texts))]
+        public string UserName { get; set; }
+
+        [Display(Name = "Email")]
+        public string Email { get; set; }
     }
 }

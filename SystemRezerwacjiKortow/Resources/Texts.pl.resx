@@ -624,4 +624,7 @@
   <data name="WinterSeasonEnding" xml:space="preserve">
     <value>Zakończenie sezonu zimowego</value>
   </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Imię i nazwisko</value>
+  </data>
 </root>
