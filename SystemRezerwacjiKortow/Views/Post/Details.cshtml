@@ -1,0 +1,73 @@
+﻿@model SystemRezerwacjiKortow.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TitlePL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitlePL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionPL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionPL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfInsert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfInsert)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -639,4 +639,22 @@
   <data name="TitlePL" xml:space="preserve">
     <value>Title PL</value>
   </data>
+  <data name="Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="Posts" xml:space="preserve">
+    <value>Posts</value>
+  </data>
+  <data name="AddingPost" xml:space="preserve">
+    <value>Adding Post</value>
+  </data>
+  <data name="CharsRemainingContent" xml:space="preserve">
+    <value>300 characters remaining</value>
+  </data>
+  <data name="CharsRemainingTitle" xml:space="preserve">
+    <value>50 characters remaining</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
 </root>

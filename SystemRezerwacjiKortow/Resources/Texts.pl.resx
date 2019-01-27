@@ -651,4 +651,22 @@
   <data name="TitlePL" xml:space="preserve">
     <value>Tytuł PL</value>
   </data>
+  <data name="AddingPost" xml:space="preserve">
+    <value>Dodaj Post</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="Posts" xml:space="preserve">
+    <value>Posts</value>
+  </data>
+  <data name="CharRemainingContent" xml:space="preserve">
+    <value>300 znaków do wykorzystania</value>
+  </data>
+  <data name="CharRemainingTitle" xml:space="preserve">
+    <value>50 znaków do wykorzystania</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Opublikuj</value>
+  </data>
 </root>

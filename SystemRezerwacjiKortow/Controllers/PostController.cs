@@ -1,56 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Linq.Expressions;
-using System.ComponentModel;
 using SystemRezerwacjiKortow.Database;
 using SystemRezerwacjiKortow.Models;
 
 namespace SystemRezerwacjiKortow.Controllers
 {
-    public class CourtController : Controller
+    public class PostController : Controller
     {
-        List<Court> list = SqlCourt.GetCourts();
-        // GET: Court
+        List<Post> list = SqlPost.GetPosts();
+        // GET: Post
         public ActionResult Index()
         {
             return View(list);
         }
 
-        public ActionResult PriceList()
-        {
-            return View(list);
-        }
-        public ActionResult PriceListWinter()
+        public ActionResult PostsForUsers()
         {
             return View(list);
         }
 
-
-        // GET: Court/Details/5
+        // GET: Post/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Post post = SqlPost.GetPost(id);
+            return View(post);
         }
-       
-        // GET: Court/Create
+
+        // GET: Post/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Court/Create
+        // POST: Post/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "CourtNumber, SurfaceType, IsForDoubles, IsCovered, PriceH, Name")] Court court)
+        public ActionResult Create([Bind(Include = "TitlePL, TitleEN, TitleDE, DescriptionPL, DescriptionEN, DescriptionDE")] Post post)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    SqlCourt.AddModifyCourt(court);
+                    SqlPost.InsertPost(post);                 
                     return RedirectToAction("Index");
                 }
 
@@ -58,51 +51,51 @@ namespace SystemRezerwacjiKortow.Controllers
             }
             catch
             {
-                return View(court);
+                return View(post);
             }
         }
 
-        // GET: Court/Edit/5
+        // GET: Post/Edit/5
         public ActionResult Edit(int id)
         {
-           Court court = SqlCourt.GetCourt(id);
-            return View(court);
+            Post post = SqlPost.GetPost(id);           
+            return View(post);
         }
 
-        // POST: Court/Edit/5
+        // POST: Post/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, [Bind(Include = "CourtNumber, SurfaceType, IsForDoubles, IsCovered, PriceH, Name")] Court court)
+        public ActionResult Edit(int id, [Bind(Include = "TitlePL, TitleEN, TitleDE, DescriptionPL, DescriptionEN, DescriptionDE")] Post post)
         {
             try
             {
-                SqlCourt.AddModifyCourt(court);
+                SqlPost.UpdatePost(id,post); //???? czemu id i post, a nie samo post?
                 // TODO: Add update logic here
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View(court);
+                return View(post);
             }
         }
 
-        // GET: Court/Delete/5
+        // GET: Post/Delete/5
         public ActionResult Delete(int id)
         {
-            Court court = SqlCourt.GetCourt(id);
-            return View(court);
+            Post post = SqlPost.GetPost(id);
+            return View(post);
         }
 
-        // POST: Court/Delete/5
+        // POST: Post/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                Court ToDelete = new Court();
-                ToDelete = SqlCourt.GetCourt(id);
-                SqlCourt.DeleteCourt(ToDelete);
-                // TODO: Add delete logic here
+               // Post deletedPost = new Post();
+               // deletedPost = SqlPost.GetPost(id);
+                SqlPost.DeletePost(id);
+
                 return RedirectToAction("Index");
             }
             catch

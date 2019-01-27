@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SystemRezerwacjiKortow.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@SystemRezerwacjiKortow.Resources.Texts.Posts</h2>
+
+@Html.Partial("_AdminPartial")
+
+<p>
+    @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TitlePL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionPL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfInsert)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitlePL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleDE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionPL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionDE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfInsert)
+            </td>
+            <td>
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Edit, "Edit", new { id = item.PostID }) |
+                @Html.ActionLink(SystemRezerwacjiKortow.Resources.Texts.Delete, "Delete", new { id = item.PostID })
+            </td>
+        </tr>
+    }
+
+</table>

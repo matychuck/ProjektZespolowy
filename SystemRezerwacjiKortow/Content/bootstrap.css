@@ -17,7 +17,7 @@ body.home {
 }
 
 body {
-
+    padding-top: 20px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
@@ -26,6 +26,8 @@ body {
     /*background-image: url(https://www.tennisforu.com/wp-content/uploads/2017/07/racquets-review.jpg);*/
     background-size: cover;
 }
+
+
 .darkblue-row {
     background: #ffccff;
 }
@@ -35,6 +37,11 @@ body {
 .yellow-row {
     background: #ffeb99;
 }
+.panel-body-green {
+    padding: 15px;
+    background: #ccf5ff
+}
+
 .znizka-row {
     background: #b3ffd9;
 }
