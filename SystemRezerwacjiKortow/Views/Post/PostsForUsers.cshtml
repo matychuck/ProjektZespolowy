@@ -5,8 +5,83 @@
 
 <h2>@SystemRezerwacjiKortow.Resources.Texts.Posts</h2>
 
+<div class="container">
+    <div class="row">
+        @if (System.Threading.Thread.CurrentThread.CurrentCulture.ToString() == "pl")
+        {
+            foreach (var Post in Model)
+            {
+                <div style="border: solid; border-width: 2px; border-radius: 15px; padding: 5px">
+                    <div class="post-preview">
+                        <center>
+                            <h2 style="font-size: 30px; margin-top: 10px; margin-bottom: 10px;">
+                                <strong>@Post.TitlePL</strong>
+                            </h2>
+                        </center>
+                        <hr>
+                        <h3 style="font-weight: 300; margin: 0 0 10px;">
+                            @Post.DescriptionPL
+                        </h3>
 
+                        <p style="font-size: 15px; font-style: italic; margin-top: 0; color: #868e96;">
+                            @Post.DateOfInsert
+                        </p>
+                    </div>
+                </div>
+                <br>
+            }
+        }
+        @if (System.Threading.Thread.CurrentThread.CurrentCulture.ToString() == "en")
+        {
+            foreach (var Post in Model)
+            {
+                <div style="border: solid; border-width: 2px; border-radius: 20px; padding: 5px">
+                    <div class="post-preview">
+                        <center>
+                            <h2 style="font-size: 30px; margin-top: 10px; margin-bottom: 10px;">
+                                <strong>@Post.TitleEN</strong>
+                            </h2>
+                        </center>
+                        <hr>
+                        <h3 style="font-weight: 300; margin: 0 0 10px;">
+                            @Post.DescriptionEN
+                        </h3>
 
+                        <p style="font-size: 15px; font-style: italic; margin-top: 0; color: #868e96;">
+                            @Post.DateOfInsert
+                        </p>
+                    </div>
+                </div>
+                <br>
+            }
+        }
+        @if (System.Threading.Thread.CurrentThread.CurrentCulture.ToString() == "de")
+        {
+            foreach (var Post in Model)
+            {
+                <div style="border: solid; border-width: 2px; border-radius: 15px; padding: 5px">
+                    <div class="post-preview">
+                        <center>
+                            <h2 style="font-size: 30px; margin-top: 10px; margin-bottom: 10px;">
+                                <strong>@Post.TitleDE</strong>
+                            </h2>
+                        </center>
+                        <hr>
+                        <h3 style="font-weight: 300; margin: 0 0 10px;">
+                            @Post.DescriptionDE
+                        </h3>
+
+                        <p style="font-size: 15px; font-style: italic; margin-top: 0; color: #868e96;">
+                            @Post.DateOfInsert
+                        </p>
+                    </div>
+                </div>
+                <br>
+            }
+        }
+    </div>
+</div>
+@*
 <table class="table">
     <tr>
         <th>
@@ -61,5 +136,5 @@
         </tr>
     }
 
-</table>
+</table>*@
 
