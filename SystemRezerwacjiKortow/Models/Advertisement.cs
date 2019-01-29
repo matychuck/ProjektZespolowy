@@ -9,7 +9,7 @@ namespace SystemRezerwacjiKortow.Models
 {
     public class Advertisement
     {
-        [Display(Name = "CourtName", ResourceType = typeof(Texts))]
+        [Display(Name = "AdvertisementName", ResourceType = typeof(Texts))]
         [StringLength(50)]
         public string Name { get; set; }
 

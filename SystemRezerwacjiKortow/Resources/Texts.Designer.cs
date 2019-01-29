@@ -106,6 +106,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Advertisement name.
+        /// </summary>
+        public static string AdvertisementName {
+            get {
+                return ResourceManager.GetString("AdvertisementName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Advertisements.
         /// </summary>
         public static string Advertisements {
@@ -1614,6 +1623,15 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string VerifyYourEmail {
             get {
                 return ResourceManager.GetString("VerifyYourEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu An attempt to delete an ad has been rejected! The advertisement has already been accepted by the administration..
+        /// </summary>
+        public static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
             }
         }
         

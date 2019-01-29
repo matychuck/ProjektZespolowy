@@ -657,4 +657,10 @@
   <data name="Publish" xml:space="preserve">
     <value>Publish</value>
   </data>
+  <data name="AdvertisementName" xml:space="preserve">
+    <value>Advertisement name</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>An attempt to delete an ad has been rejected! The advertisement has already been accepted by the administration.</value>
+  </data>
 </root>

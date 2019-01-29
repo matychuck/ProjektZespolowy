@@ -669,4 +669,10 @@
   <data name="Publish" xml:space="preserve">
     <value>Opublikuj</value>
   </data>
+  <data name="AdvertisementName" xml:space="preserve">
+    <value>Nazwa reklamy</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Próba usunięcia reklamy została odrzucona! Zgłosznie reklamy zostało już przyjęte przez administrację.</value>
+  </data>
 </root>
