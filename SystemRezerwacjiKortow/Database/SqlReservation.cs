@@ -15,7 +15,11 @@ namespace SystemRezerwacjiKortow.Database
         // testDate - data, której zajętość ma być sprawdzona
         // testHour - godzina, której zajętość ma być sprawdzona
         // jeśli testHour zosatnie podane 0, to będzie sprawdzana zajętość całego dnia, a nie konkretnej godziny
-       
+        // zwraca: 0 - całkowicie wolny
+        //         1 - całkowicie zajęty
+        //         2 - częściowo zajęty
+        //         3 - turniej
+        //         4 - nieczynne
         public static int GetReservationStateCourt(int courtID, DateTime testDate, int testHour)
         {
             int result = -1;
