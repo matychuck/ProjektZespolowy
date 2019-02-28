@@ -663,4 +663,7 @@
   <data name="Warning" xml:space="preserve">
     <value>An attempt to delete an ad has been rejected! The advertisement has already been accepted by the administration.</value>
   </data>
+  <data name="CanReserve" xml:space="preserve">
+    <value>Can reserve</value>
+  </data>
 </root>

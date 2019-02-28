@@ -32,6 +32,9 @@ namespace SystemRezerwacjiKortow.Database
             //SqlPost.GetPosts();
             //SqlPost.GetPost(1);
             //SqlPost.DeletePost(2);
+
+            // testy rezerwacji
+            //SqlReservation.GetReservationStateCourt(2, DateTime.Now, 0);
         }
         #region User
         private static void testInsertUser()
@@ -150,5 +153,6 @@ namespace SystemRezerwacjiKortow.Database
         }
 
         #endregion
+
     }
 }

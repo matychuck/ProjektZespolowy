@@ -169,6 +169,7 @@
     <Compile Include="Database\SqlDatabase.cs" />
     <Compile Include="Database\SqlGear.cs" />
     <Compile Include="Database\SqlPost.cs" />
+    <Compile Include="Database\SqlReservation.cs" />
     <Compile Include="Database\SqlTesty.cs" />
     <Compile Include="Database\SqlUser.cs" />
     <Compile Include="Email.cs" />
