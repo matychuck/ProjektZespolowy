@@ -277,6 +277,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contest name.
+        /// </summary>
+        public static string ContestName {
+            get {
+                return ResourceManager.GetString("ContestName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contests.
         /// </summary>
         public static string Contests {
@@ -1087,6 +1096,15 @@ namespace SystemRezerwacjiKortow.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is accepted.
+        /// </summary>
+        public static string IsAccepted {
+            get {
+                return ResourceManager.GetString("IsAccepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is admin.
         /// </summary>
         public static string IsAdmin {
@@ -1110,6 +1128,15 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string IsEmailVeryfied {
             get {
                 return ResourceManager.GetString("IsEmailVeryfied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is executed.
+        /// </summary>
+        public static string IsExecuted {
+            get {
+                return ResourceManager.GetString("IsExecuted", resourceCulture);
             }
         }
         
@@ -1389,6 +1416,15 @@ namespace SystemRezerwacjiKortow.Resources {
         public static string RepeatPassword {
             get {
                 return ResourceManager.GetString("RepeatPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reservated item.
+        /// </summary>
+        public static string ReservationName {
+            get {
+                return ResourceManager.GetString("ReservationName", resourceCulture);
             }
         }
         

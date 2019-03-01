@@ -10,7 +10,7 @@ namespace SystemRezerwacjiKortow.Database
 {
     public static class SqlUser
     {
-        // dodanie użytkownika - rejestracja
+        // dodanie użytkownika albo aktualizacja jego imienia, nazwiska, daty urodzenia, jezli ten uzytkownik juz istnieje
         // przy wywolywaniu funckji w rejestracji 
         // pod user.RoleID trzeba podstawić SqlDatabase.UserRoleID
         // pod user.CustomerID trzeba podstawić SqlDatabase.CustomerAtr

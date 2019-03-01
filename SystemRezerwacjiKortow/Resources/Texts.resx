@@ -666,4 +666,16 @@
   <data name="CanReserve" xml:space="preserve">
     <value>Can reserve</value>
   </data>
+  <data name="ContestName" xml:space="preserve">
+    <value>Contest name</value>
+  </data>
+  <data name="IsAccepted" xml:space="preserve">
+    <value>Is accepted</value>
+  </data>
+  <data name="IsExecuted" xml:space="preserve">
+    <value>Is executed</value>
+  </data>
+  <data name="ReservationName" xml:space="preserve">
+    <value>Reservated item</value>
+  </data>
 </root>

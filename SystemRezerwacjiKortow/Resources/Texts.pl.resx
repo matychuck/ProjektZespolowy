@@ -678,4 +678,16 @@
   <data name="CanReserve" xml:space="preserve">
     <value>Czy może rezerwować</value>
   </data>
+  <data name="ContestName" xml:space="preserve">
+    <value>Nazwa turnieju</value>
+  </data>
+  <data name="IsAccepted" xml:space="preserve">
+    <value>Czy jest zaakceptowana</value>
+  </data>
+  <data name="IsExecuted1" xml:space="preserve">
+    <value>Czy jest zrealizowana</value>
+  </data>
+  <data name="ReservationName" xml:space="preserve">
+    <value>Rezerwowany przedmiot</value>
+  </data>
 </root>

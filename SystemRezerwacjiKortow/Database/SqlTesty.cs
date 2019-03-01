@@ -35,6 +35,11 @@ namespace SystemRezerwacjiKortow.Database
 
             // testy rezerwacji
             //SqlReservation.GetReservationStateCourt(2, DateTime.Now, 0);
+            //SqlReservation.SetReservationCourt(1, DateTime.Now.AddMinutes(5), DateTime.Now.AddHours(2), 4);
+            //SqlReservation.GetReservations(4);
+            //SqlReservation.AcceptReservation(1, false);
+            //SqlReservation.CancelReservation(7, 4);
+            //SqlReservation.GetReservation(7);
         }
         #region User
         private static void testInsertUser()
