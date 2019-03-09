@@ -55,7 +55,7 @@ namespace SystemRezerwacjiKortow.Database
         }
 
         // składanie rezerwacji (zwykłej) na kort
-        // zwraca id rezerwacji, jeśli rezerwacja się powiodła lub wartość < 0 w przypadku niepowodzenia
+        // zwraca true, jeśli rezerwacja się powiodła lub false w przypadku niepowodzenia
         // courtID - id kortu, ktory ma byc zarezerwowany
         // dateTimeFrom - data i godzina rozpoczecia rezerwacji
         // dateTimeTo - data i godzina zakonczenia rezerwacji
@@ -153,7 +153,13 @@ namespace SystemRezerwacjiKortow.Database
         // reservationID - id rezerwacji, ktorej status ma byc zmieniony
         // Accept - true -> dana rezerwacja ma byc zaakceptowana
         //          false -> dana rezerwacja ma by niezaakceptowana
-        // akceptowania/anulowanie akceptacji jest mozliwe tylko gdy rezerwacja nei jest wykonana (IsExecuted jest false) -> sprawdzane na poziomie bazy
+        // akceptowania/anulowanie akceptacji jest mozliwe tylko gdy rezerwacja nie jest wykonana (IsExecuted jest false) -> sprawdzane na poziomie bazy
+        // UWAGA! 
+        // akceptacja/anulowanie akceptacji rezerwacji bedacej czescia rezerwacji cyklicznej lub turniejowej
+        // powoduje akceptacje/anulowanie akceptacji dla wszystkich rezerwacji nalezacych do danej rezerwacji cyklicznej/turniejowej
+        // przyklad: 
+        // rezerwacja cykliczna od 11.03.2019 do 24.03.2019 co 2 dni, akceptujemy jedną z rezerwacji zwykłych - 13.03.2019
+        // pozostałe rezerwacje zwykłe w podanym przedziałe również zostaną zaakceptowane
         public static bool AcceptReservation(int reservationID, bool Accept)
         {
             bool result = false;
@@ -267,6 +273,42 @@ namespace SystemRezerwacjiKortow.Database
                 }
             }
             return reservation;
+        }
+
+        // zwraca id rezerwacji > 0, jesli rezerwacja istnieje, w innym przypadku zwraca 0 lub -1 jesli blad wykonania procedury
+        // courtID - identyfikator kortu
+        // testDate - data i godzina sprawdzanej rezerwacji
+        public static int GetReservationIDCourt(int courtID, DateTime testDate)
+        {
+            int result = -1;
+            using (SqlConnection connection = SqlDatabase.NewConnection())
+            {
+                if (SqlDatabase.OpenConnection(connection))
+                {
+                    var command = new SqlCommand("dbo.GetReservationIDCourt", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@CourtID", courtID);
+                    command.Parameters.AddWithValue("@Date", testDate);
+                    command.CommandTimeout = SqlDatabase.Timeout;
+
+                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
+                    command.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+
+                    // użyć jeżeli chcemy wykorzystać wartość return z procedury
+                    result = int.Parse(command.Parameters["@ReturnValue"].Value.ToString());
+
+                    SqlDatabase.CloseConnection(connection);
+                }
+            }
+            return result;
         }
     }
 }
